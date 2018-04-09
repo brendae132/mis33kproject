@@ -6,8 +6,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinalProject_Team12.Models
 {
+    public enum TheaterNum { Theater1, Theater2 };
+
     public class Screening
     {
+
         public Int32 ScreeningID { get; set; }
 
         //is this related to movie or theatre?
@@ -26,8 +29,7 @@ namespace FinalProject_Team12.Models
 
         //navigational properties
         public virtual Movie Movie { get; set; }
-        public virtual List<Theatre> Theatres { get; set; }
-        public virtual List<SeatReserved> SeatsReserved { get; set; }
+
         public virtual List<Ticket> Tickets { get; set; }
 
     }

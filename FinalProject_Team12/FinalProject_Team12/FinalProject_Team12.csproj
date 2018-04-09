@@ -187,14 +187,16 @@
     <Compile Include="Migrations\201804082313421_InitialSetup.Designer.cs">
       <DependentUpon>201804082313421_InitialSetup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804092305057_updatethemodels.cs" />
+    <Compile Include="Migrations\201804092305057_updatethemodels.Designer.cs">
+      <DependentUpon>201804092305057_updatethemodels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MovieReview.cs" />
-    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Screening.cs" />
-    <Compile Include="Models\SeatReserved.cs" />
-    <Compile Include="Models\Theatre.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -224,6 +226,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804082313421_InitialSetup.resx">
       <DependentUpon>201804082313421_InitialSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804092305057_updatethemodels.resx">
+      <DependentUpon>201804092305057_updatethemodels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -25,7 +25,6 @@ namespace FinalProject_Team12.Models
 
         public virtual Orders Orders { get; set;}
         public virtual Screening Screening { get; set;}
-        public virtual List<SeatReserved> SeatReserveds { get; set; }
 
     }
 }

@@ -34,10 +34,6 @@ namespace FinalProject_Team12.DAL
         //Create the db set
         public DbSet<MovieReview> MovieReviews { get; set; }
 
-        //Create the db set
-        public DbSet<Theatre> Theatres { get; set; }
 
-        //Create the db set
-        public DbSet<SeatReserved> SeatsReserved { get; set; }
     }
 }

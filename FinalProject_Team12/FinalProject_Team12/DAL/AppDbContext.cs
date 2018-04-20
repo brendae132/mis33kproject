@@ -1,39 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using FinalProject_Team12.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+
+using FinalProject_Team12.Models;
 
 namespace FinalProject_Team12.DAL
 {
-    public class AppDbContext: DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
-        //Constructor that invokes the base constructor
-        public AppDbContext() : base("MyDBConnection") { }
+        public AppDbContext()
+            : base("MyDBConnection", throwIfV1Schema: false) { }
 
-        //Create the db set
-        public DbSet<Movie> Movies { get; set; }
-
-        //Create the db set
-        public DbSet<Genre> Genres { get; set; }
-
-        //Create the db set
-        public DbSet<User> Users { get; set; }
-
-        //Create the db set
-        //***Don't forget to ask: Should Orders be singular or plural? Does it matter? 
-        public DbSet<Orders> Orders { get; set; }
-
-        //Create the db set
-        public DbSet<Screening> Screenings { get; set; }
-
-        //Create the db set
-        public DbSet<Ticket> Tickets { get; set; }
-
-        //Create the db set
-        public DbSet<MovieReview> MovieReviews { get; set; }
+        public static AppDbContext Create()
+        {
+            return new AppDbContext();
+        }
 
 
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Vendor> Vendors { get; set; }
+
+        public DbSet<AppRole> AppRoles { get; set; }
     }
 }

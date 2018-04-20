@@ -19,27 +19,28 @@ namespace FinalProject_Team12.Controllers
         // GET: Home
         public ActionResult Index(String SearchString)
         {
-            ViewBag.TotalRepositories = db.Repositories.ToList().Count();
+            ViewBag.TotalMovies = db.Movies.ToList().Count();
 
-            List<Repository> SelectedRepositories = new List<Repository>();
+            List<Movies> SelectedMovies = new List<Movie>();
 
-            var query = from r in db.Repositories select r; //Start with the db set with the data you want
+            var query = from r in db.Movies select r; //Start with the db set with the data you want
 
             //Check if search string is null
 
             if (SearchString != null)
             {
                 //Add in 'where' clauses to limit the data
-                query = query.Where(r => r.RepositoryName.Contains(SearchString) || r.UserName.Contains(SearchString));
+                query = query.Where(r => r.Title.Contains(SearchString) || r.Actors.Contains(SearchString));
+                //TODO: Actor names as well?
                 //Will search names in BOTH Repository Names and User Names
             }
 
-            SelectedRepositories = query.ToList();
+            SelectedMovies = query.ToList();
 
-            ViewBag.TotalRepositories = db.Repositories.Count();
-            ViewBag.SelectedRepositories = SelectedRepositories.Count();
+            ViewBag.TotalMovies = db.Movies.Count();
+            ViewBag.SelectedMovies = SelectedMovies.Count();
 
-            return View(SelectedRepositories.OrderByDescending(r => r.StarCount));
+            return View(SelectedMovies.OrderByDescending(r => r.StarCount)); //TODO: Ordering process
         }
 
         // GET: Vendor/Details/5
@@ -49,48 +50,48 @@ namespace FinalProject_Team12.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Repository repository = db.Repositories.Find(id);
-            if (repository == null)
+            Movie movie = db.Movies.Find(id);
+            if (movie == null)
             {
                 return HttpNotFound();
             }
-            return View(repository);
+            return View(movie);
         }
 
-        public ActionResult DetailedSearch()
+        public ActionResult DetailedSearch() //TODO: Genres section
         {
-            ViewBag.AllLanguages = GetAllLanguages();
+            ViewBag.AllGenres = GetAllGenres();
             return View();
         }
 
-        public ActionResult DisplaySearchResults(string SearchName, string Description, int SelectedLanguage, string NumberofStars, StarRank SelectedStar, DateTime? datSelectedDate)
+        public ActionResult DisplaySearchResults(string SearchName, string Description, int SelectedGenre, string NumberofStars, StarRank SelectedStar, DateTime? datSelectedDate)
         {
 
 
             //Create query
-            var query = from r in db.Repositories select r;
+            var query = from r in db.Movies select r;
 
             //Check to see if search string is null
             if (SearchName != null)
             {
-                query = query.Where(r => r.RepositoryName.Contains(SearchName));
+                query = query.Where(r => r.Title.Contains(SearchName));
             }
 
             //Check if description is null. If not, filter results
             if (Description != null)
             {
-                query = query.Where(r => r.RepositoryName.Contains(Description));
+                query = query.Where(r => r.Title.Contains(Description));
             }
 
             //Allow user to see all languages
-            if (SelectedLanguage == 0)
+            if (SelectedGenre == 0)
             {
-                ViewBag.SelectedLanguage = "No Language was selected";
+                ViewBag.SelectedGenre = "No Language was selected";
             }
             else
             {
-                Language LanguageToDisplay = db.Languages.Find(SelectedLanguage);
-                ViewBag.SelectedLanguage = "The selected language is " + LanguageToDisplay.Name;
+                Genre GenreToDisplay = db.Genres.Find(SelectedGenre);
+                ViewBag.SelectedGenre = "The selected language is " + GenreToDisplay.GenreType;
             }
 
             //TODO: Code for textbox with numeric input. See if they specified something for Number of Stars
@@ -153,32 +154,32 @@ namespace FinalProject_Team12.Controllers
             }
 
 
-            ViewBag.TotalRepositories = db.Repositories.ToList().Count(); //Repopulate the Viewbag for the X out of Y line!
+            ViewBag.TotalMovies = db.Movies.ToList().Count(); //Repopulate the Viewbag for the X out of Y line!
             //This is for Detailed Search Results
-            List<Repository> SelectedRepositories = query.ToList();
-            ViewBag.SelectedRepositories = SelectedRepositories.ToList().Count();
+            List<Movie> SelectedMovies = query.ToList();
+            ViewBag.SelectedMovies = SelectedMovies.ToList().Count();
 
             //Display repositories in descending order
-            SelectedRepositories.OrderByDescending(r => r.StarCount);
+            SelectedMovies.OrderByDescending(r => r.StarCount);
 
             //Send the list to View
-            return View("Index", SelectedRepositories);
+            return View("Index", SelectedMovies);
 
         }
         
-        public SelectList GetAllLanguages()
+        public SelectList GetAllGenres()
         {
-            List<Language> Languages = db.Languages.ToList();
+            List<Genre> Genres = db.Genres.ToList();
 
             //Add a record for all languages
-            Language SelectNone = new Models.Language() { LanguageID = 0, Name = "All Languages" };
-            Languages.Add(SelectNone);
+            Genre SelectNone = new Models.Genre() { GenreID = 0, GenreType = "All Genres" };
+            Genres.Add(SelectNone);
 
             //Convert list to select list
-            SelectList AllLanguages = new SelectList(Languages.OrderBy(m => m.LanguageID), "LanguageID", "Name");
+            SelectList AllGenres = new SelectList(Genres.OrderBy(m => m.GenreID), "GenreID", "GenreType");
 
             //Return the select list
-            return AllLanguages;
+            return AllGenres;
         }
     }
 }

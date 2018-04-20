@@ -6,10 +6,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinalProject_Team12.Models
 {
-    public class Orders
+    public class Order
     {
         [Required(ErrorMessage = "Order ID is required")]
-        public Int32 OrdersID { get; set; }
+        public Int32 OrderID { get; set; }
 
         //***Does this need to be a list of some sort?
         //***How do we go about displaying multiple past purchases if needed?
@@ -17,8 +17,8 @@ namespace FinalProject_Team12.Models
         public String PastPurchases { get; set; }
 
         //***Same concern as above: Displaying multiple cancelled orders?
-        [Display(Name = "Cancelled Orders")]
-        public String CancelledOrders { get; set; }
+        [Display(Name = "Cancelled Order")]
+        public String CancelledOrder { get; set; }
 
         //***Same concern as above: Displaying multiple future showings?
         [Display(Name = "Future Showings")]

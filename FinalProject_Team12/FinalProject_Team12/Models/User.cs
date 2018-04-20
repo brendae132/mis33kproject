@@ -58,7 +58,7 @@ namespace FinalProject_Team12.Models
         public Int32 PopcornPoints { get; set; }
 
         //Navigational property for Orders 
-        //***Orders or Order?
-        public virtual List<Orders> Orders { get; set; }
+        public virtual List<Order> Orders { get; set; }
+        public virtual List<MovieReview> MovieReview { get; set; }
     }
 }

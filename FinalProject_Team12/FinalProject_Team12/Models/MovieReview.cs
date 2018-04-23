@@ -31,6 +31,6 @@ namespace FinalProject_Team12.Models
         public Int32 TextReviewVote { get; set; }
 
         //Navigation property for Movie Review to User
-        public virtual List<User> Users { get; set; }
+
     }
 }

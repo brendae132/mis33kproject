@@ -21,6 +21,8 @@ namespace FinalProject_Team12.DAL
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<MovieReview> MovieReviews { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Movie> Movies { get; set; }
         //TODO: Ask if need movie reviews dbset
 
         public DbSet<AppRole> AppRoles { get; set; }

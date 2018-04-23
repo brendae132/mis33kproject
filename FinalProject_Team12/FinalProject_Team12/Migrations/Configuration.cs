@@ -10,6 +10,7 @@ namespace FinalProject_Team12.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "FinalProject_Team12.DAL.AppDbContext";
         }
 
         protected override void Seed(FinalProject_Team12.DAL.AppDbContext context)
@@ -18,6 +19,17 @@ namespace FinalProject_Team12.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            SeedIdentity si = new SeedIdentity();
+            si.AddAdmin(context);
+
+            //seed the genres
+            GenreData AddGenres = new GenreData();
+            AddGenres.SeedGenres(context);
+
+            //seed the movies
+            MovieData AddMovies = new MovieData();
+            AddMovies.SeedMovies(context);
         }
     }
 }

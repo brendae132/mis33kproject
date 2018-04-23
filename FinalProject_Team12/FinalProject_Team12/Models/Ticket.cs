@@ -23,7 +23,7 @@ namespace FinalProject_Team12.Models
         [Display(Name = "SeatNumber")]
         public String SeatNumber { get; set; }
 
-        public virtual Orders Orders { get; set;}
+        public virtual Order Order { get; set;}
         public virtual Screening Screening { get; set;}
 
     }

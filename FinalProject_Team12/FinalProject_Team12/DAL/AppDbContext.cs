@@ -15,11 +15,13 @@ namespace FinalProject_Team12.DAL
             return new AppDbContext();
         }
 
-
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        
+        public DbSet<Screening> Screenings { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-        public DbSet<Vendor> Vendors { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<MovieReview> MovieReviews { get; set; }
+        //TODO: Ask if need movie reviews dbset
 
         public DbSet<AppRole> AppRoles { get; set; }
     }

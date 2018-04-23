@@ -24,7 +24,7 @@ namespace FinalProject_Team12.Models
 
         //navigational properties
         public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Screening Screening { get; set; }
         public virtual List<AppUser> AppUser { get; set; }
     }
 }

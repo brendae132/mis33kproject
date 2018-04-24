@@ -24,11 +24,36 @@ namespace FinalProject_Team12.Models
         [Display(Name = "Last Name")]
         public String LastName { get; set; }
 
+        [Display(Name = "Middle Initial")]
+        public String MiddleInitial { get; set; }
+
+        [Required(ErrorMessage = "Birthday is required.")]
+        [Display(Name = "Birthday")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [MinimumAgeCheck(13, "You have to be at least {0} to apply")]
+        public DateTime Birthday { get; set; }
+
+        [Required(ErrorMessage = "Street is required.")]
+        [Display(Name = "Street")]
+        public String Street { get; set; }
+
+        [Required(ErrorMessage = "City is required.")]
+        [Display(Name = "City")]
+        public String City { get; set; }
+
+        [Required(ErrorMessage = "State is required.")]
+        [Display(Name = "State")]
+        public String State { get; set; }
+
+        [Required(ErrorMessage = "Zip Code is required.")]
+        [Display(Name = "Zip Code")]
+        public Int32 ZipCode { get; set; }
+
         //Navigational properties needed here
         public virtual List<Order> Orders { get; set; }
         public virtual List<OrderDetail> OrderDetails { get; set; }
-        public virtual List<Product> Products { get; set; }
-        public virtual List<Vendor> Vendors { get; set; }
+        public virtual List<Screening> Screenings { get; set; }
+
 
         //This method allows you to create a new user
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)

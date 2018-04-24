@@ -27,8 +27,7 @@ namespace FinalProject_Team12.Models
         //Navigational properties needed here
         public virtual List<Order> Orders { get; set; }
         public virtual List<OrderDetail> OrderDetails { get; set; }
-        public virtual List<Product> Products { get; set; }
-        public virtual List<Vendor> Vendors { get; set; }
+        public virtual List<Screening> Screenings { get; set; }
 
         //This method allows you to create a new user
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)

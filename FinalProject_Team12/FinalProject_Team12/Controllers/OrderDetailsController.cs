@@ -38,6 +38,7 @@ namespace FinalProject_Team12.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "OrderDetailID,Quantity,ProductPrice,ExtendedPrice")] OrderDetail orderDetail)
+        //**CHANGED "ProductPrice" TO "TicketPrice"
         {
             //find the product associated with this order
             OrderDetail od = db.OrderDetails.Include(OD => OD.Order)

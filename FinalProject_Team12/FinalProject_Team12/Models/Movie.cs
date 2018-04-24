@@ -51,7 +51,7 @@ namespace FinalProject_Team12.Models
             //for reports
             [Required(ErrorMessage = "Revenue is required.")]
             [Display(Name = "Revenue")]
-            public Int32 Revenue { get; set; }
+            public Int64 Revenue { get; set; }
 
             //navigational properties
             public virtual List<Genre> Genres { get; set; }

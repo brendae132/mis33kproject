@@ -119,14 +119,19 @@ namespace FinalProject_Team12.Controllers
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
                     FirstName = model.FirstName,
-                    LastName = model.LastName
+                    LastName = model.LastName,
+                    MiddleInitial = model.MiddleInitial,
+                    Birthday = model.Birthday,
+                    Street = model.Street,
+                    City = model.City,
+                    State = model.State,
+                    ZipCode = model.ZipCode
                                  
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 await UserManager.AddToRoleAsync(user.Id, "Customer");
-                // --OR--
-                // await UserManager.AddToRoleAsync(user.Id, "Employee");
+                await UserManager.AddToRoleAsync(user.Id, "Employee");
 
 
                 if (result.Succeeded)

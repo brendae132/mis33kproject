@@ -15,7 +15,7 @@ namespace FinalProject_Team12.Controllers
     [Authorize]
     public class OrdersController : Controller
     {
-        //Create an instance of the db conteext (this is now derived from Identity)
+        //Create an instance of the db context (this is now derived from Identity)
         private AppDbContext db = new AppDbContext();
 
         // GET: Orders
@@ -115,21 +115,21 @@ namespace FinalProject_Team12.Controllers
             //Set the new order detail's order to the new ord we just found
             od.Order = ord;
 
-            //Populate the view bag with the list of products
-            ViewBag.Allproducts = GetAllProducts();
+            //Populate the view bag with the list of screening
+            ViewBag.AllScreenings = GetAllScreenings();
 
             //Give the view the registration detail object we just created
             return View(od);
         }
 
         [HttpPost]
-        public ActionResult AddToOrder(OrderDetail od, int SelectedProduct)
+        public ActionResult AddToOrder(OrderDetail od, int SelectedScreening)
         {
-            //Find the product associated with the int SelectedProduct
-            Product product = db.Products.Find(SelectedProduct);
+            //Find the screening associated with the int SelectedScreening
+            Screening screening = db.Screenings.Find(SelectedScreening);
 
-            //set the product property of the order detail to this newly found product
-            od.Product = product;
+            //set the screening property of the order detail to this newly found screening
+            od.Screening = screening;
 
             //Find the order associated with the order detail
             Order ord = db.Orders.Find(od.Order.OrderID);
@@ -137,11 +137,11 @@ namespace FinalProject_Team12.Controllers
             //set the property of the order detail to this newly found order
             od.Order = ord;
 
-            //set the value of the product price
-            od.ProductPrice = product.Price;
+            ////set the value of the product price
+            //od.ProductPrice = product.Price;
 
-            //set the value of the extended price
-            od.ExtendedPrice = od.ProductPrice * od.Quantity;
+            ////set the value of the extended price
+            //od.ExtendedPrice = od.ProductPrice * od.Quantity;
 
             if (ModelState.IsValid)//model meets all requirements
             {
@@ -152,7 +152,7 @@ namespace FinalProject_Team12.Controllers
             }
 
             //model state is not valid
-            ViewBag.AllProducts = GetAllProducts();
+            ViewBag.AllScreenings = GetAllScreenings();
             return View(od);
 
         }
@@ -233,19 +233,19 @@ namespace FinalProject_Team12.Controllers
             return RedirectToAction("Index");
         }
 
-        //method to get all products for the ViewBag
-        public SelectList GetAllProducts()
+        //method to get all screenings for the ViewBag
+        public SelectList GetAllScreenings()
         {
-            //Get the list of products in order by product name
-            List<Product> allProducts = db.Products.OrderBy(p => p.Name).ToList();
+            //Get the list of screenings in order by screening time
+            List<Screening> allScreening = db.Screenings.OrderBy(p => p.StartTime).ToList();
 
             //convert the list to a select lsit
-            SelectList selProducts = new SelectList(allProducts, "ProductID", "Name");
+            SelectList selScreenings = new SelectList(allScreening, "Screening", "StartTime");
 
             //return the select list
-            return selProducts;
+            return selScreenings;
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)

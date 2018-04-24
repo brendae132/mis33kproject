@@ -65,7 +65,7 @@ namespace FinalProject_Team12.Models
 
         //Navigational properties needed here
         public virtual List<Order> Orders { get; set; }
-        public virtual List<OrderDetail> OrderDetails { get; set; }
+        public virtual List<Ticket> Tickets { get; set; }
         public virtual List<Screening> Screenings { get; set; }
 
 

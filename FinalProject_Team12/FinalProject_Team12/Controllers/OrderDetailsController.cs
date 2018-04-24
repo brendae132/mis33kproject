@@ -47,14 +47,14 @@ namespace FinalProject_Team12.Controllers
  
             if (ModelState.IsValid)
             {
-                //update number of products
-                od.Quantity = orderDetail.Quantity;
+                ////update number of products
+                //od.Quantity = orderDetail.Quantity;
 
-                //update product price for related product
-                od.ProductPrice = od.Screening.Price;
+                ////update product price for related product
+                //od.ProductPrice = od.Screening.Price;
 
-                //update extended price
-                od.ExtendedPrice = od.ProductPrice * od.Quantity;
+                ////update extended price
+                //od.ExtendedPrice = od.ProductPrice * od.Quantity;
 
                 //change this code for entry and return
                 db.Entry(od).State = EntityState.Modified;

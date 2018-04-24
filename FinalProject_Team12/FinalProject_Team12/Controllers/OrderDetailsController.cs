@@ -38,10 +38,11 @@ namespace FinalProject_Team12.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "OrderDetailID,Quantity,ProductPrice,ExtendedPrice")] OrderDetail orderDetail)
+        //**CHANGED "ProductPrice" TO "TicketPrice"
         {
             //find the product associated with this order
             OrderDetail od = db.OrderDetails.Include(OD => OD.Order)
-                                            .Include(OD => OD.Product)
+                                            .Include(OD => OD.Screening)
                                             .FirstOrDefault(x => x.OrderDetailID == orderDetail.OrderDetailID);
 
  
@@ -51,7 +52,7 @@ namespace FinalProject_Team12.Controllers
                 od.Quantity = orderDetail.Quantity;
 
                 //update product price for related product
-                od.ProductPrice = od.Product.Price;
+                od.ProductPrice = od.Screening.Price;
 
                 //update extended price
                 od.ExtendedPrice = od.ProductPrice * od.Quantity;

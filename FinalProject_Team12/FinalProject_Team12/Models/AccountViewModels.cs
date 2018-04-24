@@ -82,6 +82,15 @@ namespace FinalProject_Team12.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Address")]
+        public String Address { get; set; }
+
+        [Required]
+        [Display(Name = "Birthday")]
+        public DateTime Birthday { get; set; }
+
     }
     public class ChangePasswordViewModel
     {

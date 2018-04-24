@@ -9,8 +9,8 @@ using System.Net;
 
 namespace FinalProject_Team12.Controllers
 {
-    //Enum for star number
-    public enum StarRank { GreaterThan, LessThan}
+    //Enum for rating number
+    public enum Rating { GreaterThan, LessThan}
 
     public class HomeController : Controller
     {
@@ -21,7 +21,7 @@ namespace FinalProject_Team12.Controllers
         {
             ViewBag.TotalMovies = db.Movies.ToList().Count();
 
-            List<Movies> SelectedMovies = new List<Movie>();
+            List<Movie> SelectedMovies = new List<Movie>();
 
             var query = from r in db.Movies select r; //Start with the db set with the data you want
 
@@ -40,9 +40,11 @@ namespace FinalProject_Team12.Controllers
             ViewBag.TotalMovies = db.Movies.Count();
             ViewBag.SelectedMovies = SelectedMovies.Count();
 
-            return View(SelectedMovies.OrderByDescending(r => r.StarCount)); //TODO: Ordering process
+            return View(SelectedMovies.OrderByDescending(r => r.Rating)); 
+            //TODO: ***How do we refer to the "Rating" which is in our MovieReview class? 
+            //I assumed that adding navigational properties between MovieReview and Movie would help, but the error remained.
         }
-
+        
         // GET: Vendor/Details/5
         public ActionResult Details(int? id)
         {
@@ -64,10 +66,9 @@ namespace FinalProject_Team12.Controllers
             return View();
         }
 
-        public ActionResult DisplaySearchResults(string SearchName, string Description, int SelectedGenre, string NumberofStars, StarRank SelectedStar, DateTime? datSelectedDate)
+        //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
+        public ActionResult DisplaySearchResults(string SearchName, string Tagline, int SelectedGenre, DateTime ReleaseDate, MPAARating MPAARating, string NumberofStars, Rating Rating, DateTime? datSelectedDate)
         {
-
-
             //Create query
             var query = from r in db.Movies select r;
 
@@ -78,23 +79,37 @@ namespace FinalProject_Team12.Controllers
             }
 
             //Check if description is null. If not, filter results
-            if (Description != null)
+            //TODO: ***Double check if this query line is correct
+            if (Tagline != null)
             {
-                query = query.Where(r => r.Title.Contains(Description));
+                query = query.Where(r => r.Tagline.Contains(Tagline));
             }
 
-            //Allow user to see all languages
+            //Allow user to see all genres
+
             if (SelectedGenre == 0)
             {
-                ViewBag.SelectedGenre = "No Language was selected";
+                ViewBag.SelectedGenre = "No genre was selected";
             }
             else
             {
                 Genre GenreToDisplay = db.Genres.Find(SelectedGenre);
-                ViewBag.SelectedGenre = "The selected language is " + GenreToDisplay.GenreType;
+                ViewBag.SelectedGenre = "The selected genre is " + GenreToDisplay.GenreType;
             }
 
-            //TODO: Code for textbox with numeric input. See if they specified something for Number of Stars
+            //TODO: ***SEARCH FOR 'RELEASE YEAR' HERE. Using ReleaseDate is not entirely correct...I think. 
+            //Maybe perform a search for release dates containing the selected year? 
+
+            if (MPAARating == 0)
+            {
+                ViewBag.SelectedMPAARating = "No MPAA Rating was selected";
+            }
+            else
+            {
+                MPAARating MPAARatingToDisplay = db.Movie.Find(MPAARating);
+                //ViewBag.SelectedMPAARating = "Movies with the selected MPAA Rating include " + GenreToDisplay.GenreType;
+                //TODO: ***This is wrong - somehow need to figure out how to display a list of movies containing searched MPAA Rating
+            }
 
             if (NumberofStars != null && NumberofStars != "") //Make sure string is a valid number
             {
@@ -108,26 +123,26 @@ namespace FinalProject_Team12.Controllers
                     //Add a message for the Viewbag
                     ViewBag.Message = NumberofStars + "is not a valid number. Please try again.";
 
-                    //Repopulate dropdown
-                    ViewBag.AllLanguages = GetAllLanguages();
+                    //Repopulate dropdown for genres
+                    ViewBag.AllGenres = GetAllGenres();
 
                     //Send user back to home page
                     return View("DetailedSearch");
                 }
 
 
-                Decimal decStarOptions;
-                decStarOptions = Convert.ToDecimal(NumberofStars);
+                Decimal Rating;
+                Rating = Convert.ToDecimal(NumberofStars);
 
-                if (SelectedStar == StarRank.GreaterThan)
+                if (SelectedStar == Rating.GreaterThan)
                 {
                     ViewBag.SelectedStarOption = "The records greater than the selected rank should be shown.";
 
-                    query = query.Where(r => r.StarCount >= decStarOptions);
+                    query = query.Where(r => r.Rating >= decStarOptions);
                 }
                 else
                 {
-                    query = query.Where(r => r.StarCount <= decStarOptions);
+                    query = query.Where(r => r.Rating <= decStarOptions);
 
                     ViewBag.SelectedStarOption = "The records lesser than the selected rank should be shown.";
                 }
@@ -160,7 +175,7 @@ namespace FinalProject_Team12.Controllers
             ViewBag.SelectedMovies = SelectedMovies.ToList().Count();
 
             //Display repositories in descending order
-            SelectedMovies.OrderByDescending(r => r.StarCount);
+            SelectedMovies.OrderByDescending(r => r.Rating);
 
             //Send the list to View
             return View("Index", SelectedMovies);

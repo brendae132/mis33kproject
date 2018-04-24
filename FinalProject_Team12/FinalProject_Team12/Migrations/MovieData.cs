@@ -22,9 +22,6 @@ namespace FinalProject_Team12.Migrations
 			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
 			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r1);
 			db.SaveChanges();
 
@@ -39,10 +36,6 @@ namespace FinalProject_Team12.Migrations
 			r2.Revenue = 4500000;
 			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r2);
 			db.SaveChanges();
 
@@ -58,9 +51,6 @@ namespace FinalProject_Team12.Migrations
 			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
 			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r3);
 			db.SaveChanges();
 
@@ -76,9 +66,6 @@ namespace FinalProject_Team12.Migrations
 			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r4);
 			db.SaveChanges();
 
@@ -94,9 +81,6 @@ namespace FinalProject_Team12.Migrations
 			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
-			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r5);
 			db.SaveChanges();
 
@@ -111,10 +95,6 @@ namespace FinalProject_Team12.Migrations
 			r6.Revenue = 400176459;
 			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r6);
 			db.SaveChanges();
 
@@ -129,10 +109,6 @@ namespace FinalProject_Team12.Migrations
 			r7.Revenue = 10462500;
 			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r7);
 			db.SaveChanges();
 
@@ -148,9 +124,6 @@ namespace FinalProject_Team12.Migrations
 			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r8);
 			db.SaveChanges();
 
@@ -167,8 +140,6 @@ namespace FinalProject_Team12.Migrations
 			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Western"));
-			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r9);
 			db.SaveChanges();
 
@@ -182,11 +153,6 @@ namespace FinalProject_Team12.Migrations
 			r10.RunningTime = 125;
 			r10.Revenue = 8000000;
 			r10.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r10.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r10.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r10.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r10.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r10.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r10);
 			db.SaveChanges();
 
@@ -202,9 +168,6 @@ namespace FinalProject_Team12.Migrations
 			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r11);
 			db.SaveChanges();
 
@@ -219,10 +182,6 @@ namespace FinalProject_Team12.Migrations
 			r12.Revenue = 17570324;
 			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r12);
 			db.SaveChanges();
 
@@ -237,10 +196,6 @@ namespace FinalProject_Team12.Migrations
 			r13.Revenue = 25000000;
 			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r13);
 			db.SaveChanges();
 
@@ -256,9 +211,6 @@ namespace FinalProject_Team12.Migrations
 			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Horror"));
 			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r14);
 			db.SaveChanges();
 
@@ -274,9 +226,6 @@ namespace FinalProject_Team12.Migrations
 			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r15);
 			db.SaveChanges();
 
@@ -290,11 +239,6 @@ namespace FinalProject_Team12.Migrations
 			r16.RunningTime = 123;
 			r16.Revenue = 8000000;
 			r16.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
-			r16.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r16.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r16.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r16.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r16.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r16);
 			db.SaveChanges();
 
@@ -310,9 +254,6 @@ namespace FinalProject_Team12.Migrations
 			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r17);
 			db.SaveChanges();
 
@@ -329,8 +270,6 @@ namespace FinalProject_Team12.Migrations
 			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
 			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
-			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r18);
 			db.SaveChanges();
 
@@ -345,10 +284,6 @@ namespace FinalProject_Team12.Migrations
 			r19.Revenue = 13129846;
 			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r19);
 			db.SaveChanges();
 
@@ -363,10 +298,6 @@ namespace FinalProject_Team12.Migrations
 			r20.Revenue = 12299668;
 			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r20);
 			db.SaveChanges();
 
@@ -382,9 +313,6 @@ namespace FinalProject_Team12.Migrations
 			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r21);
 			db.SaveChanges();
 
@@ -401,8 +329,6 @@ namespace FinalProject_Team12.Migrations
 			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r22);
 			db.SaveChanges();
 
@@ -419,8 +345,6 @@ namespace FinalProject_Team12.Migrations
 			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r23);
 			db.SaveChanges();
 
@@ -437,8 +361,6 @@ namespace FinalProject_Team12.Migrations
 			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Western"));
 			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r24);
 			db.SaveChanges();
 
@@ -454,9 +376,6 @@ namespace FinalProject_Team12.Migrations
 			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "War"));
 			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r25);
 			db.SaveChanges();
 
@@ -471,10 +390,6 @@ namespace FinalProject_Team12.Migrations
 			r26.Revenue = 4000000;
 			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r26);
 			db.SaveChanges();
 
@@ -489,10 +404,6 @@ namespace FinalProject_Team12.Migrations
 			r27.Revenue = 83304330;
 			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r27);
 			db.SaveChanges();
 
@@ -508,9 +419,6 @@ namespace FinalProject_Team12.Migrations
 			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "  Action"));
 			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r28);
 			db.SaveChanges();
 
@@ -525,10 +433,6 @@ namespace FinalProject_Team12.Migrations
 			r29.Revenue = 140000000;
 			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r29);
 			db.SaveChanges();
 
@@ -544,9 +448,6 @@ namespace FinalProject_Team12.Migrations
 			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "  Drama"));
-			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r30);
 			db.SaveChanges();
 
@@ -562,9 +463,6 @@ namespace FinalProject_Team12.Migrations
 			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Horror"));
 			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r31);
 			db.SaveChanges();
 
@@ -579,10 +477,6 @@ namespace FinalProject_Team12.Migrations
 			r32.Revenue = 119500000;
 			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
 			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r32);
 			db.SaveChanges();
 
@@ -598,9 +492,6 @@ namespace FinalProject_Team12.Migrations
 			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r33);
 			db.SaveChanges();
 
@@ -616,9 +507,6 @@ namespace FinalProject_Team12.Migrations
 			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
 			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r34);
 			db.SaveChanges();
 
@@ -634,9 +522,6 @@ namespace FinalProject_Team12.Migrations
 			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r35);
 			db.SaveChanges();
 
@@ -652,9 +537,6 @@ namespace FinalProject_Team12.Migrations
 			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r36);
 			db.SaveChanges();
 
@@ -669,10 +551,6 @@ namespace FinalProject_Team12.Migrations
 			r37.Revenue = 303788635;
 			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r37);
 			db.SaveChanges();
 
@@ -686,11 +564,6 @@ namespace FinalProject_Team12.Migrations
 			r38.RunningTime = 110;
 			r38.Revenue = 181813770;
 			r38.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
-			r38.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r38.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r38.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r38.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r38.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r38);
 			db.SaveChanges();
 
@@ -704,11 +577,6 @@ namespace FinalProject_Team12.Migrations
 			r39.RunningTime = 109;
 			r39.Revenue = 141000000;
 			r39.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r39.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r39.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r39.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r39.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r39.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r39);
 			db.SaveChanges();
 
@@ -723,10 +591,6 @@ namespace FinalProject_Team12.Migrations
 			r40.Revenue = 70000000;
 			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
 			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r40);
 			db.SaveChanges();
 
@@ -743,8 +607,6 @@ namespace FinalProject_Team12.Migrations
 			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
 			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r41);
 			db.SaveChanges();
 
@@ -760,9 +622,6 @@ namespace FinalProject_Team12.Migrations
 			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r42);
 			db.SaveChanges();
 
@@ -777,10 +636,6 @@ namespace FinalProject_Team12.Migrations
 			r43.Revenue = 89460381;
 			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
-			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r43);
 			db.SaveChanges();
 
@@ -796,9 +651,6 @@ namespace FinalProject_Team12.Migrations
 			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r44);
 			db.SaveChanges();
 
@@ -813,10 +665,6 @@ namespace FinalProject_Team12.Migrations
 			r45.Revenue = 44017374;
 			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
 			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r45);
 			db.SaveChanges();
 
@@ -830,11 +678,6 @@ namespace FinalProject_Team12.Migrations
 			r46.RunningTime = 88;
 			r46.Revenue = 83453539;
 			r46.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r46.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r46.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r46.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r46.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r46.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r46);
 			db.SaveChanges();
 
@@ -848,11 +691,6 @@ namespace FinalProject_Team12.Migrations
 			r47.RunningTime = 98;
 			r47.Revenue = 39846344;
 			r47.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r47.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r47.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r47.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r47.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r47.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r47);
 			db.SaveChanges();
 
@@ -866,11 +704,6 @@ namespace FinalProject_Team12.Migrations
 			r48.RunningTime = 129;
 			r48.Revenue = 23000000;
 			r48.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r48.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r48.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r48.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r48.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r48.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r48);
 			db.SaveChanges();
 
@@ -885,10 +718,6 @@ namespace FinalProject_Team12.Migrations
 			r49.Revenue = 389925971;
 			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r49);
 			db.SaveChanges();
 
@@ -905,8 +734,6 @@ namespace FinalProject_Team12.Migrations
 			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r50);
 			db.SaveChanges();
 
@@ -920,11 +747,6 @@ namespace FinalProject_Team12.Migrations
 			r51.RunningTime = 90;
 			r51.Revenue = 27092880;
 			r51.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r51.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r51.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r51.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r51.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r51.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r51);
 			db.SaveChanges();
 
@@ -940,9 +762,6 @@ namespace FinalProject_Team12.Migrations
 			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r52);
 			db.SaveChanges();
 
@@ -957,10 +776,6 @@ namespace FinalProject_Team12.Migrations
 			r53.Revenue = 79567667;
 			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r53);
 			db.SaveChanges();
 
@@ -974,11 +789,6 @@ namespace FinalProject_Team12.Migrations
 			r54.RunningTime = 116;
 			r54.Revenue = 90400000;
 			r54.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r54.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r54.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r54.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r54.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r54.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r54);
 			db.SaveChanges();
 
@@ -993,10 +803,6 @@ namespace FinalProject_Team12.Migrations
 			r55.Revenue = 19294144;
 			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r55);
 			db.SaveChanges();
 
@@ -1013,8 +819,6 @@ namespace FinalProject_Team12.Migrations
 			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r56);
 			db.SaveChanges();
 
@@ -1031,8 +835,6 @@ namespace FinalProject_Team12.Migrations
 			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r57);
 			db.SaveChanges();
 
@@ -1046,11 +848,6 @@ namespace FinalProject_Team12.Migrations
 			r58.RunningTime = 154;
 			r58.Revenue = 146292009;
 			r58.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r58.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r58.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r58.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r58.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r58.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r58);
 			db.SaveChanges();
 
@@ -1066,9 +863,6 @@ namespace FinalProject_Team12.Migrations
 			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
-			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r59);
 			db.SaveChanges();
 
@@ -1084,9 +878,6 @@ namespace FinalProject_Team12.Migrations
 			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
 			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r60);
 			db.SaveChanges();
 
@@ -1101,10 +892,6 @@ namespace FinalProject_Team12.Migrations
 			r61.Revenue = 38119483;
 			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r61);
 			db.SaveChanges();
 
@@ -1122,7 +909,6 @@ namespace FinalProject_Team12.Migrations
 			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r62);
 			db.SaveChanges();
 
@@ -1140,7 +926,6 @@ namespace FinalProject_Team12.Migrations
 			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r63);
 			db.SaveChanges();
 
@@ -1156,9 +941,6 @@ namespace FinalProject_Team12.Migrations
 			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r64);
 			db.SaveChanges();
 
@@ -1172,11 +954,6 @@ namespace FinalProject_Team12.Migrations
 			r65.RunningTime = 133;
 			r65.Revenue = 412800000;
 			r65.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r65.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r65.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r65.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r65.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r65.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r65);
 			db.SaveChanges();
 
@@ -1192,9 +969,6 @@ namespace FinalProject_Team12.Migrations
 			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r66);
 			db.SaveChanges();
 
@@ -1208,11 +982,6 @@ namespace FinalProject_Team12.Migrations
 			r67.RunningTime = 129;
 			r67.Revenue = 235860116;
 			r67.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r67.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r67.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r67.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r67.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r67.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r67);
 			db.SaveChanges();
 
@@ -1228,9 +997,6 @@ namespace FinalProject_Team12.Migrations
 			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r68);
 			db.SaveChanges();
 
@@ -1247,8 +1013,6 @@ namespace FinalProject_Team12.Migrations
 			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r69);
 			db.SaveChanges();
 
@@ -1265,8 +1029,6 @@ namespace FinalProject_Team12.Migrations
 			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r70);
 			db.SaveChanges();
 
@@ -1280,11 +1042,6 @@ namespace FinalProject_Team12.Migrations
 			r71.RunningTime = 143;
 			r71.Revenue = 390493908;
 			r71.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r71.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r71.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r71.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r71.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r71.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r71);
 			db.SaveChanges();
 
@@ -1298,11 +1055,6 @@ namespace FinalProject_Team12.Migrations
 			r72.RunningTime = 94;
 			r72.Revenue = 121697323;
 			r72.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r72.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r72.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r72.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r72.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r72.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r72);
 			db.SaveChanges();
 
@@ -1316,11 +1068,6 @@ namespace FinalProject_Team12.Migrations
 			r73.RunningTime = 128;
 			r73.Revenue = 107458785;
 			r73.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r73.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r73.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r73.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r73.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r73.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r73);
 			db.SaveChanges();
 
@@ -1373,8 +1120,6 @@ namespace FinalProject_Team12.Migrations
 			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r76);
 			db.SaveChanges();
 
@@ -1388,11 +1133,6 @@ namespace FinalProject_Team12.Migrations
 			r77.RunningTime = 138;
 			r77.Revenue = 243240178;
 			r77.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r77.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r77.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r77.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r77.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r77.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r77);
 			db.SaveChanges();
 
@@ -1407,10 +1147,6 @@ namespace FinalProject_Team12.Migrations
 			r78.Revenue = 920100000;
 			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r78);
 			db.SaveChanges();
 
@@ -1426,9 +1162,6 @@ namespace FinalProject_Team12.Migrations
 			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r79);
 			db.SaveChanges();
 
@@ -1443,10 +1176,6 @@ namespace FinalProject_Team12.Migrations
 			r80.Revenue = 7993039;
 			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r80);
 			db.SaveChanges();
 
@@ -1462,9 +1191,6 @@ namespace FinalProject_Team12.Migrations
 			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r81);
 			db.SaveChanges();
 
@@ -1480,9 +1206,6 @@ namespace FinalProject_Team12.Migrations
 			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
 			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r82);
 			db.SaveChanges();
 
@@ -1498,9 +1221,6 @@ namespace FinalProject_Team12.Migrations
 			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r83);
 			db.SaveChanges();
 
@@ -1515,10 +1235,6 @@ namespace FinalProject_Team12.Migrations
 			r84.Revenue = 28341469;
 			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r84);
 			db.SaveChanges();
 
@@ -1533,10 +1249,6 @@ namespace FinalProject_Team12.Migrations
 			r85.Revenue = 213928762;
 			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r85);
 			db.SaveChanges();
 
@@ -1552,9 +1264,6 @@ namespace FinalProject_Team12.Migrations
 			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r86);
 			db.SaveChanges();
 
@@ -1570,9 +1279,6 @@ namespace FinalProject_Team12.Migrations
 			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r87);
 			db.SaveChanges();
 
@@ -1587,10 +1293,6 @@ namespace FinalProject_Team12.Migrations
 			r88.Revenue = 135000000;
 			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r88);
 			db.SaveChanges();
 
@@ -1606,9 +1308,6 @@ namespace FinalProject_Team12.Migrations
 			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r89);
 			db.SaveChanges();
 
@@ -1624,9 +1323,6 @@ namespace FinalProject_Team12.Migrations
 			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r90);
 			db.SaveChanges();
 
@@ -1642,9 +1338,6 @@ namespace FinalProject_Team12.Migrations
 			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r91);
 			db.SaveChanges();
 
@@ -1661,8 +1354,6 @@ namespace FinalProject_Team12.Migrations
 			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r92);
 			db.SaveChanges();
 
@@ -1678,9 +1369,6 @@ namespace FinalProject_Team12.Migrations
 			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r93);
 			db.SaveChanges();
 
@@ -1695,10 +1383,6 @@ namespace FinalProject_Team12.Migrations
 			r94.Revenue = 46189568;
 			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r94);
 			db.SaveChanges();
 
@@ -1713,10 +1397,6 @@ namespace FinalProject_Team12.Migrations
 			r95.Revenue = 289317794;
 			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
-			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r95);
 			db.SaveChanges();
 
@@ -1731,10 +1411,6 @@ namespace FinalProject_Team12.Migrations
 			r96.Revenue = 250821495;
 			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r96);
 			db.SaveChanges();
 
@@ -1749,10 +1425,6 @@ namespace FinalProject_Team12.Migrations
 			r97.Revenue = 12827813;
 			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r97);
 			db.SaveChanges();
 
@@ -1768,9 +1440,6 @@ namespace FinalProject_Team12.Migrations
 			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r98);
 			db.SaveChanges();
 
@@ -1786,9 +1455,6 @@ namespace FinalProject_Team12.Migrations
 			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r99);
 			db.SaveChanges();
 
@@ -1804,9 +1470,6 @@ namespace FinalProject_Team12.Migrations
 			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r100);
 			db.SaveChanges();
 
@@ -1822,9 +1485,6 @@ namespace FinalProject_Team12.Migrations
 			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r101);
 			db.SaveChanges();
 
@@ -1840,9 +1500,6 @@ namespace FinalProject_Team12.Migrations
 			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r102);
 			db.SaveChanges();
 
@@ -1858,9 +1515,6 @@ namespace FinalProject_Team12.Migrations
 			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r103);
 			db.SaveChanges();
 
@@ -1876,9 +1530,6 @@ namespace FinalProject_Team12.Migrations
 			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r104);
 			db.SaveChanges();
 
@@ -1892,11 +1543,6 @@ namespace FinalProject_Team12.Migrations
 			r105.RunningTime = 96;
 			r105.Revenue = 141774679;
 			r105.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r105.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r105.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r105.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r105.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r105.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r105);
 			db.SaveChanges();
 
@@ -1912,9 +1558,6 @@ namespace FinalProject_Team12.Migrations
 			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r106);
 			db.SaveChanges();
 
@@ -1930,9 +1573,6 @@ namespace FinalProject_Team12.Migrations
 			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r107);
 			db.SaveChanges();
 
@@ -1947,10 +1587,6 @@ namespace FinalProject_Team12.Migrations
 			r108.Revenue = 450717150;
 			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r108);
 			db.SaveChanges();
 
@@ -1966,9 +1602,6 @@ namespace FinalProject_Team12.Migrations
 			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r109);
 			db.SaveChanges();
 
@@ -1983,10 +1616,6 @@ namespace FinalProject_Team12.Migrations
 			r110.Revenue = 940335536;
 			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r110);
 			db.SaveChanges();
 
@@ -2002,9 +1631,6 @@ namespace FinalProject_Team12.Migrations
 			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r111);
 			db.SaveChanges();
 
@@ -2020,9 +1646,6 @@ namespace FinalProject_Team12.Migrations
 			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r112);
 			db.SaveChanges();
 
@@ -2036,11 +1659,6 @@ namespace FinalProject_Team12.Migrations
 			r113.RunningTime = 97;
 			r113.Revenue = 129042871;
 			r113.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r113.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r113.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r113.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r113.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r113.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r113);
 			db.SaveChanges();
 
@@ -2056,9 +1674,6 @@ namespace FinalProject_Team12.Migrations
 			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r114);
 			db.SaveChanges();
 
@@ -2074,9 +1689,6 @@ namespace FinalProject_Team12.Migrations
 			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r115);
 			db.SaveChanges();
 
@@ -2093,8 +1705,6 @@ namespace FinalProject_Team12.Migrations
 			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r116);
 			db.SaveChanges();
 
@@ -2110,9 +1720,6 @@ namespace FinalProject_Team12.Migrations
 			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
 			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r117);
 			db.SaveChanges();
 
@@ -2129,8 +1736,6 @@ namespace FinalProject_Team12.Migrations
 			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r118);
 			db.SaveChanges();
 
@@ -2146,9 +1751,6 @@ namespace FinalProject_Team12.Migrations
 			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r119);
 			db.SaveChanges();
 
@@ -2165,8 +1767,6 @@ namespace FinalProject_Team12.Migrations
 			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Mystery"));
-			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r120);
 			db.SaveChanges();
 
@@ -2183,8 +1783,6 @@ namespace FinalProject_Team12.Migrations
 			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r121);
 			db.SaveChanges();
 
@@ -2200,9 +1798,6 @@ namespace FinalProject_Team12.Migrations
 			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r122);
 			db.SaveChanges();
 
@@ -2219,8 +1814,6 @@ namespace FinalProject_Team12.Migrations
 			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r123);
 			db.SaveChanges();
 
@@ -2236,9 +1829,6 @@ namespace FinalProject_Team12.Migrations
 			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r124);
 			db.SaveChanges();
 
@@ -2255,8 +1845,6 @@ namespace FinalProject_Team12.Migrations
 			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
 			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r125);
 			db.SaveChanges();
 
@@ -2268,14 +1856,11 @@ namespace FinalProject_Team12.Migrations
 			r126.Actors = "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang, Michelle Rodriguez, Giovanni Ribisi";
 			r126.ReleaseDate = new DateTime(2009, 12, 10);
 			r126.RunningTime = 162;
-			r126.Revenue = 278796508;
-            //TODO: 2787965087;
+			r126.Revenue = 2787965087;
             r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r126);
 			db.SaveChanges();
 
@@ -2291,9 +1876,6 @@ namespace FinalProject_Team12.Migrations
 			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r127);
 			db.SaveChanges();
 
@@ -2308,10 +1890,6 @@ namespace FinalProject_Team12.Migrations
 			r128.Revenue = 414211549;
 			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
-			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r128);
 			db.SaveChanges();
 
@@ -2325,11 +1903,6 @@ namespace FinalProject_Team12.Migrations
 			r129.RunningTime = 133;
 			r129.Revenue = 110206216;
 			r129.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r129.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r129.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r129.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r129.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r129.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r129);
 			db.SaveChanges();
 
@@ -2363,9 +1936,6 @@ namespace FinalProject_Team12.Migrations
 			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r131);
 			db.SaveChanges();
 
@@ -2383,7 +1953,6 @@ namespace FinalProject_Team12.Migrations
 			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r132);
 			db.SaveChanges();
 
@@ -2399,9 +1968,6 @@ namespace FinalProject_Team12.Migrations
 			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r133);
 			db.SaveChanges();
 
@@ -2415,11 +1981,6 @@ namespace FinalProject_Team12.Migrations
 			r134.RunningTime = 100;
 			r134.Revenue = 183936074;
 			r134.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r134.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r134.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r134.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r134.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
-			r134.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == ""));
 			db.Movies.AddOrUpdate(r => r.Title, r134);
 			db.SaveChanges();
 

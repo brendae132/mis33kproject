@@ -28,6 +28,15 @@ namespace FinalProject_Team12.Models
         [Display(Name = "Popcorn Points Balance")]
         public Int32 PopcornPoints { get; set; }
 
+        [Required(ErrorMessage = "Order Date is required.")]
+        [DataType(DataType.Date, ErrorMessage = "Enter valid order date.")]
+        [Display(Name = "Order Date")]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime OrderDate { get; set; }
+
+        [Display(Name = "Order Number")]
+        public Int32 OrderNumber { get; set; }
+
         //Navigational properties for Reservations, Users, Movie Reviews, Reports
         public virtual List<Ticket> Tickets { get; set; }
         public virtual List<MovieReview> MovieReviews { get; set; }

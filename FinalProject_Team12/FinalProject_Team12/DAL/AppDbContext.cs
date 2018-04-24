@@ -18,7 +18,6 @@ namespace FinalProject_Team12.DAL
         
         public DbSet<Screening> Screenings { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
-        public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<MovieReview> MovieReviews { get; set; }
         public DbSet<Genre> Genres { get; set; }

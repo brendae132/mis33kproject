@@ -107,7 +107,7 @@ namespace FinalProject_Team12.Controllers
         public ActionResult AddToOrder(int OrderID)
         {
             //Create a new instance of the order detail class
-            OrderDetail od = new OrderDetail();
+            Ticket od = new Ticket();
 
             //Find the order for this order detail
             Order ord = db.Orders.Find(OrderID);
@@ -123,7 +123,7 @@ namespace FinalProject_Team12.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddToOrder(OrderDetail od, int SelectedScreening)
+        public ActionResult AddToOrder(Ticket od, int SelectedScreening)
         {
             //Find the screening associated with the int SelectedScreening
             Screening screening = db.Screenings.Find(SelectedScreening);
@@ -137,8 +137,8 @@ namespace FinalProject_Team12.Controllers
             //set the property of the order detail to this newly found order
             od.Order = ord;
 
-            ////set the value of the product price
-            //od.ProductPrice = product.Price;
+            //set the value of the product price
+            //od.TicketPrice = product.Price;
 
             ////set the value of the extended price
             //od.ExtendedPrice = od.ProductPrice * od.Quantity;
@@ -146,7 +146,7 @@ namespace FinalProject_Team12.Controllers
             if (ModelState.IsValid)//model meets all requirements
             {
                 //add the order detail to the database
-                db.OrderDetails.Add(od);
+                db.Tickets.Add(od);
                 db.SaveChanges();
                 return RedirectToAction("Details", "Orders", new { id = ord.OrderID });
             }
@@ -187,7 +187,7 @@ namespace FinalProject_Team12.Controllers
             return View(order);
         }
 
-        // GET action method that allows user to remove an OrderDetail from the order
+        // GET action method that allows user to remove an ticket from the order
         public ActionResult RemoveFromOrder(int OrderID)
         {
             Order ord = db.Orders.Find(OrderID);
@@ -197,13 +197,13 @@ namespace FinalProject_Team12.Controllers
                 return RedirectToAction("Details", new { id = OrderID });
             }
 
-            if (ord.OrderDetails.Count == 0) //there are no order details
+            if (ord.Tickets.Count == 0) //there are no order details
             {
                 return RedirectToAction("Details", new { id = OrderID });
             }
 
             //pass the list of order details to the view
-            return View(ord.OrderDetails);
+            return View(ord.Tickets);
         }
 
 

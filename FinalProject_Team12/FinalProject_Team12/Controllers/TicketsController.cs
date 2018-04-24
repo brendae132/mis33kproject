@@ -52,7 +52,7 @@ namespace FinalProject_Team12.Controllers
                     od.Quantity = ticket.Quantity;
 
                     ////update product price for related product
-                    //od.ProductPrice = od.Screening.Price;
+                    //od.TicketPrice = od.Screening.Price;
 
                     ////update extended price
                     //od.ExtendedPrice = od.ProductPrice * od.Quantity;

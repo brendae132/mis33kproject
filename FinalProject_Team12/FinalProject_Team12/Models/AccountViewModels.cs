@@ -37,10 +37,10 @@ namespace FinalProject_Team12.Models
         [Display(Name = "Middle Initial")]
         public String MiddleInitial { get; set; }
 
+        //TODO: Validate that user is at least 13 years old
         [Required(ErrorMessage = "Birthday is required.")]
         [Display(Name = "Birthday")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        [MinimumAgeCheck(13, "You have to be at least {0} to apply")]
         public DateTime Birthday { get; set; }
 
         [Required(ErrorMessage = "Street is required.")]
@@ -58,6 +58,20 @@ namespace FinalProject_Team12.Models
         [Required(ErrorMessage = "Zip Code is required.")]
         [Display(Name = "Zip Code")]
         public Int32 ZipCode { get; set; }
+
+        [Display(Name = "Credit Card 1")]
+        [DataType(DataType.CreditCard)]
+        public String CC1 { get; set; }
+
+        [Display(Name = "Credit Card 1 Type")]
+        public String CC1Type { get; set; }
+
+        [Display(Name = "Credit Card 2")]
+        [DataType(DataType.CreditCard)]
+        public String CC2 { get; set; }
+
+        [Display(Name = "Credit Card 2 Type")]
+        public String CC2Type { get; set; }
 
         //NOTE: Here is the property for email
         [Required]
@@ -83,13 +97,7 @@ namespace FinalProject_Team12.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
-        [Display(Name = "Address")]
-        public String Address { get; set; }
-
-        [Required]
-        [Display(Name = "Birthday")]
-        public DateTime Birthday { get; set; }
+       
 
     }
     public class ChangePasswordViewModel

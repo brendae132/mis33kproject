@@ -125,9 +125,13 @@ namespace FinalProject_Team12.Controllers
                     Street = model.Street,
                     City = model.City,
                     State = model.State,
-                    ZipCode = model.ZipCode
-                                 
+                    ZipCode = model.ZipCode,
+                    CC1 = model.CC1,
+                    CC1Type = model.CC1Type,
+                    CC2 = model.CC2,
+                    CC2Type = model.CC2Type           
                 };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 await UserManager.AddToRoleAsync(user.Id, "Customer");

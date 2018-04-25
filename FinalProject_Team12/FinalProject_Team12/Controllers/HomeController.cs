@@ -40,9 +40,10 @@ namespace FinalProject_Team12.Controllers
             ViewBag.TotalMovies = db.Movies.Count();
             ViewBag.SelectedMovies = SelectedMovies.Count();
 
-            return View(SelectedMovies.OrderByDescending(r => r.Rating)); 
+            return View(SelectedMovies); //I deleted 'OrderByDescending(r => r.Rating)' since it was causing issues
             //TODO: ***How do we refer to the "Rating" which is in our MovieReview class? 
             //I assumed that adding navigational properties between MovieReview and Movie would help, but the error remained.
+            //One MovieReview to Many Movies relationship has been added
         }
         
         // GET: Vendor/Details/5
@@ -67,7 +68,9 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
-        public ActionResult DisplaySearchResults(string SearchName, string Tagline, int SelectedGenre, DateTime ReleaseDate, MPAARating MPAARating, string NumberofStars, Rating Rating, DateTime? datSelectedDate)
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, string SelectedGenre, DateTime ReleaseYear, MPAARating SelectedMPAARating, string NumberofStars, Rating Rating, DateTime? datSelectedDate)
+        //??? "string NumberOfStars"
+
         {
             //Create query
             var query = from r in db.Movies select r;
@@ -79,15 +82,15 @@ namespace FinalProject_Team12.Controllers
             }
 
             //Check if description is null. If not, filter results
-            //TODO: ***Double check if this query line is correct
-            if (Tagline != null)
+            if (SearchTagline != null)
             {
-                query = query.Where(r => r.Tagline.Contains(Tagline));
+                query = query.Where(r => r.Tagline.Contains(SearchTagline));
             }
 
             //Allow user to see all genres
-
-            if (SelectedGenre == 0)
+            //TODO: Double check if the following for SelectedGenre is correct:
+            //How to give user options to select available genres?
+            if (SelectedGenre == null)
             {
                 ViewBag.SelectedGenre = "No genre was selected";
             }
@@ -95,20 +98,21 @@ namespace FinalProject_Team12.Controllers
             {
                 Genre GenreToDisplay = db.Genres.Find(SelectedGenre);
                 ViewBag.SelectedGenre = "The selected genre is " + GenreToDisplay.GenreType;
+                query = query.Where(r => r.Genres.Equals(SelectedGenre));
             }
 
-            //TODO: ***SEARCH FOR 'RELEASE YEAR' HERE. Using ReleaseDate is not entirely correct...I think. 
-            //Maybe perform a search for release dates containing the selected year? 
-
-            if (MPAARating == 0)
+            if (ReleaseYear != null)
             {
-                ViewBag.SelectedMPAARating = "No MPAA Rating was selected";
+                query = query.Where(r => r.ReleaseDate.Equals(ReleaseYear));
             }
-            else
+                //TODO: ***SEARCH FOR 'RELEASE YEAR' HERE. Using ReleaseDate.Equals this way is not entirely correct...
+                //I think it's supposed to perform a search for release dates *containing* the selected year 
+                //I temporarily wrote "Equals" even though it isn't quite what I want it to do
+                //What is the equivalent of "Contains" for numbers?
+
+            if (SelectedMPAARating != 0) //Is this correct?
             {
-                MPAARating MPAARatingToDisplay = db.Movie.Find(MPAARating);
-                //ViewBag.SelectedMPAARating = "Movies with the selected MPAA Rating include " + GenreToDisplay.GenreType;
-                //TODO: ***This is wrong - somehow need to figure out how to display a list of movies containing searched MPAA Rating
+                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
             }
 
             if (NumberofStars != null && NumberofStars != "") //Make sure string is a valid number
@@ -117,7 +121,7 @@ namespace FinalProject_Team12.Controllers
                 try
                 {
                     decStars = Convert.ToDecimal(NumberofStars);
-                }
+                } //This changes the user's inputted value into a decimal, which is now 'decStars'
                 catch //This code will display when something is wrong
                 {
                     //Add a message for the Viewbag
@@ -131,7 +135,19 @@ namespace FinalProject_Team12.Controllers
                 }
 
 
-                Decimal Rating;
+
+        //As part of HW 5. On the Orders/Details View
+        //[Display(Name = "Order Subtotal")]
+        //[DisplayFormat(DataFormatString = "{0:C}")]
+        //public Decimal OrderSubtotal
+        //{
+        //   get { return OrderDetails.Sum(od => od.ExtendedPrice); }
+        //}
+        //TODO: Write the calculations for overall movie rating in Movie.cs: 
+        //Then, use that variable of overall rating here: 
+
+
+        Decimal Rating;
                 Rating = Convert.ToDecimal(NumberofStars);
 
                 if (SelectedStar == Rating.GreaterThan)
@@ -160,7 +176,8 @@ namespace FinalProject_Team12.Controllers
             {
                 DateTime datSelected = datSelectedDate ?? new DateTime(1900, 1, 1);
                 ViewBag.SelectedDate = "The selected date is " + datSelected.ToLongDateString();
-
+                //TODO: Update this query when we have completed our Screenings class/controller.
+                //This is supposed to reflect the available showings for a selected day
                 query = query.Where(r => r.LastUpdate >= datSelectedDate);
             }
             else //They didn't pick a date

@@ -31,6 +31,15 @@ namespace FinalProject_Team12.Models
             [Display(Name = "MPAA Rating")]
             public MPAARating MPAARating { get; set; }
 
+
+            //As part of HW 5. On the Orders/Details View
+            //[Display(Name = "Order Subtotal")]
+            //[DisplayFormat(DataFormatString = "{0:C}")]
+            //public Decimal OrderSubtotal
+            //{
+            //   get { return OrderDetails.Sum(od => od.ExtendedPrice); }
+            //}
+            //TODO: Write the calculations for overall movie rating here: 
             [Required(ErrorMessage = "Customer rating is required.")]
             [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5")]
             [Display(Name = "Customer Rating")]
@@ -56,6 +65,7 @@ namespace FinalProject_Team12.Models
             //navigational properties
             public virtual List<Genre> Genres { get; set; }
             public virtual List<Screening> Screenings { get; set; }
+            public virtual List<MovieReview> MovieReviews { get; set; }
 
             public Movie()
             {

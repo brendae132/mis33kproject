@@ -26,6 +26,9 @@ namespace FinalProject_Team12.Migrations
             //add customer user
             AppUser customer = db.Users.FirstOrDefault(u => u.Email == "customer@example.com");
 
+            //add customer user
+            AppUser employee = db.Users.FirstOrDefault(u => u.Email == "employee@example.com");
+
             //if manager hasn't been created, then add them
             if (manager == null)
             {
@@ -56,6 +59,23 @@ namespace FinalProject_Team12.Migrations
                 customer = db.Users.First(u => u.UserName == "customer@example.com");
             }
 
+
+            //if customer hasn't been created add them
+            if (employee == null)
+            {
+                //Add any additional fields for user here
+                employee = new AppUser();
+                employee.UserName = "employee@example.com";
+                employee.FirstName = "Employee";
+                employee.LastName = "Last name";
+                employee.PhoneNumber = "(512)555-1111";
+
+                var result = UserManager.Create(customer, "456Abc!");
+                db.SaveChanges();
+                customer = db.Users.First(u => u.UserName == "employee@example.com");
+            }
+
+
             //Add the needed roles
             //if role doesn't exist, add it
             if (RoleManager.RoleExists("Manager") == false)
@@ -68,6 +88,11 @@ namespace FinalProject_Team12.Migrations
                 RoleManager.Create(new AppRole("Customer"));
             }
 
+            if (RoleManager.RoleExists("Employee") == false)
+            {
+                RoleManager.Create(new AppRole("Employee"));
+            }
+
             //make sure user is in role
             if (UserManager.IsInRole(manager.Id, "Manager") == false)
             {
@@ -78,6 +103,12 @@ namespace FinalProject_Team12.Migrations
             {
                 UserManager.AddToRole(customer.Id, "Customer");
             }
+
+            if (UserManager.IsInRole(employee.Id, "Employee") == false)
+            {
+                UserManager.AddToRole(employee.Id, "Employee");
+            }
+
 
             //save changes
             db.SaveChanges();

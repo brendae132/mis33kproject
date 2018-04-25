@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using FinalProject_Team12.DAL;
 using FinalProject_Team12.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace FinalProject_Team12.Controllers
 {

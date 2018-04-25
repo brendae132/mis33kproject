@@ -249,6 +249,8 @@
       <DependentUpon>201804092305057_updatethemodels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\CustomerData.cs" />
+    <Compile Include="Migrations\EmployeeData.cs" />
     <Compile Include="Migrations\GenreData.cs" />
     <Compile Include="Migrations\MovieData.cs" />
     <Compile Include="Migrations\SeedIdentity.cs" />

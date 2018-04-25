@@ -27,9 +27,18 @@ namespace FinalProject_Team12.Models
         [DisplayFormat(DataFormatString = "{0:hh:mm}", ApplyFormatInEditMode = true)]
         public DateTime EndTime { get; set; }
 
+        [Display(Name = "Theater Number")]
+        public TheaterNum TheaterNum { get; set; }
+
+        [Required(ErrorMessage = "Screening Date is required.")]
+        [DataType(DataType.Date, ErrorMessage = "Enter valid screening date.")]
+        [Display(Name = "Screening Date")]
+        [DisplayFormat(DataFormatString = "{0:ddd, MMM d, yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime ScreeningDate { get; set; }
+
+
         //navigational properties
         public virtual Movie Movie { get; set; }
-
         public virtual List<Ticket> Tickets { get; set; }
 
     }

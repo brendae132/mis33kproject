@@ -14,13 +14,13 @@ namespace FinalProject_Team12.Controllers
     {
         private AppDbContext db = new AppDbContext();
 
-        // GET: Products
+        // GET: screenings
         public ActionResult Index()
         {
             return View(db.Screenings.ToList());
         }
 
-        // GET: Products/Details/5
+        // GET: Screenings/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,10 +36,10 @@ namespace FinalProject_Team12.Controllers
         }
 
         [Authorize(Roles = "Manager")]
-        // GET: Products/Create
+        // GET: Screenings/Create
         public ActionResult Create()
         {
-            ViewBag.AllVendors = GetAllVendors();
+            ViewBag.AllMovie = GetAllMovies();
             return View();
         }
 
@@ -48,21 +48,21 @@ namespace FinalProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,SKU,ProductName,ProductPrice,Description")] Screening screening, int[] SelectedVendors)
+        public ActionResult Create([Bind(Include = "ScreenID,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int[] SelectedMovies)
         {
             //ask for the next sku number
             screening.SKU = Utilities.GenerateSKU.GetNextSKU();
 
             //add vendors
 
-            foreach (int i in SelectedVendors)
+            foreach (int i in SelectedMovies)
 
             {
                 //find the vendor
 
-                Vendor vend = db.Vendor.Find(i);
+                Movie movi = db.Movies.Find(i);
 
-                screening.Vendors.Add(vend);
+                screening.Movie.Add(movi);
 
             }
 
@@ -74,12 +74,12 @@ namespace FinalProject_Team12.Controllers
             }
             //Populate the view bag with the department list
 
-            ViewBag.AllVendors = GetAllVendors();
+            ViewBag.AllMovies = GetAllMovies();
             return View(screening);
         }
 
         [Authorize(Roles = "Manager")]
-        // GET: Products/Edit/5
+        // GET: Screenings/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,7 +91,7 @@ namespace FinalProject_Team12.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AllVendors = GetAllVendors(screening);
+            ViewBag.AllMovies = GetAllMovies(screening);
             return View(screening);
         }
 
@@ -106,12 +106,12 @@ namespace FinalProject_Team12.Controllers
             {
                 Screening screeningToChange = db.Screenings.Find(screening.ScreeningID);
 
-                screeningToChange.Vendors.Clear();
+                screeningToChange.Movie.Clear();
 
                 foreach (int i in SelectedVendors)
                 {
-                    Vendor vend = db.Vendor.Find(i);
-                    screeningToChange.Vendors.Add(vend);
+                    Movie movi = db.Movies.Find(i);
+                    screeningToChange.Movie.Add(movi);
                 }
 
                 screeningToChange.ProductPrice = screening.ProductPrice;

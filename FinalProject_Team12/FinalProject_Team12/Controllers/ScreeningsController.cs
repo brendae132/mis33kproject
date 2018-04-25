@@ -39,6 +39,7 @@ namespace FinalProject_Team12.Controllers
         // GET: Screenings/Create
         public ActionResult Create()
         {
+            //NOTE: should this be scheduled movies? 
             ViewBag.AllMovie = GetAllMovies();
             return View();
         }
@@ -48,21 +49,22 @@ namespace FinalProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //Note: changed the bind to include 
         public ActionResult Create([Bind(Include = "ScreenID,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int[] SelectedMovies)
         {
             //ask for the next sku number
             screening.SKU = Utilities.GenerateSKU.GetNextSKU();
 
-            //add vendors
+            //add movies
 
             foreach (int i in SelectedMovies)
 
             {
                 //find the vendor
 
-                Movie movi = db.Movies.Find(i);
+                Movie movie = db.Movies.Find(i);
 
-                screening.Movie.Add(movi);
+                screening.Movie.Add(movie);
 
             }
 
@@ -114,7 +116,7 @@ namespace FinalProject_Team12.Controllers
                     screeningToChange.Movie.Add(movi);
                 }
 
-                screeningToChange.ProductPrice = screening.ProductPrice;
+                screeningToChange.TicketPrice = screening.TicketPrice;
                 screeningToChange.ProductName = screening.ProductName;
                 screeningToChange.Description = screening.Description;
 

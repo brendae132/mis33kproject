@@ -8,6 +8,8 @@ namespace FinalProject_Team12.Models
 {
     public class Order
     {
+        private const Decimal SALES_TAX = 0.0825m;
+
         [Required(ErrorMessage = "Order ID is required")]
         public Int32 OrderID { get; set; }
 
@@ -36,6 +38,39 @@ namespace FinalProject_Team12.Models
 
         [Display(Name = "Order Number")]
         public Int32 OrderNumber { get; set; }
+
+
+        //get order subtotal
+        [Display(Name = "Order Subtotal")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public Decimal OrderSubtotal
+        {
+            get { return Tickets.Sum(od => od.ExtendedPrice); }
+        }
+
+        //get sales tax
+        [Display(Name = "Sales Tax (8.25%)")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public Decimal SalesTax
+        {
+            get { return OrderSubtotal * SALES_TAX; }
+        }
+
+        //get order total
+        [Display(Name = "Order Total")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public Decimal OrderTotal
+        {
+            get { return OrderSubtotal + SalesTax; }
+        }
+
+        public Order()
+        {
+            if (Tickets == null)
+            {
+                Tickets = new List<Ticket>();
+            }
+        }
 
         //Navigational properties for Reservations, Users, Movie Reviews, Reports
         public virtual List<Ticket> Tickets { get; set; }

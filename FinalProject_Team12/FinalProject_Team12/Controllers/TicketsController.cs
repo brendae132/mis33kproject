@@ -37,8 +37,8 @@ namespace FinalProject_Team12.Controllers
             // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public ActionResult Edit([Bind(Include = "TicketID,Quantity,TicketPrice")] Ticket ticket)
-            //**CHANGED "ProductPrice" TO "TicketPrice"
+            public ActionResult Edit([Bind(Include = "TicketID,SeatsReserved,TicketPrice")] Ticket ticket)
+            //NOTE: **CHANGED "ProductPrice" TO "TicketPrice"
             {
                 //find the product associated with this order
                 Ticket od = db.Tickets.Include(OD => OD.Order)
@@ -49,13 +49,13 @@ namespace FinalProject_Team12.Controllers
                 if (ModelState.IsValid)
                 {
                     //update number of products
-                    od.Quantity = ticket.Quantity;
+                    od.SeatsReserved = ticket.SeatsReserved;
 
                     ////update product price for related product
-                    //od.TicketPrice = od.Screening.Price;
+                    od.TicketPrice = od.TicketPrice;
 
                     ////update extended price
-                    //od.ExtendedPrice = od.ProductPrice * od.Quantity;
+                    od.ExtendedPrice = od.TicketPrice * od.SeatsReserved;
 
                     //change this code for entry and return
                     db.Entry(od).State = EntityState.Modified;

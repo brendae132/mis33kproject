@@ -30,7 +30,8 @@ namespace FinalProject_Team12.Models
         [Display(Name = "Text Review Vote")]
         public Int32 TextReviewVote { get; set; }
 
-        //Navigation property for Movie Review to User
+        //Navigation property for Movie Review to Movie
+        public virtual Movie Movie { get; set; }
 
     }
 }

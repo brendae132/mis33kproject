@@ -18,7 +18,6 @@ namespace FinalProject_Team12.Migrations
 			r1.Actors = "Warner Baxter, Bebe Daniels, George Brent, Ruby Keeler, Guy Kibbee, Una Merkel";
 			r1.ReleaseDate = new DateTime(1933, 2, 2);
 			r1.RunningTime = 89;
-			r1.Revenue = 2281000;
 			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
 			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
@@ -33,7 +32,6 @@ namespace FinalProject_Team12.Migrations
 			r2.Actors = "Clark Gable, Claudette Colbert, Walter Connolly, Roscoe Karns, Jameson Thomas, Alan Hale";
 			r2.ReleaseDate = new DateTime(1934, 2, 22);
 			r2.RunningTime = 105;
-			r2.Revenue = 4500000;
 			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			db.Movies.AddOrUpdate(r => r.Title, r2);
@@ -47,7 +45,6 @@ namespace FinalProject_Team12.Migrations
 			r3.Actors = "Adriana Caselotti, Lucille La Verne, Harry Stockwell, Roy Atwell, Pinto Colvig, Otis Harlan";
 			r3.ReleaseDate = new DateTime(1937, 12, 20);
 			r3.RunningTime = 83;
-			r3.Revenue = 184925486;
 			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
 			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -62,7 +59,6 @@ namespace FinalProject_Team12.Migrations
 			r4.Actors = "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr, Jack Haley, Billie Burke";
 			r4.ReleaseDate = new DateTime(1939, 8, 15);
 			r4.RunningTime = 102;
-			r4.Revenue = 33754967;
 			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
@@ -77,7 +73,6 @@ namespace FinalProject_Team12.Migrations
 			r5.Actors = "James Stewart, Jean Arthur, Claude Rains, Edward Arnold, Guy Kibbee, Thomas Mitchell";
 			r5.ReleaseDate = new DateTime(1939, 10, 19);
 			r5.RunningTime = 129;
-			r5.Revenue = 9600000;
 			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
@@ -92,7 +87,6 @@ namespace FinalProject_Team12.Migrations
 			r6.Actors = "Vivien Leigh, Clark Gable, Olivia de Havilland, Thomas Mitchell, Leslie Howard, Barbara O'Neil";
 			r6.ReleaseDate = new DateTime(1939, 12, 15);
 			r6.RunningTime = 238;
-			r6.Revenue = 400176459;
 			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			db.Movies.AddOrUpdate(r => r.Title, r6);
@@ -106,7 +100,6 @@ namespace FinalProject_Team12.Migrations
 			r7.Actors = "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains, Conrad Veidt, Sydney Greenstreet";
 			r7.ReleaseDate = new DateTime(1942, 11, 26);
 			r7.RunningTime = 102;
-			r7.Revenue = 10462500;
 			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			db.Movies.AddOrUpdate(r => r.Title, r7);
@@ -120,7 +113,6 @@ namespace FinalProject_Team12.Migrations
 			r8.Actors = "James Stewart, Donna Reed, Lionel Barrymore, Thomas Mitchell, Henry Travers, Beulah Bondi";
 			r8.ReleaseDate = new DateTime(1946, 12, 20);
 			r8.RunningTime = 130;
-			r8.Revenue = 9644124;
 			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
@@ -135,7 +127,6 @@ namespace FinalProject_Team12.Migrations
 			r9.Actors = "Betty Hutton, Howard Keel, Louis Calhern, J. Carrol Naish, Edward Arnold, Keenan Wynn";
 			r9.ReleaseDate = new DateTime(1950, 5, 17);
 			r9.RunningTime = 107;
-			r9.Revenue = 8000000;
 			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
@@ -151,7 +142,6 @@ namespace FinalProject_Team12.Migrations
 			r10.Actors = "Vivien Leigh, Marlon Brando, Kim Hunter, Karl Malden, Rudy Bond, Nick Dennis";
 			r10.ReleaseDate = new DateTime(1951, 9, 18);
 			r10.RunningTime = 125;
-			r10.Revenue = 8000000;
 			r10.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r10);
 			db.SaveChanges();
@@ -164,7 +154,6 @@ namespace FinalProject_Team12.Migrations
 			r11.Actors = "Gene Kelly, Donald O'Connor, Debbie Reynolds, Jean Hagen, Millard Mitchell, Cyd Charisse";
 			r11.ReleaseDate = new DateTime(1952, 4, 10);
 			r11.RunningTime = 103;
-			r11.Revenue = 7200000;
 			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
@@ -179,7 +168,6 @@ namespace FinalProject_Team12.Migrations
 			r12.Actors = "Elizabeth Taylor, Paul Newman, Burl Ives, Judith Anderson, Jack Carson, Madeleine Sherwood";
 			r12.ReleaseDate = new DateTime(1958, 2, 17);
 			r12.RunningTime = 108;
-			r12.Revenue = 17570324;
 			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			db.Movies.AddOrUpdate(r => r.Title, r12);
@@ -193,7 +181,6 @@ namespace FinalProject_Team12.Migrations
 			r13.Actors = "Marilyn Monroe, Tony Curtis, Jack Lemmon, George Raft, Pat O\u2019Brien, Joe E. Brown";
 			r13.ReleaseDate = new DateTime(1959, 3, 18);
 			r13.RunningTime = 122;
-			r13.Revenue = 25000000;
 			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			db.Movies.AddOrUpdate(r => r.Title, r13);
@@ -207,7 +194,6 @@ namespace FinalProject_Team12.Migrations
 			r14.Actors = "Anthony Perkins, Vera Miles, John Gavin, Janet Leigh, Martin Balsam, John McIntire";
 			r14.ReleaseDate = new DateTime(1960, 6, 16);
 			r14.RunningTime = 109;
-			r14.Revenue = 32000000;
 			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Horror"));
 			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -222,7 +208,6 @@ namespace FinalProject_Team12.Migrations
 			r15.Actors = "Natalie Wood, Richard Beymer, Russ Tamblyn, Rita Moreno, George Chakiris, Simon Oakland";
 			r15.ReleaseDate = new DateTime(1961, 10, 18);
 			r15.RunningTime = 152;
-			r15.Revenue = 43656822;
 			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
@@ -237,7 +222,6 @@ namespace FinalProject_Team12.Migrations
 			r16.Actors = "John Wayne, James Stewart, Vera Miles, Lee Marvin, Edmond O'Brien, Ken Murray";
 			r16.ReleaseDate = new DateTime(1962, 4, 22);
 			r16.RunningTime = 123;
-			r16.Revenue = 8000000;
 			r16.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
 			db.Movies.AddOrUpdate(r => r.Title, r16);
 			db.SaveChanges();
@@ -250,7 +234,6 @@ namespace FinalProject_Team12.Migrations
 			r17.Actors = "Sean Connery, Ursula Andress, Joseph Wiseman, Jack Lord, Bernard Lee, Anthony Dawson";
 			r17.ReleaseDate = new DateTime(1962, 10, 4);
 			r17.RunningTime = 110;
-			r17.Revenue = 59600000;
 			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -265,7 +248,6 @@ namespace FinalProject_Team12.Migrations
 			r18.Actors = "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins, Omar Sharif, Claude Rains";
 			r18.ReleaseDate = new DateTime(1962, 12, 10);
 			r18.RunningTime = 216;
-			r18.Revenue = 69995385;
 			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
@@ -281,7 +263,6 @@ namespace FinalProject_Team12.Migrations
 			r19.Actors = "Gregory Peck, Brock Peters, James Anderson, Mary Badham, Phillip Alford, John Megna";
 			r19.ReleaseDate = new DateTime(1962, 12, 25);
 			r19.RunningTime = 129;
-			r19.Revenue = 13129846;
 			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r19);
@@ -295,7 +276,6 @@ namespace FinalProject_Team12.Migrations
 			r20.Actors = "John Lennon, Paul McCartney, George Harrison, Ringo Starr, Wilfrid Brambell, Norman Rossington";
 			r20.ReleaseDate = new DateTime(1964, 7, 6);
 			r20.RunningTime = 88;
-			r20.Revenue = 12299668;
 			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			db.Movies.AddOrUpdate(r => r.Title, r20);
@@ -309,7 +289,6 @@ namespace FinalProject_Team12.Migrations
 			r21.Actors = "Julie Andrews, Dick Van Dyke, David Tomlinson, Glynis Johns, Hermione Baddeley, Reta Shaw";
 			r21.ReleaseDate = new DateTime(1964, 8, 27);
 			r21.RunningTime = 139;
-			r21.Revenue = 102272727;
 			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -324,7 +303,6 @@ namespace FinalProject_Team12.Migrations
 			r22.Actors = "Audrey Hepburn, Rex Harrison, Stanley Holloway, Wilfrid Hyde-White, Gladys Cooper, Jeremy Brett";
 			r22.ReleaseDate = new DateTime(1964, 10, 21);
 			r22.RunningTime = 170;
-			r22.Revenue = 72070731;
 			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
@@ -340,7 +318,6 @@ namespace FinalProject_Team12.Migrations
 			r23.Actors = "Julie Andrews, Christopher Plummer, Eleanor Parker, Richard Haydn, Peggy Wood, Charmian Carr";
 			r23.ReleaseDate = new DateTime(1965, 3, 2);
 			r23.RunningTime = 174;
-			r23.Revenue = 286214286;
 			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
@@ -356,7 +333,6 @@ namespace FinalProject_Team12.Migrations
 			r24.Actors = "Paul Newman, Robert Redford, Katharine Ross, Strother Martin, Henry Jones, Jeff Corey";
 			r24.ReleaseDate = new DateTime(1969, 9, 23);
 			r24.RunningTime = 110;
-			r24.Revenue = 102308889;
 			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "History"));
 			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Western"));
@@ -372,7 +348,6 @@ namespace FinalProject_Team12.Migrations
 			r25.Actors = "Martin Balsam, Richard Benjamin, Art Garfunkel, Jack Gilford, Buck Henry, Bob Newhart";
 			r25.ReleaseDate = new DateTime(1970, 6, 24);
 			r25.RunningTime = 121;
-			r25.Revenue = 24911670;
 			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "War"));
 			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -387,7 +362,6 @@ namespace FinalProject_Team12.Migrations
 			r26.Actors = "Gene Wilder, Jack Albertson, Peter Ostrum, Roy Kinnear, Denise Nickerson, Leonard Stone";
 			r26.ReleaseDate = new DateTime(1971, 6, 29);
 			r26.RunningTime = 100;
-			r26.Revenue = 4000000;
 			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			db.Movies.AddOrUpdate(r => r.Title, r26);
@@ -401,7 +375,6 @@ namespace FinalProject_Team12.Migrations
 			r27.Actors = "Chaim Topol, Norma Crane, Leonard Frey, Molly Picon, Paul Mann, Rosalind Harris";
 			r27.ReleaseDate = new DateTime(1971, 11, 3);
 			r27.RunningTime = 181;
-			r27.Revenue = 83304330;
 			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			db.Movies.AddOrUpdate(r => r.Title, r27);
@@ -415,7 +388,6 @@ namespace FinalProject_Team12.Migrations
 			r28.Actors = "Sean Connery, Jill St. John, Charles Gray, Lana Wood, Jimmy Dean, Bruce Cabot";
 			r28.ReleaseDate = new DateTime(1971, 12, 13);
 			r28.RunningTime = 120;
-			r28.Revenue = 116019547;
 			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "  Action"));
 			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -430,7 +402,6 @@ namespace FinalProject_Team12.Migrations
 			r29.Actors = "Richard Dreyfuss, Ron Howard, Paul Le Mat, Charles Martin Smith, Cindy Williams, Candy Clark";
 			r29.ReleaseDate = new DateTime(1973, 8, 1);
 			r29.RunningTime = 110;
-			r29.Revenue = 140000000;
 			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r29);
@@ -444,7 +415,6 @@ namespace FinalProject_Team12.Migrations
 			r30.Actors = "Paul Newman, Robert Redford, Robert Shaw, Charles Durning, Ray Walston, Eileen Brennan";
 			r30.ReleaseDate = new DateTime(1973, 12, 25);
 			r30.RunningTime = 129;
-			r30.Revenue = 159616327;
 			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "  Drama"));
@@ -459,7 +429,6 @@ namespace FinalProject_Team12.Migrations
 			r31.Actors = "Linda Blair, Max von Sydow, Ellen Burstyn, Jason Miller, Lee J. Cobb, Kitty Winn";
 			r31.ReleaseDate = new DateTime(1973, 12, 26);
 			r31.RunningTime = 122;
-			r31.Revenue = 441306145;
 			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Horror"));
 			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -474,7 +443,6 @@ namespace FinalProject_Team12.Migrations
 			r32.Actors = "Cleavon Little, Gene Wilder, Harvey Korman, Slim Pickens, Madeline Kahn, Mel Brooks";
 			r32.ReleaseDate = new DateTime(1974, 2, 7);
 			r32.RunningTime = 93;
-			r32.Revenue = 119500000;
 			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
 			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r32);
@@ -488,7 +456,6 @@ namespace FinalProject_Team12.Migrations
 			r33.Actors = "Graham Chapman, John Cleese, Terry Gilliam, Eric Idle, Terry Jones, Michael Palin";
 			r33.ReleaseDate = new DateTime(1975, 3, 13);
 			r33.RunningTime = 91;
-			r33.Revenue = 5028948;
 			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -503,7 +470,6 @@ namespace FinalProject_Team12.Migrations
 			r34.Actors = "Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary, Murray Hamilton, Carl Gottlieb";
 			r34.ReleaseDate = new DateTime(1975, 6, 18);
 			r34.RunningTime = 124;
-			r34.Revenue = 470654000;
 			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
 			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -518,7 +484,6 @@ namespace FinalProject_Team12.Migrations
 			r35.Actors = "Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing, Alec Guinness, Anthony Daniels";
 			r35.ReleaseDate = new DateTime(1977, 5, 25);
 			r35.RunningTime = 121;
-			r35.Revenue = 775398007;
 			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
@@ -533,7 +498,6 @@ namespace FinalProject_Team12.Migrations
 			r36.Actors = "Roger Moore, Barbara Bach, Curd Joergens, Richard Kiel, Caroline Munro, Walter Gotell";
 			r36.ReleaseDate = new DateTime(1977, 7, 7);
 			r36.RunningTime = 125;
-			r36.Revenue = 185438673;
 			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -548,7 +512,6 @@ namespace FinalProject_Team12.Migrations
 			r37.Actors = "Richard Dreyfuss, Francois Truffaut, Teri Garr, Melinda Dillon, Bob Balaban, J. Patrick McNamara";
 			r37.ReleaseDate = new DateTime(1977, 11, 16);
 			r37.RunningTime = 135;
-			r37.Revenue = 303788635;
 			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r37);
@@ -562,7 +525,6 @@ namespace FinalProject_Team12.Migrations
 			r38.Actors = "John Travolta, Olivia Newton-John, Stockard Channing, Jeff Conaway, Didi Conn, Barry Pearl";
 			r38.ReleaseDate = new DateTime(1978, 7, 7);
 			r38.RunningTime = 110;
-			r38.Revenue = 181813770;
 			r38.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.Movies.AddOrUpdate(r => r.Title, r38);
 			db.SaveChanges();
@@ -575,7 +537,6 @@ namespace FinalProject_Team12.Migrations
 			r39.Actors = "John Belushi, Tim Matheson, John Vernon, Verna Bloom, Tom Hulce, Cesare Danova";
 			r39.ReleaseDate = new DateTime(1978, 7, 27);
 			r39.RunningTime = 109;
-			r39.Revenue = 141000000;
 			r39.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r39);
 			db.SaveChanges();
@@ -588,7 +549,6 @@ namespace FinalProject_Team12.Migrations
 			r40.Actors = "Donald Pleasence, Jamie Lee Curtis, P.J. Soles, Nancy Kyes, Nick Castle, Tony Moran";
 			r40.ReleaseDate = new DateTime(1978, 10, 25);
 			r40.RunningTime = 91;
-			r40.Revenue = 70000000;
 			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
 			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
 			db.Movies.AddOrUpdate(r => r.Title, r40);
@@ -602,7 +562,6 @@ namespace FinalProject_Team12.Migrations
 			r41.Actors = "Tom Skerritt, Sigourney Weaver, Veronica Cartwright, Harry Dean Stanton, John Hurt, Ian Holm";
 			r41.ReleaseDate = new DateTime(1979, 5, 25);
 			r41.RunningTime = 117;
-			r41.Revenue = 104931801;
 			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
 			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -618,7 +577,6 @@ namespace FinalProject_Team12.Migrations
 			r42.Actors = "Jim Henson, Frank Oz, Jerry Nelson, Richard Hunt, Dave Goelz, Charles Durning";
 			r42.ReleaseDate = new DateTime(1979, 5, 31);
 			r42.RunningTime = 97;
-			r42.Revenue = 76657000;
 			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -633,7 +591,6 @@ namespace FinalProject_Team12.Migrations
 			r43.Actors = "Martin Sheen, Marlon Brando, Robert Duvall, Frederic Forrest, Sam Bottoms, Laurence Fishburne";
 			r43.ReleaseDate = new DateTime(1979, 8, 15);
 			r43.RunningTime = 153;
-			r43.Revenue = 89460381;
 			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
 			db.Movies.AddOrUpdate(r => r.Title, r43);
@@ -647,7 +604,6 @@ namespace FinalProject_Team12.Migrations
 			r44.Actors = "Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams, Anthony Daniels, David Prowse";
 			r44.ReleaseDate = new DateTime(1980, 5, 17);
 			r44.RunningTime = 124;
-			r44.Revenue = 538400000;
 			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
@@ -662,7 +618,6 @@ namespace FinalProject_Team12.Migrations
 			r45.Actors = "Jack Nicholson, Shelley Duvall, Danny Lloyd, Scatman Crothers, Barry Nelson, Philip Stone";
 			r45.ReleaseDate = new DateTime(1980, 5, 22);
 			r45.RunningTime = 144;
-			r45.Revenue = 44017374;
 			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
 			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
 			db.Movies.AddOrUpdate(r => r.Title, r45);
@@ -676,7 +631,6 @@ namespace FinalProject_Team12.Migrations
 			r46.Actors = "Robert Hays, Julie Hagerty, Kareem Abdul-Jabbar, Lloyd Bridges, Peter Graves, Leslie Nielsen";
 			r46.ReleaseDate = new DateTime(1980, 7, 2);
 			r46.RunningTime = 88;
-			r46.Revenue = 83453539;
 			r46.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r46);
 			db.SaveChanges();
@@ -689,7 +643,6 @@ namespace FinalProject_Team12.Migrations
 			r47.Actors = "Chevy Chase, Rodney Dangerfield, Ted Knight, Michael O'Keefe, Bill Murray, Sarah Holcomb";
 			r47.ReleaseDate = new DateTime(1980, 7, 25);
 			r47.RunningTime = 98;
-			r47.Revenue = 39846344;
 			r47.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r47);
 			db.SaveChanges();
@@ -702,7 +655,6 @@ namespace FinalProject_Team12.Migrations
 			r48.Actors = "Robert De Niro, Joe Pesci, Cathy Moriarty, Frank Vincent, Nicholas Colasanto, Theresa Saldana";
 			r48.ReleaseDate = new DateTime(1980, 11, 14);
 			r48.RunningTime = 129;
-			r48.Revenue = 23000000;
 			r48.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r48);
 			db.SaveChanges();
@@ -715,7 +667,6 @@ namespace FinalProject_Team12.Migrations
 			r49.Actors = "Harrison Ford, Karen Allen, Paul Freeman, Ronald Lacey, John Rhys-Davies, Denholm Elliott";
 			r49.ReleaseDate = new DateTime(1981, 6, 12);
 			r49.RunningTime = 115;
-			r49.Revenue = 389925971;
 			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			db.Movies.AddOrUpdate(r => r.Title, r49);
@@ -729,7 +680,6 @@ namespace FinalProject_Team12.Migrations
 			r50.Actors = "Henry Thomas, Drew Barrymore, Robert MacNaughton, Dee Wallace, Peter Coyote, Erika Eleniak";
 			r50.ReleaseDate = new DateTime(1982, 4, 3);
 			r50.RunningTime = 115;
-			r50.Revenue = 792910554;
 			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -745,7 +695,6 @@ namespace FinalProject_Team12.Migrations
 			r51.Actors = "Sean Penn, Jennifer Jason Leigh, Judge Reinhold, Phoebe Cates, Brian Backer, Robert Romanus";
 			r51.ReleaseDate = new DateTime(1982, 8, 13);
 			r51.RunningTime = 90;
-			r51.Revenue = 27092880;
 			r51.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r51);
 			db.SaveChanges();
@@ -758,7 +707,6 @@ namespace FinalProject_Team12.Migrations
 			r52.Actors = "Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams, Anthony Daniels, David Prowse";
 			r52.ReleaseDate = new DateTime(1983, 5, 23);
 			r52.RunningTime = 135;
-			r52.Revenue = 572700000;
 			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
@@ -773,7 +721,6 @@ namespace FinalProject_Team12.Migrations
 			r53.Actors = "Matthew Broderick, Dabney Coleman, Ally Sheedy, John Wood, Barry Corbin, Juanin Clay";
 			r53.ReleaseDate = new DateTime(1983, 6, 3);
 			r53.RunningTime = 114;
-			r53.Revenue = 79567667;
 			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			db.Movies.AddOrUpdate(r => r.Title, r53);
@@ -787,7 +734,6 @@ namespace FinalProject_Team12.Migrations
 			r54.Actors = "Eddie Murphy, Dan Aykroyd, Jamie Lee Curtis, Jim Belushi, Denholm Elliott, Ralph Bellamy";
 			r54.ReleaseDate = new DateTime(1983, 6, 7);
 			r54.RunningTime = 116;
-			r54.Revenue = 90400000;
 			r54.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r54);
 			db.SaveChanges();
@@ -800,7 +746,6 @@ namespace FinalProject_Team12.Migrations
 			r55.Actors = "Melinda Dillon, Darren McGavin, Peter Billingsley, Jean Shepherd, Ian Petrella, Scott Schwartz";
 			r55.ReleaseDate = new DateTime(1983, 11, 18);
 			r55.RunningTime = 94;
-			r55.Revenue = 19294144;
 			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			db.Movies.AddOrUpdate(r => r.Title, r55);
@@ -814,7 +759,6 @@ namespace FinalProject_Team12.Migrations
 			r56.Actors = "Kevin Bacon, John Lithgow, Dianne Wiest, Chris Penn, Lori Singer, Sarah Jessica Parker";
 			r56.ReleaseDate = new DateTime(1984, 2, 17);
 			r56.RunningTime = 107;
-			r56.Revenue = 80035402;
 			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
@@ -830,7 +774,6 @@ namespace FinalProject_Team12.Migrations
 			r57.Actors = "Michael J. Fox, Christopher Lloyd, Lea Thompson, Crispin Glover, Thomas F. Wilson, Claudia Wells";
 			r57.ReleaseDate = new DateTime(1985, 7, 3);
 			r57.RunningTime = 116;
-			r57.Revenue = 381109762;
 			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
@@ -846,7 +789,6 @@ namespace FinalProject_Team12.Migrations
 			r58.Actors = "Whoopi Goldberg, Margaret Avery, Danny Glover, Akosua Busia, Oprah Winfrey, Willard E. Pugh";
 			r58.ReleaseDate = new DateTime(1985, 12, 18);
 			r58.RunningTime = 154;
-			r58.Revenue = 146292009;
 			r58.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r58);
 			db.SaveChanges();
@@ -859,7 +801,6 @@ namespace FinalProject_Team12.Migrations
 			r59.Actors = "Tom Cruise, Kelly McGillis, Val Kilmer, Anthony Edwards, Tom Skerritt, Michael Ironside";
 			r59.ReleaseDate = new DateTime(1986, 5, 16);
 			r59.RunningTime = 110;
-			r59.Revenue = 356830601;
 			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
@@ -874,7 +815,6 @@ namespace FinalProject_Team12.Migrations
 			r60.Actors = "Rick Moranis, Ellen Greene, Vincent Gardenia, Steve Martin, Tisha Campbell-Martin, John Candy";
 			r60.ReleaseDate = new DateTime(1986, 12, 19);
 			r60.RunningTime = 94;
-			r60.Revenue = 38748395;
 			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
 			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -889,7 +829,6 @@ namespace FinalProject_Team12.Migrations
 			r61.Actors = "Mel Brooks, Rick Moranis, Bill Pullman, Daphne Zuniga, John Candy, George Wyner";
 			r61.ReleaseDate = new DateTime(1987, 6, 24);
 			r61.RunningTime = 96;
-			r61.Revenue = 38119483;
 			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			db.Movies.AddOrUpdate(r => r.Title, r61);
@@ -903,7 +842,6 @@ namespace FinalProject_Team12.Migrations
 			r62.Actors = "Cary Elwes, Robin Wright, Mandy Patinkin, Andre the Giant, Chris Sarandon, Christopher Guest";
 			r62.ReleaseDate = new DateTime(1987, 9, 18);
 			r62.RunningTime = 98;
-			r62.Revenue = 30857814;
 			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
@@ -920,7 +858,6 @@ namespace FinalProject_Team12.Migrations
 			r63.Actors = "Tom Hanks, Elizabeth Perkins, Robert Loggia, John Heard, Jared Rushton, David Moscow";
 			r63.ReleaseDate = new DateTime(1988, 6, 3);
 			r63.RunningTime = 104;
-			r63.Revenue = 151668774;
 			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -937,7 +874,6 @@ namespace FinalProject_Team12.Migrations
 			r64.Actors = "Gabriel Damon, Candace Hutson, Judith Barsi, Will Ryan, Pat Hingle, Helen Shaver";
 			r64.ReleaseDate = new DateTime(1988, 11, 18);
 			r64.RunningTime = 69;
-			r64.Revenue = 84460846;
 			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -952,7 +888,6 @@ namespace FinalProject_Team12.Migrations
 			r65.Actors = "Dustin Hoffman, Tom Cruise, Valeria Golino, Gerald R. Molen, Jack Murdock, Michael D. Roberts";
 			r65.ReleaseDate = new DateTime(1988, 12, 11);
 			r65.RunningTime = 133;
-			r65.Revenue = 412800000;
 			r65.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r65);
 			db.SaveChanges();
@@ -965,7 +900,6 @@ namespace FinalProject_Team12.Migrations
 			r66.Actors = "Keanu Reeves, Alex Winter, George Carlin, Dan Shor, Hal Landon Jr., Amy Stock-Poynton";
 			r66.ReleaseDate = new DateTime(1989, 2, 17);
 			r66.RunningTime = 90;
-			r66.Revenue = 40485039;
 			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
@@ -980,7 +914,6 @@ namespace FinalProject_Team12.Migrations
 			r67.Actors = "Robin Williams, Ethan Hawke, Robert Sean Leonard, Gale Hansen, Josh Charles, Dylan Kussman";
 			r67.ReleaseDate = new DateTime(1989, 6, 2);
 			r67.RunningTime = 129;
-			r67.Revenue = 235860116;
 			r67.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r67);
 			db.SaveChanges();
@@ -993,7 +926,6 @@ namespace FinalProject_Team12.Migrations
 			r68.Actors = "Meg Ryan, Billy Crystal, Carrie Fisher, Bruno Kirby, Steven Ford, Lisa Jane Persky";
 			r68.ReleaseDate = new DateTime(1989, 7, 21);
 			r68.RunningTime = 96;
-			r68.Revenue = 92823546;
 			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
@@ -1008,7 +940,6 @@ namespace FinalProject_Team12.Migrations
 			r69.Actors = "Michael J. Fox, Christopher Lloyd, Lea Thompson, Elisabeth Shue, James Tolkan, Jeffrey Weissman";
 			r69.ReleaseDate = new DateTime(1989, 11, 20);
 			r69.RunningTime = 108;
-			r69.Revenue = 332000000;
 			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1024,7 +955,6 @@ namespace FinalProject_Team12.Migrations
 			r70.Actors = "Michael J. Fox, Christopher Lloyd, Mary Steenburgen, Thomas F. Wilson, Lea Thompson, Elisabeth Shue";
 			r70.ReleaseDate = new DateTime(1990, 5, 25);
 			r70.RunningTime = 118;
-			r70.Revenue = 244527583;
 			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1040,7 +970,6 @@ namespace FinalProject_Team12.Migrations
 			r71.Actors = "Kevin Costner, Morgan Freeman, Christian Slater, Mary Elizabeth Mastrantonio, Alan Rickman, Geraldine McEwan";
 			r71.ReleaseDate = new DateTime(1991, 6, 14);
 			r71.RunningTime = 143;
-			r71.Revenue = 390493908;
 			r71.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			db.Movies.AddOrUpdate(r => r.Title, r71);
 			db.SaveChanges();
@@ -1053,7 +982,6 @@ namespace FinalProject_Team12.Migrations
 			r72.Actors = "Mike Myers, Dana Carvey, Rob Lowe, Tia Carrere, Lara Flynn Boyle, Chris Farley";
 			r72.ReleaseDate = new DateTime(1992, 2, 14);
 			r72.RunningTime = 94;
-			r72.Revenue = 121697323;
 			r72.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r72);
 			db.SaveChanges();
@@ -1066,7 +994,6 @@ namespace FinalProject_Team12.Migrations
 			r73.Actors = "Tom Hanks, Geena Davis, Madonna, Lori Petty, Jon Lovitz, David Strathairn";
 			r73.ReleaseDate = new DateTime(1992, 7, 1);
 			r73.RunningTime = 128;
-			r73.Revenue = 107458785;
 			r73.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r73);
 			db.SaveChanges();
@@ -1079,7 +1006,6 @@ namespace FinalProject_Team12.Migrations
 			r74.Actors = "Daniel Day-Lewis, Madeleine Stowe, Russell Means, Eric Schweig, Jodhi May, Steven Waddington";
 			r74.ReleaseDate = new DateTime(1992, 9, 25);
 			r74.RunningTime = 112;
-			r74.Revenue = 75505856;
 			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
@@ -1097,7 +1023,6 @@ namespace FinalProject_Team12.Migrations
 			r75.Actors = "Scott Weinger, Robin Williams, Linda Larkin, Jonathan Freeman, Frank Welker, Gilbert Gottfried";
 			r75.ReleaseDate = new DateTime(1992, 11, 25);
 			r75.RunningTime = 90;
-			r75.Revenue = 504050219;
 			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -1115,7 +1040,6 @@ namespace FinalProject_Team12.Migrations
 			r76.Actors = "Michael Caine, Don Austen, Meredith Braun, Don Austen, Ed Sanders, Dave Goelz";
 			r76.ReleaseDate = new DateTime(1992, 12, 10);
 			r76.RunningTime = 85;
-			r76.Revenue = 27281507;
 			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
@@ -1131,7 +1055,6 @@ namespace FinalProject_Team12.Migrations
 			r77.Actors = "Tom Cruise, Jack Nicholson, Demi Moore, Kevin Bacon, Kevin Pollak, James Marshall";
 			r77.ReleaseDate = new DateTime(1992, 12, 11);
 			r77.RunningTime = 138;
-			r77.Revenue = 243240178;
 			r77.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r77);
 			db.SaveChanges();
@@ -1144,7 +1067,6 @@ namespace FinalProject_Team12.Migrations
 			r78.Actors = "Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough, Bob Peck, Martin Ferrero";
 			r78.ReleaseDate = new DateTime(1993, 6, 11);
 			r78.RunningTime = 127;
-			r78.Revenue = 920100000;
 			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			db.Movies.AddOrUpdate(r => r.Title, r78);
@@ -1158,7 +1080,6 @@ namespace FinalProject_Team12.Migrations
 			r79.Actors = "Bette Midler, Sarah Jessica Parker, Kathy Najimy, Omri Katz, Thora Birch, Vinessa Shaw";
 			r79.ReleaseDate = new DateTime(1993, 7, 16);
 			r79.RunningTime = 96;
-			r79.Revenue = 39514713;
 			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
@@ -1173,7 +1094,6 @@ namespace FinalProject_Team12.Migrations
 			r80.Actors = "Jason London, Rory Cochrane, Wiley Wiggins, Sasha Jenson, Michelle Burke, Adam Goldberg";
 			r80.ReleaseDate = new DateTime(1993, 9, 24);
 			r80.RunningTime = 102;
-			r80.Revenue = 7993039;
 			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r80);
@@ -1187,7 +1107,6 @@ namespace FinalProject_Team12.Migrations
 			r81.Actors = "Hugh Grant, Andie MacDowell, James Fleet, Simon Callow, John Hannah, Kristin Scott Thomas";
 			r81.ReleaseDate = new DateTime(1994, 3, 9);
 			r81.RunningTime = 117;
-			r81.Revenue = 254700832;
 			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
@@ -1202,7 +1121,6 @@ namespace FinalProject_Team12.Migrations
 			r82.Actors = "Jonathan Taylor Thomas, Matthew Broderick, James Earl Jones, Jeremy Irons, Moira Kelly, Niketa Calame";
 			r82.ReleaseDate = new DateTime(1994, 6, 23);
 			r82.RunningTime = 89;
-			r82.Revenue = 788241776;
 			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
 			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
@@ -1217,7 +1135,6 @@ namespace FinalProject_Team12.Migrations
 			r83.Actors = "Tom Hanks, Robin Wright, Gary Sinise, Mykelti Williamson, Sally Field, Michael Conner Humphreys";
 			r83.ReleaseDate = new DateTime(1994, 7, 6);
 			r83.RunningTime = 142;
-			r83.Revenue = 677945399;
 			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
@@ -1232,7 +1149,6 @@ namespace FinalProject_Team12.Migrations
 			r84.Actors = "Tim Robbins, Morgan Freeman, Bob Gunton, Clancy Brown, Mark Rolston, James Whitmore";
 			r84.ReleaseDate = new DateTime(1994, 9, 23);
 			r84.RunningTime = 142;
-			r84.Revenue = 28341469;
 			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			db.Movies.AddOrUpdate(r => r.Title, r84);
@@ -1246,7 +1162,6 @@ namespace FinalProject_Team12.Migrations
 			r85.Actors = "John Travolta, Samuel L. Jackson, Uma Thurman, Bruce Willis, Ving Rhames, Harvey Keitel";
 			r85.ReleaseDate = new DateTime(1994, 10, 8);
 			r85.RunningTime = 154;
-			r85.Revenue = 213928762;
 			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			db.Movies.AddOrUpdate(r => r.Title, r85);
@@ -1260,7 +1175,6 @@ namespace FinalProject_Team12.Migrations
 			r86.Actors = "Stephen Baldwin, Gabriel Byrne, Chazz Palminteri, Kevin Pollak, Pete Postlethwaite, Kevin Spacey";
 			r86.ReleaseDate = new DateTime(1995, 7, 19);
 			r86.RunningTime = 106;
-			r86.Revenue = 23341568;
 			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -1275,7 +1189,6 @@ namespace FinalProject_Team12.Migrations
 			r87.Actors = "Tom Hanks, Tim Allen, Don Rickles, Jim Varney, Wallace Shawn, John Ratzenberger";
 			r87.ReleaseDate = new DateTime(1995, 10, 30);
 			r87.RunningTime = 81;
-			r87.Revenue = 373554033;
 			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1290,7 +1203,6 @@ namespace FinalProject_Team12.Migrations
 			r88.Actors = "Kate Winslet, Emma Thompson, Hugh Grant, Tom Wilkinson, Alan Rickman, Imogen Stubbs";
 			r88.ReleaseDate = new DateTime(1995, 12, 13);
 			r88.RunningTime = 136;
-			r88.Revenue = 135000000;
 			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			db.Movies.AddOrUpdate(r => r.Title, r88);
@@ -1304,7 +1216,6 @@ namespace FinalProject_Team12.Migrations
 			r89.Actors = "Tom Cruise, Jon Voight, Emmanuelle Beart, Henry Czerny, Jean Reno, Ving Rhames";
 			r89.ReleaseDate = new DateTime(1996, 5, 22);
 			r89.RunningTime = 110;
-			r89.Revenue = 457696359;
 			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -1319,7 +1230,6 @@ namespace FinalProject_Team12.Migrations
 			r90.Actors = "Will Smith, Bill Pullman, Jeff Goldblum, Mary McDonnell, Judd Hirsch, Robert Loggia";
 			r90.ReleaseDate = new DateTime(1996, 6, 25);
 			r90.RunningTime = 145;
-			r90.Revenue = 816969268;
 			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
@@ -1334,7 +1244,6 @@ namespace FinalProject_Team12.Migrations
 			r91.Actors = "Mike Myers, Elizabeth Hurley, Michael York, Mimi Rogers, Seth Green, Fabiana Udenio";
 			r91.ReleaseDate = new DateTime(1997, 5, 2);
 			r91.RunningTime = 94;
-			r91.Revenue = 67683989;
 			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
@@ -1349,7 +1258,6 @@ namespace FinalProject_Team12.Migrations
 			r92.Actors = "Tommy Lee Jones, Will Smith, Linda Fiorentino, Vincent D'Onofrio, Rip Torn, Tony Shalhoub";
 			r92.ReleaseDate = new DateTime(1997, 7, 2);
 			r92.RunningTime = 98;
-			r92.Revenue = 589390539;
 			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -1365,7 +1273,6 @@ namespace FinalProject_Team12.Migrations
 			r93.Actors = "Kate Winslet, Leonardo DiCaprio, Frances Fisher, Billy Zane, Kathy Bates, Gloria Stuart";
 			r93.ReleaseDate = new DateTime(1997, 11, 18);
 			r93.RunningTime = 194;
-			r93.Revenue = 1845034188;
 			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -1380,7 +1287,6 @@ namespace FinalProject_Team12.Migrations
 			r94.Actors = "Jeff Bridges, John Goodman, Julianne Moore, Steve Buscemi, Philip Seymour Hoffman, David Huddleston";
 			r94.ReleaseDate = new DateTime(1998, 3, 6);
 			r94.RunningTime = 117;
-			r94.Revenue = 46189568;
 			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			db.Movies.AddOrUpdate(r => r.Title, r94);
@@ -1394,7 +1300,6 @@ namespace FinalProject_Team12.Migrations
 			r95.Actors = "Joseph Fiennes, Gwyneth Paltrow, Geoffrey Rush, Tom Wilkinson, Judi Dench, Imelda Staunton";
 			r95.ReleaseDate = new DateTime(1998, 12, 11);
 			r95.RunningTime = 122;
-			r95.Revenue = 289317794;
 			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
 			db.Movies.AddOrUpdate(r => r.Title, r95);
@@ -1408,7 +1313,6 @@ namespace FinalProject_Team12.Migrations
 			r96.Actors = "Tom Hanks, Meg Ryan, Katie Sagona, Greg Kinnear, Parker Posey, Jean Stapleton";
 			r96.ReleaseDate = new DateTime(1998, 12, 17);
 			r96.RunningTime = 119;
-			r96.Revenue = 250821495;
 			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			db.Movies.AddOrUpdate(r => r.Title, r96);
@@ -1422,7 +1326,6 @@ namespace FinalProject_Team12.Migrations
 			r97.Actors = "Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root";
 			r97.ReleaseDate = new DateTime(1999, 2, 19);
 			r97.RunningTime = 89;
-			r97.Revenue = 12827813;
 			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			db.Movies.AddOrUpdate(r => r.Title, r97);
@@ -1436,7 +1339,6 @@ namespace FinalProject_Team12.Migrations
 			r98.Actors = "Julia Roberts, Hugh Grant, Gina McKee, Tim McInnerny, Rhys Ifans, Emma Chambers";
 			r98.ReleaseDate = new DateTime(1999, 5, 13);
 			r98.RunningTime = 124;
-			r98.Revenue = 363889678;
 			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
@@ -1451,7 +1353,6 @@ namespace FinalProject_Team12.Migrations
 			r99.Actors = "Tom Hanks, Tim Allen, Joan Cusack, Kelsey Grammer, Don Rickles, Jim Varney";
 			r99.ReleaseDate = new DateTime(1999, 10, 30);
 			r99.RunningTime = 92;
-			r99.Revenue = 497366869;
 			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1466,7 +1367,6 @@ namespace FinalProject_Team12.Migrations
 			r100.Actors = "Russell Crowe, Joaquin Phoenix, Connie Nielsen, Oliver Reed, Richard Harris, Derek Jacobi";
 			r100.ReleaseDate = new DateTime(2000, 5, 1);
 			r100.RunningTime = 155;
-			r100.Revenue = 457640427;
 			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
 			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
@@ -1481,7 +1381,6 @@ namespace FinalProject_Team12.Migrations
 			r101.Actors = "Nicolas Cage, Angelina Jolie, Giovanni Ribisi, Delroy Lindo, Will Patton, Christopher Eccleston";
 			r101.ReleaseDate = new DateTime(2000, 6, 9);
 			r101.RunningTime = 118;
-			r101.Revenue = 237202299;
 			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
@@ -1496,7 +1395,6 @@ namespace FinalProject_Team12.Migrations
 			r102.Actors = "Patrick Stewart, Hugh Jackman, Ian McKellen, Halle Berry, Famke Janssen, James Marsden";
 			r102.ReleaseDate = new DateTime(2000, 7, 13);
 			r102.RunningTime = 104;
-			r102.Revenue = 296339527;
 			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
@@ -1511,7 +1409,6 @@ namespace FinalProject_Team12.Migrations
 			r103.Actors = "Sandra Bullock, Benjamin Bratt, Michael Caine, Candice Bergen, William Shatner, Ernie Hudson";
 			r103.ReleaseDate = new DateTime(2000, 12, 14);
 			r103.RunningTime = 111;
-			r103.Revenue = 212000000;
 			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
@@ -1526,7 +1423,6 @@ namespace FinalProject_Team12.Migrations
 			r104.Actors = "Renee Zellweger, Colin Firth, Hugh Grant, Gemma Jones, Jim Broadbent, James Callis";
 			r104.ReleaseDate = new DateTime(2001, 4, 13);
 			r104.RunningTime = 97;
-			r104.Revenue = 281929795;
 			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
@@ -1541,7 +1437,6 @@ namespace FinalProject_Team12.Migrations
 			r105.Actors = "Reese Witherspoon, Luke Wilson, Selma Blair, Matthew Davis, Victor Garber, Jennifer Coolidge";
 			r105.ReleaseDate = new DateTime(2001, 7, 13);
 			r105.RunningTime = 96;
-			r105.Revenue = 141774679;
 			r105.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r105);
 			db.SaveChanges();
@@ -1554,7 +1449,6 @@ namespace FinalProject_Team12.Migrations
 			r106.Actors = "John Goodman, Billy Crystal, Mary Gibbs, Steve Buscemi, James Coburn, Jennifer Tilly";
 			r106.ReleaseDate = new DateTime(2001, 11, 1);
 			r106.RunningTime = 92;
-			r106.Revenue = 562816256;
 			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1569,7 +1463,6 @@ namespace FinalProject_Team12.Migrations
 			r107.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris, Tom Felton, Robbie Coltrane";
 			r107.ReleaseDate = new DateTime(2001, 11, 16);
 			r107.RunningTime = 152;
-			r107.Revenue = 976475550;
 			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1584,7 +1477,6 @@ namespace FinalProject_Team12.Migrations
 			r108.Actors = "George Clooney, Brad Pitt, Matt Damon, Andy Garcia, Julia Roberts, Casey Affleck";
 			r108.ReleaseDate = new DateTime(2001, 12, 7);
 			r108.RunningTime = 116;
-			r108.Revenue = 450717150;
 			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
 			db.Movies.AddOrUpdate(r => r.Title, r108);
@@ -1598,7 +1490,6 @@ namespace FinalProject_Team12.Migrations
 			r109.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris, Alan Rickman, Tom Felton";
 			r109.ReleaseDate = new DateTime(2002, 11, 13);
 			r109.RunningTime = 161;
-			r109.Revenue = 876688482;
 			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1613,7 +1504,6 @@ namespace FinalProject_Team12.Migrations
 			r110.Actors = "Albert Brooks, Ellen DeGeneres, Alexander Gould, Willem Dafoe, Brad Garrett, Allison Janney";
 			r110.ReleaseDate = new DateTime(2003, 5, 30);
 			r110.RunningTime = 100;
-			r110.Revenue = 940335536;
 			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			db.Movies.AddOrUpdate(r => r.Title, r110);
@@ -1627,7 +1517,6 @@ namespace FinalProject_Team12.Migrations
 			r111.Actors = "Keira Knightley, Heike Makatsch, Emma Thompson, Laura Linney, Hugh Grant, January Jones";
 			r111.ReleaseDate = new DateTime(2003, 9, 7);
 			r111.RunningTime = 135;
-			r111.Revenue = 244931766;
 			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
 			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
@@ -1642,7 +1531,6 @@ namespace FinalProject_Team12.Migrations
 			r112.Actors = "Will Ferrell, James Caan, Zooey Deschanel, Mary Steenburgen, Daniel Tay, Ed Asner";
 			r112.ReleaseDate = new DateTime(2003, 10, 9);
 			r112.RunningTime = 97;
-			r112.Revenue = 173398518;
 			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
@@ -1657,7 +1545,6 @@ namespace FinalProject_Team12.Migrations
 			r113.Actors = "Lindsay Lohan, Rachel McAdams, Tim Meadows, Ana Gasteyer, Amy Poehler, Tina Fey";
 			r113.ReleaseDate = new DateTime(2004, 4, 30);
 			r113.RunningTime = 97;
-			r113.Revenue = 129042871;
 			r113.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r113);
 			db.SaveChanges();
@@ -1670,7 +1557,6 @@ namespace FinalProject_Team12.Migrations
 			r114.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Gary Oldman, David Thewlis, Alan Rickman";
 			r114.ReleaseDate = new DateTime(2004, 5, 31);
 			r114.RunningTime = 141;
-			r114.Revenue = 789804554;
 			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1685,7 +1571,6 @@ namespace FinalProject_Team12.Migrations
 			r115.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Ralph Fiennes, Michael Gambon, Alan Rickman";
 			r115.ReleaseDate = new DateTime(2005, 11, 5);
 			r115.RunningTime = 157;
-			r115.Revenue = 895921036;
 			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1700,7 +1585,6 @@ namespace FinalProject_Team12.Migrations
 			r116.Actors = "Owen Wilson, Paul Newman, Bonnie Hunt, Larry the Cable Guy, Tony Shalhoub, Cheech Marin";
 			r116.ReleaseDate = new DateTime(2006, 6, 8);
 			r116.RunningTime = 117;
-			r116.Revenue = 461983149;
 			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -1716,7 +1600,6 @@ namespace FinalProject_Team12.Migrations
 			r117.Actors = "Jack Nicholson, Matt Damon, Jack Nicholson, Mark Wahlberg, Martin Sheen, Ray Winstone";
 			r117.ReleaseDate = new DateTime(2006, 10, 5);
 			r117.RunningTime = 151;
-			r117.Revenue = 289847354;
 			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
 			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
@@ -1731,7 +1614,6 @@ namespace FinalProject_Team12.Migrations
 			r118.Actors = "Patton Oswalt, Ian Holm, Lou Romano, Brian Dennehy, Peter Sohn, Peter O'Toole";
 			r118.ReleaseDate = new DateTime(2007, 6, 22);
 			r118.RunningTime = 111;
-			r118.Revenue = 623722818;
 			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1747,7 +1629,6 @@ namespace FinalProject_Team12.Migrations
 			r119.Actors = "Shia LaBeouf, Josh Duhamel, Megan Fox, Rachael Taylor, Tyrese Gibson, Jon Voight";
 			r119.ReleaseDate = new DateTime(2007, 6, 27);
 			r119.RunningTime = 144;
-			r119.Revenue = 709709780;
 			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
@@ -1762,7 +1643,6 @@ namespace FinalProject_Team12.Migrations
 			r120.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Michael Gambon, Ralph Fiennes, Tom Felton";
 			r120.ReleaseDate = new DateTime(2007, 6, 28);
 			r120.RunningTime = 138;
-			r120.Revenue = 938212738;
 			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1778,7 +1658,6 @@ namespace FinalProject_Team12.Migrations
 			r121.Actors = "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine, Maggie Gyllenhaal, Gary Oldman";
 			r121.ReleaseDate = new DateTime(2008, 7, 16);
 			r121.RunningTime = 152;
-			r121.Revenue = 1004558444;
 			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
@@ -1794,7 +1673,6 @@ namespace FinalProject_Team12.Migrations
 			r122.Actors = "Chris Pine, Zachary Quinto, Leonard Nimoy, Eric Bana, Bruce Greenwood, Karl Urban";
 			r122.ReleaseDate = new DateTime(2009, 5, 6);
 			r122.RunningTime = 127;
-			r122.Revenue = 385680446;
 			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
 			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
@@ -1809,7 +1687,6 @@ namespace FinalProject_Team12.Migrations
 			r123.Actors = "Ed Asner, Christopher Plummer, Jordan Nagai, Bob Peterson, Delroy Lindo, Jerome Ranft";
 			r123.ReleaseDate = new DateTime(2009, 5, 13);
 			r123.RunningTime = 96;
-			r123.Revenue = 735099082;
 			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
 			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1825,7 +1702,6 @@ namespace FinalProject_Team12.Migrations
 			r124.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Tom Felton, Michael Gambon, Jim Broadbent";
 			r124.ReleaseDate = new DateTime(2009, 7, 7);
 			r124.RunningTime = 153;
-			r124.Revenue = 933959197;
 			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
 			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
@@ -1840,7 +1716,6 @@ namespace FinalProject_Team12.Migrations
 			r125.Actors = "Anika Noni Rose, Bruno Campos, Keith David, Michael-Leon Wooley, Jennifer Cody, Jim Cummings";
 			r125.ReleaseDate = new DateTime(2009, 12, 8);
 			r125.RunningTime = 97;
-			r125.Revenue = 267045765;
 			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
@@ -1856,7 +1731,6 @@ namespace FinalProject_Team12.Migrations
 			r126.Actors = "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang, Michelle Rodriguez, Giovanni Ribisi";
 			r126.ReleaseDate = new DateTime(2009, 12, 10);
 			r126.RunningTime = 162;
-			r126.Revenue = 2787965087;
             r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
@@ -1872,7 +1746,6 @@ namespace FinalProject_Team12.Migrations
 			r127.Actors = "Tom Hanks, Tim Allen, Ned Beatty, Joan Cusack, Michael Keaton, Whoopi Goldberg";
 			r127.ReleaseDate = new DateTime(2010, 6, 16);
 			r127.RunningTime = 103;
-			r127.Revenue = 1066969703;
 			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
 			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -1887,7 +1760,6 @@ namespace FinalProject_Team12.Migrations
 			r128.Actors = "Colin Firth, Geoffrey Rush, Helena Bonham Carter, Guy Pearce, Timothy Spall, Michael Gambon";
 			r128.ReleaseDate = new DateTime(2010, 9, 6);
 			r128.RunningTime = 118;
-			r128.Revenue = 414211549;
 			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
 			db.Movies.AddOrUpdate(r => r.Title, r128);
@@ -1901,7 +1773,6 @@ namespace FinalProject_Team12.Migrations
 			r129.Actors = "Brad Pitt, Jonah Hill, Philip Seymour Hoffman, Robin Wright, Chris Pratt, Stephen Bishop";
 			r129.ReleaseDate = new DateTime(2011, 9, 22);
 			r129.RunningTime = 133;
-			r129.Revenue = 110206216;
 			r129.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.Movies.AddOrUpdate(r => r.Title, r129);
 			db.SaveChanges();
@@ -1914,7 +1785,6 @@ namespace FinalProject_Team12.Migrations
 			r130.Actors = "Kelly Macdonald, Julie Walters, Billy Connolly, Emma Thompson, Kevin McKidd, Craig Ferguson";
 			r130.ReleaseDate = new DateTime(2012, 6, 21);
 			r130.RunningTime = 93;
-			r130.Revenue = 538983207;
 			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
 			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
 			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -1932,7 +1802,6 @@ namespace FinalProject_Team12.Migrations
 			r131.Actors = "Anna Kendrick, Skylar Astin, Brittany Snow, Anna Camp, Rebel Wilson, Ben Platt";
 			r131.ReleaseDate = new DateTime(2012, 9, 28);
 			r131.RunningTime = 112;
-			r131.Revenue = 115350426;
 			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
 			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
@@ -1947,7 +1816,6 @@ namespace FinalProject_Team12.Migrations
 			r132.Actors = "Chris Pratt, Will Ferrell, Elizabeth Banks, Will Arnett, Nick Offerman, Alison Brie";
 			r132.ReleaseDate = new DateTime(2014, 2, 6);
 			r132.RunningTime = 100;
-			r132.Revenue = 469160692;
 			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
 			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
@@ -1964,7 +1832,6 @@ namespace FinalProject_Team12.Migrations
 			r133.Actors = "Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel, Bradley Cooper, Lee Pace";
 			r133.ReleaseDate = new DateTime(2014, 7, 30);
 			r133.RunningTime = 121;
-			r133.Revenue = 773328629;
 			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
 			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
@@ -1979,11 +1846,10 @@ namespace FinalProject_Team12.Migrations
 			r134.Actors = "Mila Kunis, Kristen Bell, Kathryn Hahn, Christina Applegate, Jada Pinkett Smith, Annie Mumolo";
 			r134.ReleaseDate = new DateTime(2016, 7, 28);
 			r134.RunningTime = 100;
-			r134.Revenue = 183936074;
 			r134.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.Movies.AddOrUpdate(r => r.Title, r134);
 			db.SaveChanges();
-
+           
 		}
 	}
 }

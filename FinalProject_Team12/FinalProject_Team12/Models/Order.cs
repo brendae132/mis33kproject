@@ -40,6 +40,7 @@ namespace FinalProject_Team12.Models
         //Navigational properties for Reservations, Users, Movie Reviews, Reports
         public virtual List<Ticket> Tickets { get; set; }
         public virtual List<MovieReview> MovieReviews { get; set; }
+        public virtual AppUser AppUser { get; set; }
 
     }
 }

@@ -26,10 +26,6 @@ namespace FinalProject_Team12.Models
         [Display(Name = "Future Showings")]
         public String FutureShowings { get; set; }
 
-        //Popcorn Points? Double check this
-        [Display(Name = "Popcorn Points Balance")]
-        public Int32 PopcornPoints { get; set; }
-
         [Required(ErrorMessage = "Order Date is required.")]
         [DataType(DataType.Date, ErrorMessage = "Enter valid order date.")]
         [Display(Name = "Order Date")]

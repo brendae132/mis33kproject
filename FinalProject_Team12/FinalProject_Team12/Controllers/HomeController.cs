@@ -68,7 +68,7 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
-        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, string SelectedGenre, DateTime ReleaseYear, MPAARating SelectedMPAARating, string NumberofStars, Rating Rating, DateTime? datSelectedDate)
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32 SelectedGenre, DateTime ReleaseYear, MPAARating SelectedMPAARating, string NumberofStars, Rating Rating, DateTime? datSelectedDate)
         //??? "string NumberOfStars"
 
         {
@@ -90,7 +90,7 @@ namespace FinalProject_Team12.Controllers
             //Allow user to see all genres
             //TODO: Double check if the following for SelectedGenre is correct:
             //How to give user options to select available genres?
-            if (SelectedGenre == null)
+            if (SelectedGenre == 0)
             {
                 ViewBag.SelectedGenre = "No genre was selected";
             }
@@ -212,6 +212,29 @@ namespace FinalProject_Team12.Controllers
 
             //Return the select list
             return AllGenres;
+        }
+
+        public SelectList GetAllActors()
+        {
+            List<Actor> Actors = db.Actors.ToList();
+
+            //Add a record for all languages
+            Actor SelectNone = new Models.Actor() { ActorID = 0, ActorName = "All Actors" };
+            Actor.Add(SelectNone);
+
+            foreach (Movie m in db.Movies.ToList())
+            {
+                //foreach (String a in m.Actors)
+                //{
+                    //if (!ActorsList.Contains(a))
+                    //{
+                        //ActorsList.Add(a);
+                    //}
+                //}
+            }
+            SelectList AllActors = new SelectList(Actors.OrderBy(m => m.ActorID), "ActorID");
+
+            return AllActors;
         }
     }
 }

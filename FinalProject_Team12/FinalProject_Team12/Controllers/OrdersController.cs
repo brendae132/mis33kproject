@@ -24,6 +24,7 @@ namespace FinalProject_Team12.Controllers
         {
             //Find the orders for this customer
             //Managers can see all of the orders, so they get them all 
+            //TODO: ASK TEACHER ABOUT THIS. THIS IS WHERE WE CHEATED 
             if (User.IsInRole("Manager") || User.IsInRole("Customer"))
             {
                 return View(db.Orders.ToList());
@@ -42,6 +43,7 @@ namespace FinalProject_Team12.Controllers
 
         }
 
+        //TODO: WHERE WE INCLUDE PAST, CURRENT, AND FUTURE SHOWINGS
         // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {
@@ -83,7 +85,7 @@ namespace FinalProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OrderID,OrderNumber,OrderDate,Notes")] Order order)
+        public ActionResult Create([Bind(Include = "OrderID,OrderNumber,OrderDate")] Order order)
         {
             //find the next order number
             order.OrderNumber = Utilities.GenerateNextOrderNumber.GetNextOrderNumber();
@@ -139,10 +141,10 @@ namespace FinalProject_Team12.Controllers
             od.Order = ord;
 
             //set the value of the product price
-            //od.TicketPrice = product.Price;
+            od.TicketPrice = screening.Price;
 
             ////set the value of the extended price
-            //od.ExtendedPrice = od.ProductPrice * od.Quantity;
+            od.ExtendedPrice = od.TicketPrice * od.SeatsReserved;
 
             if (ModelState.IsValid)//model meets all requirements
             {
@@ -175,9 +177,10 @@ namespace FinalProject_Team12.Controllers
         // POST: Orders/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //TODO: CHECK WHAT REQUIREMENTS ARE NEEDED
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OrderID,OrderNumber,OrderDate,Notes")] Order order)
+        public ActionResult Edit([Bind(Include = "OrderID,OrderNumber,OrderDate")] Order order)
         {
             if (ModelState.IsValid)
             {

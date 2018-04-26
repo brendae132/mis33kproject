@@ -51,8 +51,8 @@ namespace FinalProject_Team12.Controllers
                     //update number of products
                     od.SeatsReserved = ticket.SeatsReserved;
 
-                    ////update product price for related product
-                    od.TicketPrice = od.TicketPrice;
+                    ////TODO: update product price for related product
+                    od.TicketPrice = od.Screening.Price;
 
                     ////update extended price
                     od.ExtendedPrice = od.TicketPrice * od.SeatsReserved;

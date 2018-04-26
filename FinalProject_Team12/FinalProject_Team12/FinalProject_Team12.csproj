@@ -255,6 +255,7 @@
     <Compile Include="Migrations\MovieData.cs" />
     <Compile Include="Migrations\SeedIdentity.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Actor.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityRoles.cs" />

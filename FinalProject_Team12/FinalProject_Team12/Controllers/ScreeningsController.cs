@@ -40,7 +40,7 @@ namespace FinalProject_Team12.Controllers
         public ActionResult Create()
         {
             //NOTE: should this be scheduled movies? 
-            ViewBag.AllMovie = GetAllMovies();
+            ViewBag.AllMovies = GetAllMovies();
             return View();
         }
 
@@ -50,21 +50,22 @@ namespace FinalProject_Team12.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //Note: changed the bind to include 
-        public ActionResult Create([Bind(Include = "ScreenID,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int[] SelectedMovies)
+        public ActionResult Create([Bind(Include = "ScreeningID,Price,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int SelectedMovie)
         {
             //ask for the next sku number
-            screening.SKU = Utilities.GenerateSKU.GetNextSKU();
+            //TODO: HOW DOES THIS APPLY
+            //screening.SKU = Utilities.GenerateSKU.GetNextSKU();
 
             //add movies
 
-            foreach (int i in SelectedMovies)
+            foreach (int i in SelectedMovie)
 
             {
                 //find the vendor
 
-                Movie movie = db.Movies.Find(i);
+                Movie mov = db.Movies.Find(i);
 
-                screening.Movie.Add(movie);
+                screening.Movie.Add(mov);
 
             }
 
@@ -102,30 +103,35 @@ namespace FinalProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,SKU,ProductName,ProductPrice,Description")] Screening screening, int[] SelectedVendors)
+        public ActionResult Edit([Bind(Include = "ScreeningID,Price,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int SelectedMovie)
         {
             if (ModelState.IsValid)
             {
+                //Find the screening to edit
                 Screening screeningToChange = db.Screenings.Find(screening.ScreeningID);
 
+                //Remove existing movies
                 screeningToChange.Movie.Clear();
 
-                foreach (int i in SelectedVendors)
+                //add new movie
+                foreach (int i in SelectedMovie)
                 {
-                    Movie movi = db.Movies.Find(i);
-                    screeningToChange.Movie.Add(movi);
+                    Movie mov = db.Movies.Find(i);
+                    screeningToChange.Movie.Add(mov);
                 }
 
-                screeningToChange.TicketPrice = screening.TicketPrice;
-                screeningToChange.ProductName = screening.ProductName;
-                screeningToChange.Description = screening.Description;
+                screeningToChange.Price = screening.Price;
+                screeningToChange.StartTime = screening.StartTime;
+                screeningToChange.EndTime = screening.EndTime;
+                screeningToChange.TheaterNum = screening.TheaterNum;
+                screeningToChange.ScreeningDate = screening.ScreeningDate;
 
                 db.Entry(screeningToChange).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AllVendors = GetAllVendors(screening);
+            ViewBag.AllMovies = GetAllMovies(screening);
             return View(screening);
         }
 
@@ -155,38 +161,38 @@ namespace FinalProject_Team12.Controllers
             return RedirectToAction("Index");
         }
 
-        public MultiSelectList GetAllVendors()
+        public SelectList GetAllMovies()
 
         {
-            List<Vendor> allVends = db.Vendor.OrderBy(d => d.VendorName).ToList();
-            MultiSelectList selVends = new MultiSelectList(allVends, "VendorID", "VendorName");
-            return selVends;
+            List<Movie> allMovies = db.Movies.OrderBy(d => d.Title).ToList();
+            SelectList selMov = new SelectList(allMovies, "MovieID", "Title");
+            return selMov;
         }
 
-        public MultiSelectList GetAllVendors(Screening screening)
+        public SelectList GetAllMovies(Screening screening)
 
         {
 
-            List<Vendor> allVends = db.Vendor.OrderBy(d => d.VendorName).ToList();
+            List<Movie> allMovies = db.Movies.OrderBy(d => d.Title).ToList();
 
             //convert list of selected departments to ints
 
-            List<Int32> SelectedVendors = new List<Int32>();
+            List<Int32> SelectedMovie = new List<Int32> ();
 
             //loop through the course's departments and add the department id
 
-            foreach (Vendor vend in screening.Vendors)
+            foreach (Movie mov in screening.Movie)
             {
-                SelectedVendors.Add(vend.VendorID);
+                SelectedMovie.Add(mov.MovieID);
             }
 
             //create the multiselect list
 
-            MultiSelectList selVends = new MultiSelectList(allVends, "VendorID", "VendorName", SelectedVendors);
+            SelectList selMov = new SelectList(allMovies, "MovieID", "Title", SelectedMovie);
 
             //return the multiselect list
 
-            return selVends;
+            return selMov;
         }
 
         protected override void Dispose(bool disposing)

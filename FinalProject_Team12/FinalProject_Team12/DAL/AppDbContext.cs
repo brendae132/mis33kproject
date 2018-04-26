@@ -22,6 +22,7 @@ namespace FinalProject_Team12.DAL
         public DbSet<MovieReview> MovieReviews { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Actor> Actors { get; set; }
         //TODO: Ask if need movie reviews dbset
 
         public DbSet<AppRole> AppRoles { get; set; }

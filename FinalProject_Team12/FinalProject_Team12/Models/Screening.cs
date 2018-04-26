@@ -13,6 +13,12 @@ namespace FinalProject_Team12.Models
 
         public Int32 ScreeningID { get; set; }
 
+        //get price
+        [Required(ErrorMessage = "Price is required")]
+        [Display(Name = "Price")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public Decimal Price { get; set; }
+
         //is this related to movie or theatre?
         [Required(ErrorMessage = "Start time is required.")]
         [DataType(DataType.Time, ErrorMessage = "Enter valid start time.")]
@@ -36,6 +42,15 @@ namespace FinalProject_Team12.Models
         [DisplayFormat(DataFormatString = "{0:ddd, MMM d, yyyy}", ApplyFormatInEditMode = true)]
         public DateTime ScreeningDate { get; set; }
 
+        public Screening()
+        {
+         
+            if (Tickets == null)
+            {
+                Tickets = new List<Ticket>();
+            }
+
+        }
 
         //navigational properties
         public virtual Movie Movie { get; set; }

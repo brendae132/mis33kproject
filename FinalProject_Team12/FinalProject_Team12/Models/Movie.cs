@@ -44,6 +44,11 @@ namespace FinalProject_Team12.Models
             [Display(Name = "Overview")]
             public String Overview { get; set; }
 
+            ////for generating movie #
+            //[Display(Name = "Movie Number")]
+            //public Int32 MovieNumber { get; set; }
+
+
 
             //for reports
             [Required(ErrorMessage = "Revenue is required.")]

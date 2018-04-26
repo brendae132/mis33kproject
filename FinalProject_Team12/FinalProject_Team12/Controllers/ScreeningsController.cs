@@ -58,16 +58,8 @@ namespace FinalProject_Team12.Controllers
 
             //add movies
 
-            foreach (int i in SelectedMovie)
-
-            {
-                //find the vendor
-
-                Movie mov = db.Movies.Find(i);
-
-                screening.Movie.Add(mov);
-
-            }
+            Movie mov = db.Movies.Find(SelectedMovie);
+            screening.Movie = mov;
 
             if (ModelState.IsValid)
             {
@@ -111,14 +103,10 @@ namespace FinalProject_Team12.Controllers
                 Screening screeningToChange = db.Screenings.Find(screening.ScreeningID);
 
                 //Remove existing movies
-                screeningToChange.Movie.Clear();
+                //screeningToChange.Movie.Clear();
 
-                //add new movie
-                foreach (int i in SelectedMovie)
-                {
-                    Movie mov = db.Movies.Find(i);
-                    screeningToChange.Movie.Add(mov);
-                }
+                Movie mov = db.Movies.Find(SelectedMovie);
+                screeningToChange.Movie = mov;
 
                 screeningToChange.Price = screening.Price;
                 screeningToChange.StartTime = screening.StartTime;
@@ -181,10 +169,10 @@ namespace FinalProject_Team12.Controllers
 
             //loop through the course's departments and add the department id
 
-            foreach (Movie mov in screening.Movie)
-            {
-                SelectedMovie.Add(mov.MovieID);
-            }
+            //foreach (Movie mov in screening.Movie)
+            //{
+               // SelectedMovie.Add(mov.MovieID);
+            //}
 
             //create the multiselect list
 

@@ -16,7 +16,11 @@ namespace FinalProject_Team12.Models
             [Display(Name = "Title")]
             public String Title { get; set; }
 
-          
+            [Required(ErrorMessage = "Actors is required.")]
+            [Display(Name = "Actors")]
+            public String Actors { get; set; }
+
+
             [Display(Name = "Tagline")]
             public String Tagline { get; set; }
 
@@ -54,7 +58,7 @@ namespace FinalProject_Team12.Models
             public virtual List<Genre> Genres { get; set; }
             public virtual List<Screening> Screenings { get; set; }
             public virtual List<MovieReview> MovieReviews { get; set; }
-            public virtual List<Actor> Actors { get; set; }
+           // public virtual List<Actor> Actors { get; set; }
 
             public Movie()
             {

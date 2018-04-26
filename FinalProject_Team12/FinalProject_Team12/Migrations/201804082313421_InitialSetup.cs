@@ -7,14 +7,14 @@ namespace FinalProject_Team12.Migrations
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Genres",
-                c => new
-                    {
-                        GenreID = c.Int(nullable: false, identity: true),
-                        GenreType = c.String(nullable: false),
-                    })
-                .PrimaryKey(t => t.GenreID);
+            //CreateTable(
+              //  "dbo.Genres",
+                //c => new
+                  //  {
+                    //    GenreID = c.Int(nullable: false, identity: true),
+                      //  GenreType = c.String(nullable: false),
+                    //})
+                //.PrimaryKey(t => t.GenreID);
             
             CreateTable(
                 "dbo.Movies",

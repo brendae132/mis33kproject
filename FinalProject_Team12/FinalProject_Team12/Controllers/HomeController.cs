@@ -30,7 +30,7 @@ namespace FinalProject_Team12.Controllers
             if (SearchString != null)
             {
                 //Add in 'where' clauses to limit the data
-                query = query.Where(r => r.Title.Contains(SearchString) || r.Actors.Contains(SearchString));
+                //query = query.Where(r => r.Title.Contains(SearchString) || r.Actors.Contains(SearchString));
                 //TODO: Actor names as well?
                 //Will search names in BOTH Repository Names and User Names
             }
@@ -156,11 +156,11 @@ namespace FinalProject_Team12.Controllers
                 {
                     ViewBag.SelectedStarOption = "The records greater than the selected rank should be shown.";
 
-                    query = query.Where(r => r.Rating >= decStarOptions);
+                    //query = query.Where(r => r.Rating >= decStarOptions);
                 }
                 else
                 {
-                    query = query.Where(r => r.Rating <= decStarOptions);
+                    //query = query.Where(r => r.Rating <= decStarOptions);
 
                     ViewBag.SelectedStarOption = "The records lesser than the selected rank should be shown.";
                 }
@@ -194,7 +194,7 @@ namespace FinalProject_Team12.Controllers
             ViewBag.SelectedMovies = SelectedMovies.ToList().Count();
 
             //Display repositories in descending order
-            SelectedMovies.OrderByDescending(r => r.Rating);
+            //SelectedMovies.OrderByDescending(r => r.Rating);
 
             //Send the list to View
             return View("Index", SelectedMovies);
@@ -216,16 +216,16 @@ namespace FinalProject_Team12.Controllers
             return AllGenres;
         }
 
-        public SelectList GetAllActors()
-        {
-            List<Actor> Actors = db.Actors.ToList();
+        //public SelectList GetAllActors()
+        //{
+          //  List<Actor> Actors = db.Actors.ToList();
 
             //Add a record for all languages
-            Actor SelectNone = new Models.Actor() { ActorID = 0, ActorName = "All Actors" };
-            Actor.Add(SelectNone);
+            //Actor SelectNone = new Models.Actor() { ActorID = 0, ActorName = "All Actors" };
+            //Actor.Add(SelectNone);
 
-            foreach (Movie m in db.Movies.ToList())
-            {
+            //foreach (Movie m in db.Movies.ToList())
+           // {
                 //foreach (String a in m.Actors)
                 //{
                     //if (!ActorsList.Contains(a))
@@ -234,9 +234,9 @@ namespace FinalProject_Team12.Controllers
                     //}
                 //}
             }
-            SelectList AllActors = new SelectList(Actors.OrderBy(m => m.ActorID), "ActorID");
+            //SelectList AllActors = new SelectList(Actors.OrderBy(m => m.ActorID), "ActorID");
 
-            return AllActors;
-        }
-    }
+            //return AllActors;
+        
+    
 }

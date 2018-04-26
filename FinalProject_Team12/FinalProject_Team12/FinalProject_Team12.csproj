@@ -267,7 +267,7 @@
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\GenerateNextOrderNumber.cs" />
-    <Compile Include="Utilities\GenerateSKU.cs" />
+    <Compile Include="Utilities\GenerateMovieID.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

@@ -10,7 +10,7 @@ using System.Net;
 namespace FinalProject_Team12.Controllers
 {
     //Enum for rating number
-    public enum Rating { GreaterThan, LessThan}
+    public enum StarRating { GreaterThan, LessThan}
 
     public class HomeController : Controller
     {
@@ -68,7 +68,7 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
-        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32 SelectedGenre, DateTime ReleaseYear, MPAARating SelectedMPAARating, string NumberofStars, Rating Rating, DateTime? datSelectedDate)
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32 SelectedGenre, DateTime ReleaseYear, MPAARating SelectedMPAARating, string NumberofStars, StarRating SelectedStar, DateTime? SelectedDate)
         //??? "string NumberOfStars"
 
         {
@@ -147,10 +147,12 @@ namespace FinalProject_Team12.Controllers
         //Then, use that variable of overall rating here: 
 
 
-        Decimal Rating;
-                Rating = Convert.ToDecimal(NumberofStars);
+                
+                //Rating = Convert.ToDecimal(NumberofStars);
+                Decimal decStarOptions;
+                decStarOptions = Convert.ToDecimal(NumberofStars);
 
-                if (SelectedStar == Rating.GreaterThan)
+                if (SelectedStar == StarRating.GreaterThan)
                 {
                     ViewBag.SelectedStarOption = "The records greater than the selected rank should be shown.";
 
@@ -172,13 +174,13 @@ namespace FinalProject_Team12.Controllers
 
             
 
-            if (datSelectedDate != null)
+            if (SelectedDate != null)
             {
-                DateTime datSelected = datSelectedDate ?? new DateTime(1900, 1, 1);
-                ViewBag.SelectedDate = "The selected date is " + datSelected.ToLongDateString();
+                DateTime dateSelected = SelectedDate ?? new DateTime(1900, 1, 1);
+                ViewBag.SelectedDate = "The selected date is " + dateSelected.ToLongDateString();
                 //TODO: Update this query when we have completed our Screenings class/controller.
                 //This is supposed to reflect the available showings for a selected day
-                query = query.Where(r => r.LastUpdate >= datSelectedDate);
+                query = query.Where(r => r.Screenings.Equals (SelectedDate));
             }
             else //They didn't pick a date
             {

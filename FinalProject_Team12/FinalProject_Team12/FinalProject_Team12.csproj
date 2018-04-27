@@ -69,10 +69,10 @@
       <HintPath>..\packages\Carbon.Versioning.1.5.0\lib\netstandard2.0\Carbon.Versioning.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="GitHub, Version=1.11.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GitHub.1.11.4\lib\netstandard2.0\GitHub.dll</HintPath>
@@ -224,7 +224,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -240,13 +242,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804082313421_InitialSetup.cs" />
-    <Compile Include="Migrations\201804082313421_InitialSetup.Designer.cs">
-      <DependentUpon>201804082313421_InitialSetup.cs</DependentUpon>
+    <Compile Include="Migrations\201804271632261_InitialSetup.cs" />
+    <Compile Include="Migrations\201804271632261_InitialSetup.Designer.cs">
+      <DependentUpon>201804271632261_InitialSetup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804092305057_updatethemodels.cs" />
-    <Compile Include="Migrations\201804092305057_updatethemodels.Designer.cs">
-      <DependentUpon>201804092305057_updatethemodels.cs</DependentUpon>
+    <Compile Include="Migrations\201804271754176_MovieChanges.cs" />
+    <Compile Include="Migrations\201804271754176_MovieChanges.Designer.cs">
+      <DependentUpon>201804271754176_MovieChanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\CustomerData.cs" />
@@ -312,15 +314,15 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804082313421_InitialSetup.resx">
-      <DependentUpon>201804082313421_InitialSetup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804092305057_updatethemodels.resx">
-      <DependentUpon>201804092305057_updatethemodels.cs</DependentUpon>
-    </EmbeddedResource>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <EmbeddedResource Include="Migrations\201804271632261_InitialSetup.resx">
+      <DependentUpon>201804271632261_InitialSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804271754176_MovieChanges.resx">
+      <DependentUpon>201804271754176_MovieChanges.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

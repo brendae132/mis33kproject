@@ -14,7 +14,6 @@ namespace FinalProject_Team12.Migrations
 		{
             AppUserManager UserManager = new AppUserManager(new UserStore<AppUser>(db));
             AppUser e1 = new AppUser();
-			e1.PasswordHash = "society";
 			e1.LastName = "Jacobs";
 			e1.FirstName = "Todd";
 			e1.MiddleInitial = "L";
@@ -25,14 +24,17 @@ namespace FinalProject_Team12.Migrations
 			e1.ZipCode = 78628;
 			e1.PhoneNumber = "9074653365";
 			e1.Email = "t.jacobs@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e1);
+			e1.UserName = "t.jacobs@longhorncinema.com";
+			var result1 = UserManager.Create(e1, "society");
 			db.SaveChanges();
 			e1 = db.Users.FirstOrDefault(e => e.Email == "t.jacobs@longhorncinema.com");
-			UserManager.AddToRole(e1.Id, "Employee");
+			if (UserManager.IsInRole(e1.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e1.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e2 = new AppUser();
-			e2.PasswordHash = "ricearoni";
 			e2.LastName = "Rice";
 			e2.FirstName = "Eryn";
 			e2.MiddleInitial = "M";
@@ -43,14 +45,17 @@ namespace FinalProject_Team12.Migrations
 			e2.ZipCode = 78746;
 			e2.PhoneNumber = "9073876657";
 			e2.Email = "e.rice@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e2);
+			e2.UserName = "e.rice@longhorncinema.com";
+			var result2 = UserManager.Create(e2, "ricearoni");
 			db.SaveChanges();
 			e2 = db.Users.FirstOrDefault(e => e.Email == "e.rice@longhorncinema.com");
-			UserManager.AddToRole(e2.Id, "Manager");
+			if (UserManager.IsInRole(e2.Id, "Manager") == false)
+			{
+				UserManager.AddToRole(e2.Id, "Manager");
+			}
 			db.SaveChanges();
 
 			AppUser e3 = new AppUser();
-			e3.PasswordHash = "ingram45";
 			e3.LastName = "Ingram";
 			e3.FirstName = "Brad";
 			e3.MiddleInitial = "S";
@@ -61,14 +66,17 @@ namespace FinalProject_Team12.Migrations
 			e3.ZipCode = 78705;
 			e3.PhoneNumber = "9074678821";
 			e3.Email = "b.ingram@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e3);
+			e3.UserName = "b.ingram@longhorncinema.com";
+			var result3 = UserManager.Create(e3, "ingram45");
 			db.SaveChanges();
 			e3 = db.Users.FirstOrDefault(e => e.Email == "b.ingram@longhorncinema.com");
-			UserManager.AddToRole(e3.Id, "Employee");
+			if (UserManager.IsInRole(e3.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e3.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e4 = new AppUser();
-			e4.PasswordHash = "nostalgic";
 			e4.LastName = "Taylor";
 			e4.FirstName = "Allison";
 			e4.MiddleInitial = "R";
@@ -79,14 +87,17 @@ namespace FinalProject_Team12.Migrations
 			e4.ZipCode = 78727;
 			e4.PhoneNumber = "9074748452";
 			e4.Email = "a.taylor@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e4);
+			e4.UserName = "a.taylor@longhorncinema.com";
+			var result4 = UserManager.Create(e4, "nostalgic");
 			db.SaveChanges();
 			e4 = db.Users.FirstOrDefault(e => e.Email == "a.taylor@longhorncinema.com");
-			UserManager.AddToRole(e4.Id, "Employee");
+			if (UserManager.IsInRole(e4.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e4.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e5 = new AppUser();
-			e5.PasswordHash = "fungus";
 			e5.LastName = "Martinez";
 			e5.FirstName = "Gregory";
 			e5.MiddleInitial = "R";
@@ -97,14 +108,17 @@ namespace FinalProject_Team12.Migrations
 			e5.ZipCode = 78712;
 			e5.PhoneNumber = "9078746718";
 			e5.Email = "g.martinez@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e5);
+			e5.UserName = "g.martinez@longhorncinema.com";
+			var result5 = UserManager.Create(e5, "fungus");
 			db.SaveChanges();
 			e5 = db.Users.FirstOrDefault(e => e.Email == "g.martinez@longhorncinema.com");
-			UserManager.AddToRole(e5.Id, "Employee");
+			if (UserManager.IsInRole(e5.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e5.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e6 = new AppUser();
-			e6.PasswordHash = "longhorns";
 			e6.LastName = "Sheffield";
 			e6.FirstName = "Martin";
 			e6.MiddleInitial = "J";
@@ -115,14 +129,17 @@ namespace FinalProject_Team12.Migrations
 			e6.ZipCode = 78666;
 			e6.PhoneNumber = "9075479167";
 			e6.Email = "m.sheffield@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e6);
+			e6.UserName = "m.sheffield@longhorncinema.com";
+			var result6 = UserManager.Create(e6, "longhorns");
 			db.SaveChanges();
 			e6 = db.Users.FirstOrDefault(e => e.Email == "m.sheffield@longhorncinema.com");
-			UserManager.AddToRole(e6.Id, "Employee");
+			if (UserManager.IsInRole(e6.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e6.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e7 = new AppUser();
-			e7.PasswordHash = "smitty";
 			e7.LastName = "MacLeod";
 			e7.FirstName = "Jennifer";
 			e7.MiddleInitial = "D";
@@ -133,14 +150,17 @@ namespace FinalProject_Team12.Migrations
 			e7.ZipCode = 78705;
 			e7.PhoneNumber = "9074748138";
 			e7.Email = "j.macleod@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e7);
+			e7.UserName = "j.macleod@longhorncinema.com";
+			var result7 = UserManager.Create(e7, "smitty");
 			db.SaveChanges();
 			e7 = db.Users.FirstOrDefault(e => e.Email == "j.macleod@longhorncinema.com");
-			UserManager.AddToRole(e7.Id, "Employee");
+			if (UserManager.IsInRole(e7.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e7.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e8 = new AppUser();
-			e8.PasswordHash = "tanman";
 			e8.LastName = "Tanner";
 			e8.FirstName = "Jeremy";
 			e8.MiddleInitial = "S";
@@ -151,14 +171,17 @@ namespace FinalProject_Team12.Migrations
 			e8.ZipCode = 78712;
 			e8.PhoneNumber = "9074590929";
 			e8.Email = "j.tanner@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e8);
+			e8.UserName = "j.tanner@longhorncinema.com";
+			var result8 = UserManager.Create(e8, "tanman");
 			db.SaveChanges();
 			e8 = db.Users.FirstOrDefault(e => e.Email == "j.tanner@longhorncinema.com");
-			UserManager.AddToRole(e8.Id, "Employee");
+			if (UserManager.IsInRole(e8.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e8.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e9 = new AppUser();
-			e9.PasswordHash = "countryrhodes";
 			e9.LastName = "Rhodes";
 			e9.FirstName = "Megan";
 			e9.MiddleInitial = "C";
@@ -169,14 +192,17 @@ namespace FinalProject_Team12.Migrations
 			e9.ZipCode = 78729;
 			e9.PhoneNumber = "9073744746";
 			e9.Email = "m.rhodes@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e9);
+			e9.UserName = "m.rhodes@longhorncinema.com";
+			var result9 = UserManager.Create(e9, "countryrhodes");
 			db.SaveChanges();
 			e9 = db.Users.FirstOrDefault(e => e.Email == "m.rhodes@longhorncinema.com");
-			UserManager.AddToRole(e9.Id, "Employee");
+			if (UserManager.IsInRole(e9.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e9.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e10 = new AppUser();
-			e10.PasswordHash = "stewboy";
 			e10.LastName = "Stuart";
 			e10.FirstName = "Eric";
 			e10.MiddleInitial = "F";
@@ -187,14 +213,17 @@ namespace FinalProject_Team12.Migrations
 			e10.ZipCode = 78758;
 			e10.PhoneNumber = "9078178335";
 			e10.Email = "e.stuart@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e10);
+			e10.UserName = "e.stuart@longhorncinema.com";
+			var result10 = UserManager.Create(e10, "stewboy");
 			db.SaveChanges();
 			e10 = db.Users.FirstOrDefault(e => e.Email == "e.stuart@longhorncinema.com");
-			UserManager.AddToRole(e10.Id, "Employee");
+			if (UserManager.IsInRole(e10.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e10.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e11 = new AppUser();
-			e11.PasswordHash = "squirrel";
 			e11.LastName = "Miller";
 			e11.FirstName = "Charles";
 			e11.MiddleInitial = "R";
@@ -205,14 +234,17 @@ namespace FinalProject_Team12.Migrations
 			e11.ZipCode = 78709;
 			e11.PhoneNumber = "9077458615";
 			e11.Email = "c.miller@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e11);
+			e11.UserName = "c.miller@longhorncinema.com";
+			var result11 = UserManager.Create(e11, "squirrel");
 			db.SaveChanges();
 			e11 = db.Users.FirstOrDefault(e => e.Email == "c.miller@longhorncinema.com");
-			UserManager.AddToRole(e11.Id, "Employee");
+			if (UserManager.IsInRole(e11.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e11.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e12 = new AppUser();
-			e12.PasswordHash = "swansong";
 			e12.LastName = "Taylor";
 			e12.FirstName = "Rachel";
 			e12.MiddleInitial = "O";
@@ -223,14 +255,17 @@ namespace FinalProject_Team12.Migrations
 			e12.ZipCode = 78746;
 			e12.PhoneNumber = "9074512631";
 			e12.Email = "r.taylor@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e12);
+			e12.UserName = "r.taylor@longhorncinema.com";
+			var result12 = UserManager.Create(e12, "swansong");
 			db.SaveChanges();
 			e12 = db.Users.FirstOrDefault(e => e.Email == "r.taylor@longhorncinema.com");
-			UserManager.AddToRole(e12.Id, "Manager");
+			if (UserManager.IsInRole(e12.Id, "Manager") == false)
+			{
+				UserManager.AddToRole(e12.Id, "Manager");
+			}
 			db.SaveChanges();
 
 			AppUser e13 = new AppUser();
-			e13.PasswordHash = "lottery";
 			e13.LastName = "Lawrence";
 			e13.FirstName = "Victoria";
 			e13.MiddleInitial = "Y";
@@ -241,14 +276,17 @@ namespace FinalProject_Team12.Migrations
 			e13.ZipCode = 78712;
 			e13.PhoneNumber = "9079457399";
 			e13.Email = "v.lawrence@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e13);
+			e13.UserName = "v.lawrence@longhorncinema.com";
+			var result13 = UserManager.Create(e13, "lottery");
 			db.SaveChanges();
 			e13 = db.Users.FirstOrDefault(e => e.Email == "v.lawrence@longhorncinema.com");
-			UserManager.AddToRole(e13.Id, "Employee");
+			if (UserManager.IsInRole(e13.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e13.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e14 = new AppUser();
-			e14.PasswordHash = "evanescent";
 			e14.LastName = "Rogers";
 			e14.FirstName = "Allen";
 			e14.MiddleInitial = "H";
@@ -259,14 +297,17 @@ namespace FinalProject_Team12.Migrations
 			e14.ZipCode = 78705;
 			e14.PhoneNumber = "9078752943";
 			e14.Email = "a.rogers@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e14);
+			e14.UserName = "a.rogers@longhorncinema.com";
+			var result14 = UserManager.Create(e14, "evanescent");
 			db.SaveChanges();
 			e14 = db.Users.FirstOrDefault(e => e.Email == "a.rogers@longhorncinema.com");
-			UserManager.AddToRole(e14.Id, "Manager");
+			if (UserManager.IsInRole(e14.Id, "Manager") == false)
+			{
+				UserManager.AddToRole(e14.Id, "Manager");
+			}
 			db.SaveChanges();
 
 			AppUser e15 = new AppUser();
-			e15.PasswordHash = "monty3";
 			e15.LastName = "Markham";
 			e15.FirstName = "Elizabeth";
 			e15.MiddleInitial = "K";
@@ -277,14 +318,17 @@ namespace FinalProject_Team12.Migrations
 			e15.ZipCode = 78785;
 			e15.PhoneNumber = "9074579845";
 			e15.Email = "e.markham@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e15);
+			e15.UserName = "e.markham@longhorncinema.com";
+			var result15 = UserManager.Create(e15, "monty3");
 			db.SaveChanges();
 			e15 = db.Users.FirstOrDefault(e => e.Email == "e.markham@longhorncinema.com");
-			UserManager.AddToRole(e15.Id, "Employee");
+			if (UserManager.IsInRole(e15.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e15.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e16 = new AppUser();
-			e16.PasswordHash = "hecktour";
 			e16.LastName = "Baker";
 			e16.FirstName = "Christopher";
 			e16.MiddleInitial = "E";
@@ -295,14 +339,17 @@ namespace FinalProject_Team12.Migrations
 			e16.ZipCode = 78613;
 			e16.PhoneNumber = "9075571146";
 			e16.Email = "c.baker@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e16);
+			e16.UserName = "c.baker@longhorncinema.com";
+			var result16 = UserManager.Create(e16, "hecktour");
 			db.SaveChanges();
 			e16 = db.Users.FirstOrDefault(e => e.Email == "c.baker@longhorncinema.com");
-			UserManager.AddToRole(e16.Id, "Employee");
+			if (UserManager.IsInRole(e16.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e16.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e17 = new AppUser();
-			e17.PasswordHash = "rankmary";
 			e17.LastName = "Saunders";
 			e17.FirstName = "Sarah";
 			e17.MiddleInitial = "M";
@@ -313,14 +360,17 @@ namespace FinalProject_Team12.Migrations
 			e17.ZipCode = 78733;
 			e17.PhoneNumber = "9073497810";
 			e17.Email = "s.saunders@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e17);
+			e17.UserName = "s.saunders@longhorncinema.com";
+			var result17 = UserManager.Create(e17, "rankmary");
 			db.SaveChanges();
 			e17 = db.Users.FirstOrDefault(e => e.Email == "s.saunders@longhorncinema.com");
-			UserManager.AddToRole(e17.Id, "Employee");
+			if (UserManager.IsInRole(e17.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e17.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e18 = new AppUser();
-			e18.PasswordHash = "walkamile";
 			e18.LastName = "Sewell";
 			e18.FirstName = "William";
 			e18.MiddleInitial = "G";
@@ -331,14 +381,17 @@ namespace FinalProject_Team12.Migrations
 			e18.ZipCode = 78755;
 			e18.PhoneNumber = "9074510084";
 			e18.Email = "w.sewell@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e18);
+			e18.UserName = "w.sewell@longhorncinema.com";
+			var result18 = UserManager.Create(e18, "walkamile");
 			db.SaveChanges();
 			e18 = db.Users.FirstOrDefault(e => e.Email == "w.sewell@longhorncinema.com");
-			UserManager.AddToRole(e18.Id, "Manager");
+			if (UserManager.IsInRole(e18.Id, "Manager") == false)
+			{
+				UserManager.AddToRole(e18.Id, "Manager");
+			}
 			db.SaveChanges();
 
 			AppUser e19 = new AppUser();
-			e19.PasswordHash = "changalang";
 			e19.LastName = "Mason";
 			e19.FirstName = "Jack";
 			e19.MiddleInitial = "L";
@@ -349,14 +402,17 @@ namespace FinalProject_Team12.Migrations
 			e19.ZipCode = 78701;
 			e19.PhoneNumber = "9018833432";
 			e19.Email = "j.mason@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e19);
+			e19.UserName = "j.mason@longhorncinema.com";
+			var result19 = UserManager.Create(e19, "changalang");
 			db.SaveChanges();
 			e19 = db.Users.FirstOrDefault(e => e.Email == "j.mason@longhorncinema.com");
-			UserManager.AddToRole(e19.Id, "Employee");
+			if (UserManager.IsInRole(e19.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e19.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e20 = new AppUser();
-			e20.PasswordHash = "offbeat";
 			e20.LastName = "Jackson";
 			e20.FirstName = "Jack";
 			e20.MiddleInitial = "J";
@@ -367,14 +423,17 @@ namespace FinalProject_Team12.Migrations
 			e20.ZipCode = 78760;
 			e20.PhoneNumber = "9075554545";
 			e20.Email = "j.jackson@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e20);
+			e20.UserName = "j.jackson@longhorncinema.com";
+			var result20 = UserManager.Create(e20, "offbeat");
 			db.SaveChanges();
 			e20 = db.Users.FirstOrDefault(e => e.Email == "j.jackson@longhorncinema.com");
-			UserManager.AddToRole(e20.Id, "Employee");
+			if (UserManager.IsInRole(e20.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e20.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e21 = new AppUser();
-			e21.PasswordHash = "landus";
 			e21.LastName = "Nguyen";
 			e21.FirstName = "Mary";
 			e21.MiddleInitial = "J";
@@ -385,14 +444,17 @@ namespace FinalProject_Team12.Migrations
 			e21.ZipCode = 78734;
 			e21.PhoneNumber = "9075524141";
 			e21.Email = "m.nguyen@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e21);
+			e21.UserName = "m.nguyen@longhorncinema.com";
+			var result21 = UserManager.Create(e21, "landus");
 			db.SaveChanges();
 			e21 = db.Users.FirstOrDefault(e => e.Email == "m.nguyen@longhorncinema.com");
-			UserManager.AddToRole(e21.Id, "Employee");
+			if (UserManager.IsInRole(e21.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e21.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e22 = new AppUser();
-			e22.PasswordHash = "rhythm";
 			e22.LastName = "Barnes";
 			e22.FirstName = "Susan";
 			e22.MiddleInitial = "M";
@@ -403,14 +465,17 @@ namespace FinalProject_Team12.Migrations
 			e22.ZipCode = 78640;
 			e22.PhoneNumber = "9556662323";
 			e22.Email = "s.barnes@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e22);
+			e22.UserName = "s.barnes@longhorncinema.com";
+			var result22 = UserManager.Create(e22, "rhythm");
 			db.SaveChanges();
 			e22 = db.Users.FirstOrDefault(e => e.Email == "s.barnes@longhorncinema.com");
-			UserManager.AddToRole(e22.Id, "Employee");
+			if (UserManager.IsInRole(e22.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e22.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e23 = new AppUser();
-			e23.PasswordHash = "kindly";
 			e23.LastName = "Jones";
 			e23.FirstName = "Lester";
 			e23.MiddleInitial = "L";
@@ -421,14 +486,17 @@ namespace FinalProject_Team12.Migrations
 			e23.ZipCode = 78747;
 			e23.PhoneNumber = "9886662222";
 			e23.Email = "l.jones@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e23);
+			e23.UserName = "l.jones@longhorncinema.com";
+			var result23 = UserManager.Create(e23, "kindly");
 			db.SaveChanges();
 			e23 = db.Users.FirstOrDefault(e => e.Email == "l.jones@longhorncinema.com");
-			UserManager.AddToRole(e23.Id, "Employee");
+			if (UserManager.IsInRole(e23.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e23.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e24 = new AppUser();
-			e24.PasswordHash = "instrument";
 			e24.LastName = "Garcia";
 			e24.FirstName = "Hector";
 			e24.MiddleInitial = "W";
@@ -439,14 +507,17 @@ namespace FinalProject_Team12.Migrations
 			e24.ZipCode = 78712;
 			e24.PhoneNumber = "9221114444";
 			e24.Email = "h.garcia@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e24);
+			e24.UserName = "h.garcia@longhorncinema.com";
+			var result24 = UserManager.Create(e24, "instrument");
 			db.SaveChanges();
 			e24 = db.Users.FirstOrDefault(e => e.Email == "h.garcia@longhorncinema.com");
-			UserManager.AddToRole(e24.Id, "Employee");
+			if (UserManager.IsInRole(e24.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e24.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e25 = new AppUser();
-			e25.PasswordHash = "arched";
 			e25.LastName = "Silva";
 			e25.FirstName = "Cindy";
 			e25.MiddleInitial = "S";
@@ -457,14 +528,17 @@ namespace FinalProject_Team12.Migrations
 			e25.ZipCode = 78758;
 			e25.PhoneNumber = "9221113333";
 			e25.Email = "c.silva@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e25);
+			e25.UserName = "c.silva@longhorncinema.com";
+			var result25 = UserManager.Create(e25, "arched");
 			db.SaveChanges();
 			e25 = db.Users.FirstOrDefault(e => e.Email == "c.silva@longhorncinema.com");
-			UserManager.AddToRole(e25.Id, "Employee");
+			if (UserManager.IsInRole(e25.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e25.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e26 = new AppUser();
-			e26.PasswordHash = "median";
 			e26.LastName = "Lopez";
 			e26.FirstName = "Marshall";
 			e26.MiddleInitial = "T";
@@ -475,14 +549,17 @@ namespace FinalProject_Team12.Migrations
 			e26.ZipCode = 78729;
 			e26.PhoneNumber = "9234442222";
 			e26.Email = "m.lopez@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e26);
+			e26.UserName = "m.lopez@longhorncinema.com";
+			var result26 = UserManager.Create(e26, "median");
 			db.SaveChanges();
 			e26 = db.Users.FirstOrDefault(e => e.Email == "m.lopez@longhorncinema.com");
-			UserManager.AddToRole(e26.Id, "Employee");
+			if (UserManager.IsInRole(e26.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e26.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e27 = new AppUser();
-			e27.PasswordHash = "approval";
 			e27.LastName = "Larson";
 			e27.FirstName = "Bill";
 			e27.MiddleInitial = "B";
@@ -493,14 +570,17 @@ namespace FinalProject_Team12.Migrations
 			e27.ZipCode = 78665;
 			e27.PhoneNumber = "9795554444";
 			e27.Email = "b.larson@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e27);
+			e27.UserName = "b.larson@longhorncinema.com";
+			var result27 = UserManager.Create(e27, "approval");
 			db.SaveChanges();
 			e27 = db.Users.FirstOrDefault(e => e.Email == "b.larson@longhorncinema.com");
-			UserManager.AddToRole(e27.Id, "Employee");
+			if (UserManager.IsInRole(e27.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e27.Id, "Employee");
+			}
 			db.SaveChanges();
 
 			AppUser e28 = new AppUser();
-			e28.PasswordHash = "decorate";
 			e28.LastName = "Rankin";
 			e28.FirstName = "Suzie";
 			e28.MiddleInitial = "R";
@@ -511,10 +591,14 @@ namespace FinalProject_Team12.Migrations
 			e28.ZipCode = 78712;
 			e28.PhoneNumber = "9893336666";
 			e28.Email = "s.rankin@longhorncinema.com";
-			db.Users.AddOrUpdate(e => e.Email, e28);
+			e28.UserName = "s.rankin@longhorncinema.com";
+			var result28 = UserManager.Create(e28, "decorate");
 			db.SaveChanges();
 			e28 = db.Users.FirstOrDefault(e => e.Email == "s.rankin@longhorncinema.com");
-			UserManager.AddToRole(e28.Id, "Employee");
+			if (UserManager.IsInRole(e28.Id, "Employee") == false)
+			{
+				UserManager.AddToRole(e28.Id, "Employee");
+			}
 			db.SaveChanges();
 
 		}

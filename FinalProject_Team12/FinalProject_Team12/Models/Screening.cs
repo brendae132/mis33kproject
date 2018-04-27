@@ -26,7 +26,6 @@ namespace FinalProject_Team12.Models
         [DisplayFormat(DataFormatString = "{0:hh:mm}", ApplyFormatInEditMode = true)]
         public DateTime StartTime { get; set; }
 
-        //is this related to movie or theatre?
         [Required(ErrorMessage = "End time is required.")]
         [DataType(DataType.Time, ErrorMessage = "Enter valid end time.")]
         [Display(Name = "End Time")]

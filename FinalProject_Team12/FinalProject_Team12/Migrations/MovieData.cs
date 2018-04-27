@@ -11,6 +11,7 @@ namespace FinalProject_Team12.Migrations
 		public void SeedMovies(AppDbContext db)
 		{
 			Movie r1 = new Movie();
+			r1.MovieNumber = 3001;
 			r1.Title = "42nd Street";
 			r1.Overview = "A producer puts on what may be his last Broadway show, and at the last moment a chorus girl has to replace the star.";
 			r1.Tagline = "OK. Say, Jones and Barry are doin' a show! - That's great. Jones and Barry are doin' a show.";
@@ -18,13 +19,16 @@ namespace FinalProject_Team12.Migrations
 			r1.Actors = "Warner Baxter, Bebe Daniels, George Brent, Ruby Keeler, Guy Kibbee, Una Merkel";
 			r1.ReleaseDate = new DateTime(1933, 2, 2);
 			r1.RunningTime = 89;
-			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
-			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r1.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r1);
+			db.SaveChanges();
+			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
+			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r1.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r2 = new Movie();
+			r2.MovieNumber = 3002;
 			r2.Title = "It Happened One Night";
 			r2.Overview = "Ellie Andrews has just tied the knot with society aviator King Westley when she is whisked away to her father's yacht and out of King's clutches. Ellie jumps ship and eventually winds up on a bus headed back to her husband. Reluctantly she must accept the help of out-of- work reporter Peter Warne. Actually, Warne doesn't give her any choice: either she sticks with him until he gets her back to her husband, or he'll blow the whistle on Ellie to her father. Either way, Peter gets what he wants... a really juicy newspaper story!";
 			r2.Tagline = "TOGETHER... for the first time";
@@ -32,12 +36,15 @@ namespace FinalProject_Team12.Migrations
 			r2.Actors = "Clark Gable, Claudette Colbert, Walter Connolly, Roscoe Karns, Jameson Thomas, Alan Hale";
 			r2.ReleaseDate = new DateTime(1934, 2, 22);
 			r2.RunningTime = 105;
-			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r2.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r2);
+			db.SaveChanges();
+			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r2.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r3 = new Movie();
+			r3.MovieNumber = 3003;
 			r3.Title = "Snow White and the Seven Dwarfs";
 			r3.Overview = "A beautiful girl, Snow White, takes refuge in the forest in the house of seven dwarfs to hide from her stepmother, the wicked Queen. The Queen is jealous because she wants to be known as 'the fairest in the land,' and Snow White's beauty surpasses her own.";
 			r3.Tagline = "The Happiest, Dopiest, Grumpiest, Sneeziest movie of the year.";
@@ -45,13 +52,16 @@ namespace FinalProject_Team12.Migrations
 			r3.Actors = "Adriana Caselotti, Lucille La Verne, Harry Stockwell, Roy Atwell, Pinto Colvig, Otis Harlan";
 			r3.ReleaseDate = new DateTime(1937, 12, 20);
 			r3.RunningTime = 83;
-			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
-			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
-			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r3.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r3);
+			db.SaveChanges();
+			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r3.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r4 = new Movie();
+			r4.MovieNumber = 3004;
 			r4.Title = "The Wizard of Oz";
 			r4.Overview = "Young Dorothy finds herself in a magical world where she makes friends with a lion, a scarecrow and a tin man as they make their way along the yellow brick road to talk with the Wizard and ask for the things they miss most in their lives. The Wicked Witch of the West is the only thing that could stop them.";
 			r4.Tagline = "We're off to see the Wizard, the wonderful Wizard of Oz!";
@@ -59,13 +69,16 @@ namespace FinalProject_Team12.Migrations
 			r4.Actors = "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr, Jack Haley, Billie Burke";
 			r4.ReleaseDate = new DateTime(1939, 8, 15);
 			r4.RunningTime = 102;
-			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
+			r4.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r4);
+			db.SaveChanges();
+			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+            r4.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			db.SaveChanges();
 
 			Movie r5 = new Movie();
+			r5.MovieNumber = 3005;
 			r5.Title = "Mr. Smith Goes to Washington";
 			r5.Overview = "Naive and idealistic Jefferson Smith, leader of the Boy Rangers, is appointed on a lark by the spineless governor of his state. He is reunited with the state's senior senator--presidential hopeful and childhood hero, Senator Joseph Paine. In Washington, however, Smith discovers many of the shortcomings of the political process as his earnest goal of a national boys' camp leads to a conflict with the state political boss, Jim Taylor. Taylor first tries to corrupt Smith and then later attempts to destroy Smith through a scandal.";
 			r5.Tagline = "Romance, drama, laughter and heartbreak... created out of the very heart and soil of America!";
@@ -73,13 +86,16 @@ namespace FinalProject_Team12.Migrations
 			r5.Actors = "James Stewart, Jean Arthur, Claude Rains, Edward Arnold, Guy Kibbee, Thomas Mitchell";
 			r5.ReleaseDate = new DateTime(1939, 10, 19);
 			r5.RunningTime = 129;
-			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
+			r5.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r5);
+			db.SaveChanges();
+			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r5.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "War"));
 			db.SaveChanges();
 
 			Movie r6 = new Movie();
+			r6.MovieNumber = 3006;
 			r6.Title = "Gone with the Wind";
 			r6.Overview = "An American classic in which a manipulative woman and a roguish man carry on a turbulent love affair in the American south during the Civil War and Reconstruction.";
 			r6.Tagline = "The greatest romance of all time!";
@@ -87,12 +103,15 @@ namespace FinalProject_Team12.Migrations
 			r6.Actors = "Vivien Leigh, Clark Gable, Olivia de Havilland, Thomas Mitchell, Leslie Howard, Barbara O'Neil";
 			r6.ReleaseDate = new DateTime(1939, 12, 15);
 			r6.RunningTime = 238;
-			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r6.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r6);
+			db.SaveChanges();
+			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r6.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r7 = new Movie();
+			r7.MovieNumber = 3007;
 			r7.Title = "Casablanca";
 			r7.Overview = "In Casablanca, Morocco in December 1941, a cynical American expatriate meets a former lover, with unforeseen complications.";
 			r7.Tagline = "They had a date with fate in Casablanca!";
@@ -100,12 +119,15 @@ namespace FinalProject_Team12.Migrations
 			r7.Actors = "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains, Conrad Veidt, Sydney Greenstreet";
 			r7.ReleaseDate = new DateTime(1942, 11, 26);
 			r7.RunningTime = 102;
-			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r7.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r7);
+			db.SaveChanges();
+			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r7.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r8 = new Movie();
+			r8.MovieNumber = 3008;
 			r8.Title = "It's a Wonderful Life";
 			r8.Overview = "George Bailey has spent his entire life giving of himself to the people of Bedford Falls. He has always longed to travel but never had the opportunity in order to prevent rich skinflint Mr. Potter from taking over the entire town. All that prevents him from doing so is George's modest building and loan company, which was founded by his generous father. But on Christmas Eve, George's Uncle Billy loses the business's $8,000 while intending to deposit it in the bank. Potter finds the misplaced money, hides it from Billy, and George's troubles begin.";
 			r8.Tagline = "It's a wonderful laugh! It's a wonderful love!";
@@ -113,13 +135,16 @@ namespace FinalProject_Team12.Migrations
 			r8.Actors = "James Stewart, Donna Reed, Lionel Barrymore, Thomas Mitchell, Henry Travers, Beulah Bondi";
 			r8.ReleaseDate = new DateTime(1946, 12, 20);
 			r8.RunningTime = 130;
-			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
+			r8.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r8);
+			db.SaveChanges();
+			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r8.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			db.SaveChanges();
 
 			Movie r9 = new Movie();
+			r9.MovieNumber = 3009;
 			r9.Title = "Annie Get Your Gun";
 			r9.Overview = "This film adaptation of Irving Berlin's classic musical stars Betty Hutton as gunslinger Annie Oakley, who romances fellow sharpshooter Frank Butler (Howard Keel) as they travel with Buffalo Bill's Wild West Show. Previously off target when it comes to love, Annie proves you can get a man with a gun in this battle-of-the-sexes extravaganza, which features timeless numbers like 'Anything You Can Do' and 'There's No Business Like Show Business.'";
 			r9.Tagline = "Biggest musical under the sun!";
@@ -127,14 +152,17 @@ namespace FinalProject_Team12.Migrations
 			r9.Actors = "Betty Hutton, Howard Keel, Louis Calhern, J. Carrol Naish, Edward Arnold, Keenan Wynn";
 			r9.ReleaseDate = new DateTime(1950, 5, 17);
 			r9.RunningTime = 107;
-			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Western"));
+			r9.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r9);
+			db.SaveChanges();
+			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
+			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r9.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
 			db.SaveChanges();
 
 			Movie r10 = new Movie();
+			r10.MovieNumber = 3010;
 			r10.Title = "A Streetcar Named Desire";
 			r10.Overview = "Disturbed Blanche DuBois moves in with her sister in New Orleans and is tormented by her brutish brother-in-law while her reality crumbles around her.";
 			r10.Tagline = "...Blanche, who wanted so much to stay a lady...";
@@ -142,11 +170,14 @@ namespace FinalProject_Team12.Migrations
 			r10.Actors = "Vivien Leigh, Marlon Brando, Kim Hunter, Karl Malden, Rudy Bond, Nick Dennis";
 			r10.ReleaseDate = new DateTime(1951, 9, 18);
 			r10.RunningTime = 125;
-			r10.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r10.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r10);
+			db.SaveChanges();
+			r10.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r11 = new Movie();
+			r11.MovieNumber = 3011;
 			r11.Title = "Singin' in the Rain";
 			r11.Overview = "In 1927 Hollywood, Don Lockwood and Lina Lamont are a famous on-screen romantic pair in silent movies, but Lina mistakes the on-screen romance for real love. When their latest film is transformed into a musical, Don has the perfect voice for the songs, but strident voice faces the studio to dub her voice. Aspiring actress, Kathy Selden is brought in and, while she is working on the movie, Don falls in love with her.";
 			r11.Tagline = "What a Glorious Feeling!";
@@ -154,13 +185,16 @@ namespace FinalProject_Team12.Migrations
 			r11.Actors = "Gene Kelly, Donald O'Connor, Debbie Reynolds, Jean Hagen, Millard Mitchell, Cyd Charisse";
 			r11.ReleaseDate = new DateTime(1952, 4, 10);
 			r11.RunningTime = 103;
-			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r11.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r11);
+			db.SaveChanges();
+			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
+			r11.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r12 = new Movie();
+			r12.MovieNumber = 3012;
 			r12.Title = "Cat on a Hot Tin Roof";
 			r12.Overview = "Brick, an alcoholic ex-football player, drinks his days away and resists the affections of his wife, Maggie. His reunion with his father, Big Daddy, who is dying of cancer, jogs a host of memories and revelations for both father and son.";
 			r12.Tagline = "Just one pillow on her bed ... and just one desire in her heart!";
@@ -168,12 +202,15 @@ namespace FinalProject_Team12.Migrations
 			r12.Actors = "Elizabeth Taylor, Paul Newman, Burl Ives, Judith Anderson, Jack Carson, Madeleine Sherwood";
 			r12.ReleaseDate = new DateTime(1958, 2, 17);
 			r12.RunningTime = 108;
-			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r12.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r12);
+			db.SaveChanges();
+			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r12.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r13 = new Movie();
+			r13.MovieNumber = 3013;
 			r13.Title = "Some Like It Hot";
 			r13.Overview = "Two musicians witness a mob hit and struggle to find a way out of the city before they are found by the gangsters. Their only opportunity is to join an all-girl band as they leave on a tour. To make their getaway they must first disguise themselves as women, then keep their identities secret and deal with the problems this brings - such as an attractive bandmate and a very determined suitor.";
 			r13.Tagline = "The movie too HOT for words!";
@@ -181,12 +218,15 @@ namespace FinalProject_Team12.Migrations
 			r13.Actors = "Marilyn Monroe, Tony Curtis, Jack Lemmon, George Raft, Pat O\u2019Brien, Joe E. Brown";
 			r13.ReleaseDate = new DateTime(1959, 3, 18);
 			r13.RunningTime = 122;
-			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r13.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r13);
+			db.SaveChanges();
+			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r13.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r14 = new Movie();
+			r14.MovieNumber = 3014;
 			r14.Title = "Psycho";
 			r14.Overview = "When larcenous real estate clerk Marion Crane goes on the lam with a wad of cash and hopes of starting a new life, she ends up at the notorious Bates Motel, where manager Norman Bates cares for his housebound mother. The place seems quirky, but fine… until Marion decides to take a shower.";
 			r14.Tagline = "The master of suspense moves his cameras into the icy blackness of the unexplored!";
@@ -194,13 +234,16 @@ namespace FinalProject_Team12.Migrations
 			r14.Actors = "Anthony Perkins, Vera Miles, John Gavin, Janet Leigh, Martin Balsam, John McIntire";
 			r14.ReleaseDate = new DateTime(1960, 6, 16);
 			r14.RunningTime = 109;
-			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Horror"));
-			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r14.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r14);
+			db.SaveChanges();
+			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
+			r14.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r15 = new Movie();
+			r15.MovieNumber = 3015;
 			r15.Title = "West Side Story";
 			r15.Overview = "In the slums of the upper West Side of Manhattan, New York, a gang of Polish-American teenagers called the Jets compete with a rival gang of recently immigrated Puerto Ricans, the Sharks, to 'own' the neighborhood streets. Tensions are high between the gangs but two kids, one from each rival gang, fall in love leading to tragedy.";
 			r15.Tagline = "The screen achieves one of the great entertainments in the history of motion pictures";
@@ -208,13 +251,16 @@ namespace FinalProject_Team12.Migrations
 			r15.Actors = "Natalie Wood, Richard Beymer, Russ Tamblyn, Rita Moreno, George Chakiris, Simon Oakland";
 			r15.ReleaseDate = new DateTime(1961, 10, 18);
 			r15.RunningTime = 152;
-			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
-			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
+			r15.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r15);
+			db.SaveChanges();
+			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
+			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r15.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
 			db.SaveChanges();
 
 			Movie r16 = new Movie();
+			r16.MovieNumber = 3016;
 			r16.Title = "The Man Who Shot Liberty Valance";
 			r16.Overview = "A senator, who became famous for killing a notorious outlaw, returns for the funeral of an old friend and tells the truth about his deed.";
 			r16.Tagline = "Together For The First Time - James Stewart - John Wayne - in the masterpiece of four-time Academy Award winner John Ford";
@@ -222,11 +268,14 @@ namespace FinalProject_Team12.Migrations
 			r16.Actors = "John Wayne, James Stewart, Vera Miles, Lee Marvin, Edmond O'Brien, Ken Murray";
 			r16.ReleaseDate = new DateTime(1962, 4, 22);
 			r16.RunningTime = 123;
-			r16.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
+			r16.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r16);
+			db.SaveChanges();
+			r16.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
 			db.SaveChanges();
 
 			Movie r17 = new Movie();
+			r17.MovieNumber = 3017;
 			r17.Title = "Dr. No";
 			r17.Overview = "In the film that launched the James Bond saga, Agent 007 battles mysterious Dr. No, a scientific genius bent on destroying the U.S. space program. As the countdown to disaster begins, Bond must go to Jamaica, where he encounters beautiful Honey Ryder, to confront a megalomaniacal villain in his massive island headquarters.";
 			r17.Tagline = "NOW meet the most extraordinary gentleman spy in all fiction!";
@@ -234,13 +283,16 @@ namespace FinalProject_Team12.Migrations
 			r17.Actors = "Sean Connery, Ursula Andress, Joseph Wiseman, Jack Lord, Bernard Lee, Anthony Dawson";
 			r17.ReleaseDate = new DateTime(1962, 10, 4);
 			r17.RunningTime = 110;
-			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r17.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r17);
+			db.SaveChanges();
+			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r17.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r18 = new Movie();
+			r18.MovieNumber = 3018;
 			r18.Title = "Lawrence of Arabia";
 			r18.Overview = "An epic about British officer T.E. Lawrence's mission to aid the Arab tribes in their revolt against the Ottoman Empire during the First World War. Lawrence becomes a flamboyant, messianic figure in the cause of Arab unity but his psychological instability threatens to undermine his achievements.";
 			r18.Tagline = "A Mighty Motion Picture Of Action And Adventure!";
@@ -248,14 +300,17 @@ namespace FinalProject_Team12.Migrations
 			r18.Actors = "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins, Omar Sharif, Claude Rains";
 			r18.ReleaseDate = new DateTime(1962, 12, 10);
 			r18.RunningTime = 216;
-			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
-			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
+			r18.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r18);
+			db.SaveChanges();
+			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "History"));
+			r18.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "War"));
 			db.SaveChanges();
 
 			Movie r19 = new Movie();
+			r19.MovieNumber = 3019;
 			r19.Title = "To Kill a Mockingbird";
 			r19.Overview = "In a small Alabama town in the 1930s, scrupulously honest and highly respected lawyer, Atticus Finch puts his career on the line when he agrees to represent Tom Robinson, a black man accused of rape. The trial and the events surrounding it are seen through the eyes of Finch's six-year-old daughter, Scout. While Robinson's trial gives the movie its momentum, there are plenty of anecdotal occurrences before and after the court date: Scout's ever-strengthening bond with older brother, Jem, her friendship with precocious young Dill Harris, her father's no-nonsense reactions to such life-and-death crises as a rampaging mad dog, and especially Scout's reactions to, and relationship with, Boo Radley, the reclusive 'village idiot' who turns out to be her salvation when she is attacked by a venomous bigot.";
 			r19.Tagline = "The most beloved Pulitzer Prize book now comes vividly alive on the screen!�";
@@ -263,12 +318,15 @@ namespace FinalProject_Team12.Migrations
 			r19.Actors = "Gregory Peck, Brock Peters, James Anderson, Mary Badham, Phillip Alford, John Megna";
 			r19.ReleaseDate = new DateTime(1962, 12, 25);
 			r19.RunningTime = 129;
-			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
-			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r19.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r19);
+			db.SaveChanges();
+			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
+			r19.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r20 = new Movie();
+			r20.MovieNumber = 3020;
 			r20.Title = "A Hard Day's Night";
 			r20.Overview = "Capturing John Lennon, Paul McCartney, George Harrison and Ringo Starr in their electrifying element, 'A Hard Day's Night' is a wildly irreverent journey through this pastiche of a day in the life of The Beatles during 1964. The band have to use all their guile and wit to avoid the pursuing fans and press to reach their scheduled television performance, in spite of Paul's troublemaking grandfather and Ringo's arrest.";
 			r20.Tagline = "The Beatles, starring in their first full-length, hilarious, action-packed film!";
@@ -276,12 +334,15 @@ namespace FinalProject_Team12.Migrations
 			r20.Actors = "John Lennon, Paul McCartney, George Harrison, Ringo Starr, Wilfrid Brambell, Norman Rossington";
 			r20.ReleaseDate = new DateTime(1964, 7, 6);
 			r20.RunningTime = 88;
-			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
+			r20.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r20);
+			db.SaveChanges();
+			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r20.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
 			db.SaveChanges();
 
 			Movie r21 = new Movie();
+			r21.MovieNumber = 3021;
 			r21.Title = "Mary Poppins";
 			r21.Overview = "The movie combines a diverting story, songs, color and sequences of live action blended with the movements of animated figures. Mary Poppins is a kind of Super-nanny who flies in with her umbrella in response to the request of the Banks children and proceeds to put things right with the aid of her rather extraordinary magical powers before flying off again.";
 			r21.Tagline = "It's supercalifragilisticexpialidocious!";
@@ -289,13 +350,16 @@ namespace FinalProject_Team12.Migrations
 			r21.Actors = "Julie Andrews, Dick Van Dyke, David Tomlinson, Glynis Johns, Hermione Baddeley, Reta Shaw";
 			r21.ReleaseDate = new DateTime(1964, 8, 27);
 			r21.RunningTime = 139;
-			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r21.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r21);
+			db.SaveChanges();
+			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r21.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r22 = new Movie();
+			r22.MovieNumber = 3022;
 			r22.Title = "My Fair Lady";
 			r22.Overview = "A misogynistic and snobbish phonetics professor agrees to a wager that he can take a flower girl and make her presentable in high society.";
 			r22.Tagline = "The loverliest motion picture of them all!";
@@ -303,14 +367,17 @@ namespace FinalProject_Team12.Migrations
 			r22.Actors = "Audrey Hepburn, Rex Harrison, Stanley Holloway, Wilfrid Hyde-White, Gladys Cooper, Jeremy Brett";
 			r22.ReleaseDate = new DateTime(1964, 10, 21);
 			r22.RunningTime = 170;
-			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r22.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r22);
+			db.SaveChanges();
+			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
+			r22.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r23 = new Movie();
+			r23.MovieNumber = 3023;
 			r23.Title = "The Sound of Music";
 			r23.Overview = "Film adaptation of a classic Rodgers and Hammerstein musical based on a nun who becomes a governess for an Austrian family.";
 			r23.Tagline = "The happiest sound in all the world!";
@@ -318,14 +385,17 @@ namespace FinalProject_Team12.Migrations
 			r23.Actors = "Julie Andrews, Christopher Plummer, Eleanor Parker, Richard Haydn, Peggy Wood, Charmian Carr";
 			r23.ReleaseDate = new DateTime(1965, 3, 2);
 			r23.RunningTime = 174;
-			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r23.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r23);
+			db.SaveChanges();
+			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
+			r23.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r24 = new Movie();
+			r24.MovieNumber = 3024;
 			r24.Title = "Butch Cassidy and the Sundance Kid";
 			r24.Overview = "In late 1890s Wyoming, Butch Cassidy is the affable, clever and talkative leader of the outlaw Hole in the Wall Gang. His closest companion is the laconic dead-shot 'Sundance Kid'. As the west rapidly becomes civilized, the law finally catches up to Butch, Sundance and their gang.  Chased doggedly by a special posse, the two decide to make their way to South America in hopes of evading their pursuers once and for all.";
 			r24.Tagline = "Not that it matters, but most of it is true.";
@@ -333,14 +403,17 @@ namespace FinalProject_Team12.Migrations
 			r24.Actors = "Paul Newman, Robert Redford, Katharine Ross, Strother Martin, Henry Jones, Jeff Corey";
 			r24.ReleaseDate = new DateTime(1969, 9, 23);
 			r24.RunningTime = 110;
-			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "History"));
-			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Western"));
-			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
+			r24.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r24);
+			db.SaveChanges();
+			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "History"));
+			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
+			r24.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			db.SaveChanges();
 
 			Movie r25 = new Movie();
+			r25.MovieNumber = 3025;
 			r25.Title = "Catch-22";
 			r25.Overview = "A bombardier in World War II tries desperately to escape the insanity of the war. However, sometimes insanity is the only sane way to cope with a crazy situation. Catch-22 is a parody of a 'military mentality' and of a bureaucratic society in general.";
 			r25.Tagline = "The anti-war satire of epic proportions.";
@@ -348,13 +421,16 @@ namespace FinalProject_Team12.Migrations
 			r25.Actors = "Martin Balsam, Richard Benjamin, Art Garfunkel, Jack Gilford, Buck Henry, Bob Newhart";
 			r25.ReleaseDate = new DateTime(1970, 6, 24);
 			r25.RunningTime = 121;
-			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "War"));
-			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
+			r25.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r25);
+			db.SaveChanges();
+			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "War"));
+			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r25.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r26 = new Movie();
+			r26.MovieNumber = 3026;
 			r26.Title = "Willy Wonka & the Chocolate Factory";
 			r26.Overview = "Eccentric candy man Willy Wonka prompts a worldwide frenzy when he announces that golden tickets hidden inside five of his delicious candy bars will admit their lucky holders into his top-secret confectionary. But does Wonka have an agenda hidden amid a world of Oompa Loompas and chocolate rivers?";
 			r26.Tagline = "It's Scrumdiddlyumptious!";
@@ -362,12 +438,15 @@ namespace FinalProject_Team12.Migrations
 			r26.Actors = "Gene Wilder, Jack Albertson, Peter Ostrum, Roy Kinnear, Denise Nickerson, Leonard Stone";
 			r26.ReleaseDate = new DateTime(1971, 6, 29);
 			r26.RunningTime = 100;
-			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
-			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
+			r26.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r26);
+			db.SaveChanges();
+			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r26.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			db.SaveChanges();
 
 			Movie r27 = new Movie();
+			r27.MovieNumber = 3027;
 			r27.Title = "Fiddler on the Roof";
 			r27.Overview = "This lavishly produced and critically acclaimed screen adaptation of the international stage sensation tells the life-affirming story of Tevye (Topol), a poor milkman whose love, pride and faith help him face the oppression of turn-of-the-century Czarist Russia. Nominated for eight Academy Awards.";
 			r27.Tagline = "To Life!";
@@ -375,12 +454,15 @@ namespace FinalProject_Team12.Migrations
 			r27.Actors = "Chaim Topol, Norma Crane, Leonard Frey, Molly Picon, Paul Mann, Rosalind Harris";
 			r27.ReleaseDate = new DateTime(1971, 11, 3);
 			r27.RunningTime = 181;
-			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r27.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r27);
+			db.SaveChanges();
+			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r27.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r28 = new Movie();
+			r28.MovieNumber = 3028;
 			r28.Title = "Diamonds Are Forever";
 			r28.Overview = "Diamonds are stolen only to be sold again in the international market. James Bond infiltrates a smuggling mission to find out who’s guilty. The mission takes him to Las Vegas where Bond meets his archenemy Blofeld.";
 			r28.Tagline = "The man who made 007 a household number";
@@ -388,13 +470,16 @@ namespace FinalProject_Team12.Migrations
 			r28.Actors = "Sean Connery, Jill St. John, Charles Gray, Lana Wood, Jimmy Dean, Bruce Cabot";
 			r28.ReleaseDate = new DateTime(1971, 12, 13);
 			r28.RunningTime = 120;
-			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "  Action"));
-			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r28.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r28);
+			db.SaveChanges();
+			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r28.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r29 = new Movie();
+			r29.MovieNumber = 3029;
 			r29.Title = "American Graffiti";
 			r29.Overview = "A couple of high school graduates spend one final night cruising the strip with their buddies before they go off to college.";
 			r29.Tagline = "Where were you in '62?";
@@ -402,12 +487,15 @@ namespace FinalProject_Team12.Migrations
 			r29.Actors = "Richard Dreyfuss, Ron Howard, Paul Le Mat, Charles Martin Smith, Cindy Williams, Candy Clark";
 			r29.ReleaseDate = new DateTime(1973, 8, 1);
 			r29.RunningTime = 110;
-			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r29.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r29);
+			db.SaveChanges();
+			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r29.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r30 = new Movie();
+			r30.MovieNumber = 3030;
 			r30.Title = "The Sting";
 			r30.Overview = "Set in the 1930's this intricate caper deals with an ambitious small-time crook and a veteran con man who seek revenge on a vicious crime lord who murdered one of their gang.";
 			r30.Tagline = "...all it takes is a little confidence.";
@@ -415,13 +503,16 @@ namespace FinalProject_Team12.Migrations
 			r30.Actors = "Paul Newman, Robert Redford, Robert Shaw, Charles Durning, Ray Walston, Eileen Brennan";
 			r30.ReleaseDate = new DateTime(1973, 12, 25);
 			r30.RunningTime = 129;
-			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "  Drama"));
+			r30.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r30);
+			db.SaveChanges();
+			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
+			r30.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r31 = new Movie();
+			r31.MovieNumber = 3031;
 			r31.Title = "The Exorcist";
 			r31.Overview = "12-year-old Regan MacNeil begins to adapt an explicit new personality as strange events befall the local area of Georgetown. Her mother becomes torn between science and superstition in a desperate bid to save her daughter, and ultimately turns to her last hope: Father Damien Karras, a troubled priest who is struggling with his own faith.";
 			r31.Tagline = "Something almost beyond comprehension is happening to a girl on this street, in this house... and a man has been sent for as a last resort. This man is The Exorcist.";
@@ -429,13 +520,16 @@ namespace FinalProject_Team12.Migrations
 			r31.Actors = "Linda Blair, Max von Sydow, Ellen Burstyn, Jason Miller, Lee J. Cobb, Kitty Winn";
 			r31.ReleaseDate = new DateTime(1973, 12, 26);
 			r31.RunningTime = 122;
-			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Horror"));
-			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r31.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r31);
+			db.SaveChanges();
+			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
+			r31.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r32 = new Movie();
+			r32.MovieNumber = 3032;
 			r32.Title = "Blazing Saddles";
 			r32.Overview = "A town – where everyone seems to be named Johnson – is in the way of the railroad and, in order to grab their land, Hedley Lemar, a politically connected nasty person, sends in his henchmen to make the town unlivable. After the sheriff is killed, the town demands a new sheriff from the Governor, so Hedley convinces him to send the town the first black sheriff in the west.";
 			r32.Tagline = "Never give a saga an even break!";
@@ -443,12 +537,15 @@ namespace FinalProject_Team12.Migrations
 			r32.Actors = "Cleavon Little, Gene Wilder, Harvey Korman, Slim Pickens, Madeline Kahn, Mel Brooks";
 			r32.ReleaseDate = new DateTime(1974, 2, 7);
 			r32.RunningTime = 93;
-			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
-			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
+			r32.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r32);
+			db.SaveChanges();
+			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Western"));
+			r32.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r33 = new Movie();
+			r33.MovieNumber = 3033;
 			r33.Title = "Monty Python and the Holy Grail";
 			r33.Overview = "King Arthur, accompanied by his squire, recruits his Knights of the Round Table, including Sir Bedevere the Wise, Sir Lancelot the Brave, Sir Robin the Not-Quite-So-Brave-As-Sir-Lancelot and Sir Galahad the Pure. On the way, Arthur battles the Black Knight who, despite having had all his limbs chopped off, insists he can still fight. They reach Camelot, but Arthur decides not  to enter, as 'it is a silly place'.";
 			r33.Tagline = "And now! At Last! Another film completely different from some of the other films which aren't quite the same as this one is.";
@@ -456,13 +553,16 @@ namespace FinalProject_Team12.Migrations
 			r33.Actors = "Graham Chapman, John Cleese, Terry Gilliam, Eric Idle, Terry Jones, Michael Palin";
 			r33.ReleaseDate = new DateTime(1975, 3, 13);
 			r33.RunningTime = 91;
-			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
+			r33.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r33);
+			db.SaveChanges();
+			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r33.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r34 = new Movie();
+			r34.MovieNumber = 3034;
 			r34.Title = "Jaws";
 			r34.Overview = "An insatiable great white shark terrorizes the townspeople of Amity Island, The police chief, an oceanographer and a grizzled shark hunter seek to destroy the bloodthirsty beast.";
 			r34.Tagline = "Don't go in the water.";
@@ -470,13 +570,16 @@ namespace FinalProject_Team12.Migrations
 			r34.Actors = "Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary, Murray Hamilton, Carl Gottlieb";
 			r34.ReleaseDate = new DateTime(1975, 6, 18);
 			r34.RunningTime = 124;
-			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
-			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r34.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r34);
+			db.SaveChanges();
+			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
+			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r34.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r35 = new Movie();
+			r35.MovieNumber = 3035;
 			r35.Title = "Star Wars";
 			r35.Overview = "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.";
 			r35.Tagline = "A long time ago in a galaxy far, far away...";
@@ -484,13 +587,16 @@ namespace FinalProject_Team12.Migrations
 			r35.Actors = "Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing, Alec Guinness, Anthony Daniels";
 			r35.ReleaseDate = new DateTime(1977, 5, 25);
 			r35.RunningTime = 121;
-			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
+			r35.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r35);
+			db.SaveChanges();
+			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
+			r35.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			db.SaveChanges();
 
 			Movie r36 = new Movie();
+			r36.MovieNumber = 3036;
 			r36.Title = "The Spy Who Loved Me";
 			r36.Overview = "Russian and British submarines with nuclear missiles on board both vanish from sight without a trace. England and Russia both blame each other as James Bond tries to solve the riddle of the disappearing ships. But the KGB also has an agent on the case.";
 			r36.Tagline = "It's the BIGGEST. It's the BEST. It's BOND. And B-E-Y-O-N-D.";
@@ -498,13 +604,16 @@ namespace FinalProject_Team12.Migrations
 			r36.Actors = "Roger Moore, Barbara Bach, Curd Joergens, Richard Kiel, Caroline Munro, Walter Gotell";
 			r36.ReleaseDate = new DateTime(1977, 7, 7);
 			r36.RunningTime = 125;
-			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r36.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r36);
+			db.SaveChanges();
+			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r36.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r37 = new Movie();
+			r37.MovieNumber = 3037;
 			r37.Title = "Close Encounters of the Third Kind";
 			r37.Overview = "After an encounter with UFOs, a line worker feels undeniably drawn to an isolated area in the wilderness where something spectacular is about to happen.";
 			r37.Tagline = "We are not alone.";
@@ -512,12 +621,15 @@ namespace FinalProject_Team12.Migrations
 			r37.Actors = "Richard Dreyfuss, Francois Truffaut, Teri Garr, Melinda Dillon, Bob Balaban, J. Patrick McNamara";
 			r37.ReleaseDate = new DateTime(1977, 11, 16);
 			r37.RunningTime = 135;
-			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
-			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r37.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r37);
+			db.SaveChanges();
+			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
+			r37.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r38 = new Movie();
+			r38.MovieNumber = 3038;
 			r38.Title = "Grease";
 			r38.Overview = "Australian good girl Sandy and greaser Danny fell in love over the summer. But when they unexpectedly discover they're now in the same high school, will they be able to rekindle their romance despite their eccentric friends?";
 			r38.Tagline = "Grease is the word";
@@ -525,11 +637,14 @@ namespace FinalProject_Team12.Migrations
 			r38.Actors = "John Travolta, Olivia Newton-John, Stockard Channing, Jeff Conaway, Didi Conn, Barry Pearl";
 			r38.ReleaseDate = new DateTime(1978, 7, 7);
 			r38.RunningTime = 110;
-			r38.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r38.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r38);
+			db.SaveChanges();
+			r38.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r39 = new Movie();
+			r39.MovieNumber = 3039;
 			r39.Title = "Animal House";
 			r39.Overview = "At a 1962 College, Dean Vernon Wormer is determined to expel the entire Delta Tau Chi Fraternity, but those troublemakers have other plans for him.";
 			r39.Tagline = "It was the Deltas against the rules... the rules lost!";
@@ -537,11 +652,14 @@ namespace FinalProject_Team12.Migrations
 			r39.Actors = "John Belushi, Tim Matheson, John Vernon, Verna Bloom, Tom Hulce, Cesare Danova";
 			r39.ReleaseDate = new DateTime(1978, 7, 27);
 			r39.RunningTime = 109;
-			r39.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r39.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r39);
+			db.SaveChanges();
+			r39.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r40 = new Movie();
+			r40.MovieNumber = 3040;
 			r40.Title = "Halloween";
 			r40.Overview = "In John Carpenter's horror classic, a psychotic murderer, institutionalized since childhood for the murder of his sister, escapes and stalks a bookish teenage girl and her friends while his doctor chases him through the streets.";
 			r40.Tagline = "The Night He Came Home";
@@ -549,12 +667,15 @@ namespace FinalProject_Team12.Migrations
 			r40.Actors = "Donald Pleasence, Jamie Lee Curtis, P.J. Soles, Nancy Kyes, Nick Castle, Tony Moran";
 			r40.ReleaseDate = new DateTime(1978, 10, 25);
 			r40.RunningTime = 91;
-			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
-			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r40.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r40);
+			db.SaveChanges();
+			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
+			r40.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r41 = new Movie();
+			r41.MovieNumber = 3041;
 			r41.Title = "Alien";
 			r41.Overview = "During its return to the earth, commercial spaceship Nostromo intercepts a distress signal from a distant planet. When a three-member team of the crew discovers a chamber containing thousands of eggs on the planet, a creature inside one of the eggs attacks an explorer. The entire crew is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.";
 			r41.Tagline = "In space no one can hear you scream.";
@@ -562,14 +683,17 @@ namespace FinalProject_Team12.Migrations
 			r41.Actors = "Tom Skerritt, Sigourney Weaver, Veronica Cartwright, Harry Dean Stanton, John Hurt, Ian Holm";
 			r41.ReleaseDate = new DateTime(1979, 5, 25);
 			r41.RunningTime = 117;
-			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
-			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r41.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r41);
+			db.SaveChanges();
+			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
+			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
+			r41.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r42 = new Movie();
+			r42.MovieNumber = 3042;
 			r42.Title = "The Muppet Movie";
 			r42.Overview = "Kermit the Frog is persuaded by agent Dom DeLuise to pursue a career in Hollywood. Along the way, Kermit picks up Fozzie Bear, Miss Piggy, Gonzo, and a motley crew of other Muppets with similar aspirations. Meanwhile, Kermit must elude the grasp of a frog-leg restaurant magnate.";
 			r42.Tagline = "More entertaining than humanly possible.";
@@ -577,13 +701,16 @@ namespace FinalProject_Team12.Migrations
 			r42.Actors = "Jim Henson, Frank Oz, Jerry Nelson, Richard Hunt, Dave Goelz, Charles Durning";
 			r42.ReleaseDate = new DateTime(1979, 5, 31);
 			r42.RunningTime = 97;
-			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r42.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r42);
+			db.SaveChanges();
+			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r42.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r43 = new Movie();
+			r43.MovieNumber = 3043;
 			r43.Title = "Apocalypse Now";
 			r43.Overview = "At the height of the Vietnam war, Captain Benjamin Willard is sent on a dangerous mission that, officially, 'does not exist, nor will it ever exist.' His goal is to locate - and eliminate - a mysterious Green Beret Colonel named Walter Kurtz, who has been leading his personal army on illegal guerrilla missions into enemy territory.";
 			r43.Tagline = "This is the end...";
@@ -591,12 +718,15 @@ namespace FinalProject_Team12.Migrations
 			r43.Actors = "Martin Sheen, Marlon Brando, Robert Duvall, Frederic Forrest, Sam Bottoms, Laurence Fishburne";
 			r43.ReleaseDate = new DateTime(1979, 8, 15);
 			r43.RunningTime = 153;
-			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
+			r43.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r43);
+			db.SaveChanges();
+			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r43.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "War"));
 			db.SaveChanges();
 
 			Movie r44 = new Movie();
+			r44.MovieNumber = 3044;
 			r44.Title = "The Empire Strikes Back";
 			r44.Overview = "The epic saga continues as Luke Skywalker, in hopes of defeating the evil Galactic Empire, learns the ways of the Jedi from aging master Yoda. But Darth Vader is more determined than ever to capture Luke. Meanwhile, rebel leader Princess Leia, cocky Han Solo, Chewbacca, and droids C-3PO and R2-D2 are thrown into various stages of capture, betrayal and despair.";
 			r44.Tagline = "The Adventure Continues...";
@@ -604,13 +734,16 @@ namespace FinalProject_Team12.Migrations
 			r44.Actors = "Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams, Anthony Daniels, David Prowse";
 			r44.ReleaseDate = new DateTime(1980, 5, 17);
 			r44.RunningTime = 124;
-			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r44.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r44);
+			db.SaveChanges();
+			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r44.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r45 = new Movie();
+			r45.MovieNumber = 3045;
 			r45.Title = "The Shining";
 			r45.Overview = "Jack Torrance accepts a caretaker job at the Overlook Hotel, where he, along with his wife Wendy and their son Danny, must live isolated from the rest of the world for the winter. But they aren't prepared for the madness that lurks within.";
 			r45.Tagline = "A masterpiece of modern horror.";
@@ -618,12 +751,15 @@ namespace FinalProject_Team12.Migrations
 			r45.Actors = "Jack Nicholson, Shelley Duvall, Danny Lloyd, Scatman Crothers, Barry Nelson, Philip Stone";
 			r45.ReleaseDate = new DateTime(1980, 5, 22);
 			r45.RunningTime = 144;
-			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
-			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r45.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r45);
+			db.SaveChanges();
+			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
+			r45.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r46 = new Movie();
+			r46.MovieNumber = 3046;
 			r46.Title = "Airplane!";
 			r46.Overview = "Alcoholic pilot, Ted Striker has developed a fear of flying due to wartime trauma, but nevertheless boards a passenger jet in an attempt to woo back his stewardess girlfriend. Food poisoning decimates the passengers and crew, leaving it up to Striker to land the plane with the help of a glue-sniffing air traffic controller and Striker's vengeful former Air Force captain, who must both talk him down.";
 			r46.Tagline = "What's slower than a speeding bullet, and able to hit tall buildings at a single bound?";
@@ -631,11 +767,14 @@ namespace FinalProject_Team12.Migrations
 			r46.Actors = "Robert Hays, Julie Hagerty, Kareem Abdul-Jabbar, Lloyd Bridges, Peter Graves, Leslie Nielsen";
 			r46.ReleaseDate = new DateTime(1980, 7, 2);
 			r46.RunningTime = 88;
-			r46.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r46.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r46);
+			db.SaveChanges();
+			r46.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r47 = new Movie();
+			r47.MovieNumber = 3047;
 			r47.Title = "Caddyshack";
 			r47.Overview = "At an exclusive country club, an ambitious young caddy, Danny Noonan, eagerly pursues a caddy scholarship in hopes of attending college and, in turn, avoiding a job at the lumber yard. In order to succeed, he must first win the favour of the elitist Judge Smails, and then the caddy golf tournament which Smails sponsors.";
 			r47.Tagline = "The snobs against the slobs!";
@@ -643,11 +782,14 @@ namespace FinalProject_Team12.Migrations
 			r47.Actors = "Chevy Chase, Rodney Dangerfield, Ted Knight, Michael O'Keefe, Bill Murray, Sarah Holcomb";
 			r47.ReleaseDate = new DateTime(1980, 7, 25);
 			r47.RunningTime = 98;
-			r47.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r47.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r47);
+			db.SaveChanges();
+			r47.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r48 = new Movie();
+			r48.MovieNumber = 3048;
 			r48.Title = "Raging Bull";
 			r48.Overview = "When Jake LaMotta steps into a boxing ring and obliterates his opponent, he's a prizefighter. But when he treats his family and friends the same way, he's a ticking time bomb, ready to go off at any moment. Though LaMotta wants his family's love, something always seems to come between them. Perhaps it's his violent bouts of paranoia and jealousy. This kind of rage helped make him a champ, but in real life, he winds up in the ring alone.";
 			r48.Tagline = "";
@@ -655,11 +797,14 @@ namespace FinalProject_Team12.Migrations
 			r48.Actors = "Robert De Niro, Joe Pesci, Cathy Moriarty, Frank Vincent, Nicholas Colasanto, Theresa Saldana";
 			r48.ReleaseDate = new DateTime(1980, 11, 14);
 			r48.RunningTime = 129;
-			r48.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r48.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r48);
+			db.SaveChanges();
+			r48.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r49 = new Movie();
+			r49.MovieNumber = 3049;
 			r49.Title = "Raiders of the Lost Ark";
 			r49.Overview = "When Dr. Indiana Jones – the tweed-suited professor who just happens to be a celebrated archaeologist – is hired by the government to locate the legendary Ark of the Covenant, he finds himself up against the entire Nazi regime.";
 			r49.Tagline = "Indiana Jones - the new hero from the creators of JAWS and STAR WARS.";
@@ -667,12 +812,15 @@ namespace FinalProject_Team12.Migrations
 			r49.Actors = "Harrison Ford, Karen Allen, Paul Freeman, Ronald Lacey, John Rhys-Davies, Denholm Elliott";
 			r49.ReleaseDate = new DateTime(1981, 6, 12);
 			r49.RunningTime = 115;
-			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
+			r49.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r49);
+			db.SaveChanges();
+			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r49.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			db.SaveChanges();
 
 			Movie r50 = new Movie();
+			r50.MovieNumber = 3050;
 			r50.Title = "E.T. the Extra-Terrestrial";
 			r50.Overview = "After a gentle alien becomes stranded on Earth, the being is discovered and befriended by a young boy named Elliott. Bringing the extraterrestrial into his suburban California house, Elliott introduces E.T., as the alien is dubbed, to his brother and his little sister, Gertie, and the children decide to keep its existence a secret. Soon, however, E.T. falls ill, resulting in government intervention and a dire situation for both Elliott and the alien.";
 			r50.Tagline = "He is afraid. He is alone. He is three million light years from home.";
@@ -680,14 +828,17 @@ namespace FinalProject_Team12.Migrations
 			r50.Actors = "Henry Thomas, Drew Barrymore, Robert MacNaughton, Dee Wallace, Peter Coyote, Erika Eleniak";
 			r50.ReleaseDate = new DateTime(1982, 4, 3);
 			r50.RunningTime = 115;
-			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
-			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
+			r50.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r50);
+			db.SaveChanges();
+			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
+			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r50.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			db.SaveChanges();
 
 			Movie r51 = new Movie();
+			r51.MovieNumber = 3051;
 			r51.Title = "Fast Times at Ridgemont High";
 			r51.Overview = "Follows a group of high school students growing up in southern California, based on the real-life adventures chronicled by Cameron Crowe. Stacy Hamilton and Mark Ratner are looking for a love interest, and are helped along by their older classmates, Linda Barrett and Mike Damone, respectively. The center of the film is held by Jeff Spicoli, a perpetually stoned surfer dude who faces off with the resolute Mr. Hand, who is convinced that everyone is on dope.";
 			r51.Tagline = "Fast Cars, Fast Girls, Fast Carrots...Fast Carrots?";
@@ -695,11 +846,14 @@ namespace FinalProject_Team12.Migrations
 			r51.Actors = "Sean Penn, Jennifer Jason Leigh, Judge Reinhold, Phoebe Cates, Brian Backer, Robert Romanus";
 			r51.ReleaseDate = new DateTime(1982, 8, 13);
 			r51.RunningTime = 90;
-			r51.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r51.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r51);
+			db.SaveChanges();
+			r51.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r52 = new Movie();
+			r52.MovieNumber = 3052;
 			r52.Title = "Return of the Jedi";
 			r52.Overview = "As Rebel leaders map their strategy for an all-out attack on the Emperor's newer, bigger Death Star. Han Solo remains frozen in the cavernous desert fortress of Jabba the Hutt, the most loathsome outlaw in the universe, who is also keeping Princess Leia as a slave girl. Now a master of the Force, Luke Skywalker rescues his friends, but he cannot become a true Jedi Knight until he wages his own crucial battle against Darth Vader, who has sworn to win Luke over to the dark side of the Force.";
 			r52.Tagline = "The Empire Falls...";
@@ -707,13 +861,16 @@ namespace FinalProject_Team12.Migrations
 			r52.Actors = "Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams, Anthony Daniels, David Prowse";
 			r52.ReleaseDate = new DateTime(1983, 5, 23);
 			r52.RunningTime = 135;
-			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r52.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r52);
+			db.SaveChanges();
+			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r52.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r53 = new Movie();
+			r53.MovieNumber = 3053;
 			r53.Title = "WarGames";
 			r53.Overview = "High School student David Lightman (Matthew Broderick) has a talent for hacking. But while trying to hack into a computer system to play unreleased video games, he unwittingly taps into the Defense Department's war computer and initiates a confrontation of global proportions! Together with his girlfriend (Ally Sheedy) and a wizardly computer genius (John Wood), David must race against time to outwit his opponent...and prevent a nuclear Armageddon.";
 			r53.Tagline = "Is it a game, or is it real?";
@@ -721,12 +878,15 @@ namespace FinalProject_Team12.Migrations
 			r53.Actors = "Matthew Broderick, Dabney Coleman, Ally Sheedy, John Wood, Barry Corbin, Juanin Clay";
 			r53.ReleaseDate = new DateTime(1983, 6, 3);
 			r53.RunningTime = 114;
-			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
-			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r53.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r53);
+			db.SaveChanges();
+			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
+			r53.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r54 = new Movie();
+			r54.MovieNumber = 3054;
 			r54.Title = "Trading Places";
 			r54.Overview = "A snobbish investor and a wily street con-artist find their positions reversed as part of a bet by two callous millionaires.";
 			r54.Tagline = "Some very funny business.";
@@ -734,11 +894,14 @@ namespace FinalProject_Team12.Migrations
 			r54.Actors = "Eddie Murphy, Dan Aykroyd, Jamie Lee Curtis, Jim Belushi, Denholm Elliott, Ralph Bellamy";
 			r54.ReleaseDate = new DateTime(1983, 6, 7);
 			r54.RunningTime = 116;
-			r54.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r54.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r54);
+			db.SaveChanges();
+			r54.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r55 = new Movie();
+			r55.MovieNumber = 3055;
 			r55.Title = "A Christmas Story";
 			r55.Overview = "The comic mishaps and adventures of a young boy named Ralph, trying to convince his parents, teachers, and Santa that a Red Ryder B.B. gun really is the perfect Christmas gift for the 1940s.";
 			r55.Tagline = "Peace, Harmony, Comfort and Joy... Maybe Next Year.";
@@ -746,12 +909,15 @@ namespace FinalProject_Team12.Migrations
 			r55.Actors = "Melinda Dillon, Darren McGavin, Peter Billingsley, Jean Shepherd, Ian Petrella, Scott Schwartz";
 			r55.ReleaseDate = new DateTime(1983, 11, 18);
 			r55.RunningTime = 94;
-			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r55.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r55);
+			db.SaveChanges();
+			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r55.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r56 = new Movie();
+			r56.MovieNumber = 3056;
 			r56.Title = "Footloose";
 			r56.Overview = "When teenager Ren and his family move from big-city Chicago to a small town in the West, he's in for a real case of culture shock.";
 			r56.Tagline = "He's a big-city kid in a small town. They said he'd never win. He knew he had to.";
@@ -759,14 +925,17 @@ namespace FinalProject_Team12.Migrations
 			r56.Actors = "Kevin Bacon, John Lithgow, Dianne Wiest, Chris Penn, Lori Singer, Sarah Jessica Parker";
 			r56.ReleaseDate = new DateTime(1984, 2, 17);
 			r56.RunningTime = 107;
-			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r56.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r56);
+			db.SaveChanges();
+			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
+			r56.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r57 = new Movie();
+			r57.MovieNumber = 3057;
 			r57.Title = "Back to the Future";
 			r57.Overview = "Eighties teenager Marty McFly is accidentally sent back in time to 1955, inadvertently disrupting his parents' first meeting and attracting his mother's romantic interest. Marty must repair the damage to history by rekindling his parents' romance and - with the help of his eccentric inventor friend Doc Brown - return to 1985.";
 			r57.Tagline = "He's the only kid ever to get into trouble before he was born.";
@@ -774,14 +943,17 @@ namespace FinalProject_Team12.Migrations
 			r57.Actors = "Michael J. Fox, Christopher Lloyd, Lea Thompson, Crispin Glover, Thomas F. Wilson, Claudia Wells";
 			r57.ReleaseDate = new DateTime(1985, 7, 3);
 			r57.RunningTime = 116;
-			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r57.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r57);
+			db.SaveChanges();
+			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
+			r57.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r58 = new Movie();
+			r58.MovieNumber = 3058;
 			r58.Title = "The Color Purple";
 			r58.Overview = "An epic tale spanning forty years in the life of Celie (Whoopi Goldberg), an African-American woman living in the South who survives incredible abuse and bigotry.  After Celie's abusive father marries her off to the equally debasing 'Mister' Albert Johnson (Danny Glover), things go from bad to worse, leaving Celie to find companionship anywhere she can.  She perseveres, holding on to her dream of one day being reunited with her sister in Africa.  Based on the novel by Alice Walker.";
 			r58.Tagline = "It's about life. It's about love. It's about us.";
@@ -789,11 +961,14 @@ namespace FinalProject_Team12.Migrations
 			r58.Actors = "Whoopi Goldberg, Margaret Avery, Danny Glover, Akosua Busia, Oprah Winfrey, Willard E. Pugh";
 			r58.ReleaseDate = new DateTime(1985, 12, 18);
 			r58.RunningTime = 154;
-			r58.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r58.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r58);
+			db.SaveChanges();
+			r58.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r59 = new Movie();
+			r59.MovieNumber = 3059;
 			r59.Title = "Top Gun";
 			r59.Overview = "For Lieutenant Pete 'Maverick' Mitchell and his friend and Co-Pilot Nick 'Goose' Bradshaw being accepted into an elite training school for fighter pilots is a dream come true.  A tragedy, as well as personal demons, threaten Pete's dreams of becoming an Ace pilot.";
 			r59.Tagline = "Up there with the best of the best.";
@@ -801,13 +976,16 @@ namespace FinalProject_Team12.Migrations
 			r59.Actors = "Tom Cruise, Kelly McGillis, Val Kilmer, Anthony Edwards, Tom Skerritt, Michael Ironside";
 			r59.ReleaseDate = new DateTime(1986, 5, 16);
 			r59.RunningTime = 110;
-			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
-			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
+			r59.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r59);
+			db.SaveChanges();
+			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r59.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "War"));
 			db.SaveChanges();
 
 			Movie r60 = new Movie();
+			r60.MovieNumber = 3060;
 			r60.Title = "Little Shop of Horrors";
 			r60.Overview = "Seymour Krelborn is a nerdy orphan working at Mushnik's, a flower shop in urban Skid Row. He harbors a crush on fellow co-worker Audrey Fulquard, and is berated by Mr. Mushnik daily. One day as Seymour is seeking a new mysterious plant, he finds a very mysterious unidentified plant which he calls Audrey II. The plant seems to have a craving for blood and soon begins to sing for his supper.";
 			r60.Tagline = "Don't feed the plants.";
@@ -815,13 +993,16 @@ namespace FinalProject_Team12.Migrations
 			r60.Actors = "Rick Moranis, Ellen Greene, Vincent Gardenia, Steve Martin, Tisha Campbell-Martin, John Candy";
 			r60.ReleaseDate = new DateTime(1986, 12, 19);
 			r60.RunningTime = 94;
-			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
-			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
+			r60.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r60);
+			db.SaveChanges();
+			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Horror"));
+			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
+			r60.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r61 = new Movie();
+			r61.MovieNumber = 3061;
 			r61.Title = "Spaceballs";
 			r61.Overview = "When the nefarious Dark Helmet hatches a plan to snatch Princess Vespa and steal her planet's air, space-bum-for-hire Lone Starr and his clueless sidekick fly to the rescue. Along the way, they meet Yogurt, who puts Lone Starr wise to the power of 'The Schwartz.' Can he master it in time to save the day?";
 			r61.Tagline = "May the schwartz be with you";
@@ -829,12 +1010,15 @@ namespace FinalProject_Team12.Migrations
 			r61.Actors = "Mel Brooks, Rick Moranis, Bill Pullman, Daphne Zuniga, John Candy, George Wyner";
 			r61.ReleaseDate = new DateTime(1987, 6, 24);
 			r61.RunningTime = 96;
-			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r61.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r61);
+			db.SaveChanges();
+			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r61.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r62 = new Movie();
+			r62.MovieNumber = 3062;
 			r62.Title = "The Princess Bride";
 			r62.Overview = "In this enchantingly cracked fairy tale, the beautiful Princess Buttercup and the dashing Westley must overcome staggering odds to find happiness amid six-fingered swordsmen, murderous princes, Sicilians and rodents of unusual size. But even death can't stop these true lovebirds from triumphing.";
 			r62.Tagline = "It's as real as the feelings you feel.";
@@ -842,15 +1026,18 @@ namespace FinalProject_Team12.Migrations
 			r62.Actors = "Cary Elwes, Robin Wright, Mandy Patinkin, Andre the Giant, Chris Sarandon, Christopher Guest";
 			r62.ReleaseDate = new DateTime(1987, 9, 18);
 			r62.RunningTime = 98;
-			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r62.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r62);
+			db.SaveChanges();
+			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r62.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r63 = new Movie();
+			r63.MovieNumber = 3063;
 			r63.Title = "Big";
 			r63.Overview = "A young boy, Josh Baskin makes a wish at a carnival machine to be big. He wakes up the following morning to find that it has been granted and his body has grown older overnight. But he is still the same 13-year-old boy inside. Now he must learn how to cope with the unfamiliar world of grown-ups including getting a job and having his first romantic encounter with a woman. What will he find out about this strange world?";
 			r63.Tagline = "You're Only Young Once But For Josh It Might Just Last A Lifetime.";
@@ -858,15 +1045,18 @@ namespace FinalProject_Team12.Migrations
 			r63.Actors = "Tom Hanks, Elizabeth Perkins, Robert Loggia, John Heard, Jared Rushton, David Moscow";
 			r63.ReleaseDate = new DateTime(1988, 6, 3);
 			r63.RunningTime = 104;
-			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
-			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r63.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r63);
+			db.SaveChanges();
+			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r63.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r64 = new Movie();
+			r64.MovieNumber = 3064;
 			r64.Title = "The Land Before Time";
 			r64.Overview = "An orphaned brontosaurus named Littlefoot sets off in search of the legendary Great Valley. A land of lush vegetation where the dinosaurs can thrive and live in peace. Along the way he meets four other young dinosaurs, each one a different species, and they encounter several obstacles as they learn to work together in order to survive.";
 			r64.Tagline = "A new adventure is born.";
@@ -874,13 +1064,16 @@ namespace FinalProject_Team12.Migrations
 			r64.Actors = "Gabriel Damon, Candace Hutson, Judith Barsi, Will Ryan, Pat Hingle, Helen Shaver";
 			r64.ReleaseDate = new DateTime(1988, 11, 18);
 			r64.RunningTime = 69;
-			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r64.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r64);
+			db.SaveChanges();
+			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r64.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r65 = new Movie();
+			r65.MovieNumber = 3065;
 			r65.Title = "Rain Man";
 			r65.Overview = "Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie; they travel cross-country.";
 			r65.Tagline = "A journey through understanding and fellowship.";
@@ -888,11 +1081,14 @@ namespace FinalProject_Team12.Migrations
 			r65.Actors = "Dustin Hoffman, Tom Cruise, Valeria Golino, Gerald R. Molen, Jack Murdock, Michael D. Roberts";
 			r65.ReleaseDate = new DateTime(1988, 12, 11);
 			r65.RunningTime = 133;
-			r65.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r65.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r65);
+			db.SaveChanges();
+			r65.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r66 = new Movie();
+			r66.MovieNumber = 3066;
 			r66.Title = "Bill & Ted's Excellent Adventure";
 			r66.Overview = "In the small town of San Dimas, a few miles away from Los Angeles, there are two nearly brain dead teenage boys going by the names of Bill S, Preston ESQ. and Ted Theodore Logan, they have a dream together of starting their own rock and roll band called the 'Wyld Stallyns'. Unfortunately, they are still in high school and on the verge of failing out of their school as well, and if they do not pass their upcoming history report, they will be separated as a result of Ted's father sending him to military school. But, what Bill and Ted do not know is that they must stay together to save the future. So, a man from the future named Rufus came to help them pass their report. So, both Bill and Ted decided to gather up historical figures which they need for their report. They are hoping that this will help them pass their report so they can stay together.";
 			r66.Tagline = "History is about to be rewritten by two guys who can't spell.";
@@ -900,13 +1096,16 @@ namespace FinalProject_Team12.Migrations
 			r66.Actors = "Keanu Reeves, Alex Winter, George Carlin, Dan Shor, Hal Landon Jr., Amy Stock-Poynton";
 			r66.ReleaseDate = new DateTime(1989, 2, 17);
 			r66.RunningTime = 90;
-			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r66.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r66);
+			db.SaveChanges();
+			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r66.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r67 = new Movie();
+			r67.MovieNumber = 3067;
 			r67.Title = "Dead Poets Society";
 			r67.Overview = "At an elite, old-fashioned boarding school in New England, a passionate English teacher inspires his students to rebel against convention and seize the potential of every day, courting the disdain of the stern headmaster.";
 			r67.Tagline = "He was their inspiration. He made their lives extraordinary.";
@@ -914,11 +1113,14 @@ namespace FinalProject_Team12.Migrations
 			r67.Actors = "Robin Williams, Ethan Hawke, Robert Sean Leonard, Gale Hansen, Josh Charles, Dylan Kussman";
 			r67.ReleaseDate = new DateTime(1989, 6, 2);
 			r67.RunningTime = 129;
-			r67.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r67.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r67);
+			db.SaveChanges();
+			r67.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r68 = new Movie();
+			r68.MovieNumber = 3068;
 			r68.Title = "When Harry Met Sally...";
 			r68.Overview = "During their travels from Chicago to New York, Harry and Sally Will debate whether or not sex ruins a perfect relationship between a man and a woman. Eleven years and later, they're still no closer to finding the answer.";
 			r68.Tagline = "Can two friends sleep together and still love each other in the morning?";
@@ -926,13 +1128,16 @@ namespace FinalProject_Team12.Migrations
 			r68.Actors = "Meg Ryan, Billy Crystal, Carrie Fisher, Bruno Kirby, Steven Ford, Lisa Jane Persky";
 			r68.ReleaseDate = new DateTime(1989, 7, 21);
 			r68.RunningTime = 96;
-			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r68.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r68);
+			db.SaveChanges();
+			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r68.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r69 = new Movie();
+			r69.MovieNumber = 3069;
 			r69.Title = "Back to the Future Part II";
 			r69.Overview = "Marty and Doc are at it again in this wacky sequel to the 1985 blockbuster as the time-traveling duo head to 2015 to nip some McFly family woes in the bud. But things go awry thanks to bully Biff Tannen and a pesky sports almanac. In a last-ditch attempt to set things straight, Marty finds himself bound for 1955 and face to face with his teenage parents -- again.";
 			r69.Tagline = "Roads? Where we're going, we don't need roads!";
@@ -940,14 +1145,17 @@ namespace FinalProject_Team12.Migrations
 			r69.Actors = "Michael J. Fox, Christopher Lloyd, Lea Thompson, Elisabeth Shue, James Tolkan, Jeffrey Weissman";
 			r69.ReleaseDate = new DateTime(1989, 11, 20);
 			r69.RunningTime = 108;
-			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r69.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r69);
+			db.SaveChanges();
+			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r69.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r70 = new Movie();
+			r70.MovieNumber = 3070;
 			r70.Title = "Back to the Future Part III";
 			r70.Overview = "The final installment of the Back to the Future trilogy finds Marty digging the trusty DeLorean out of a mineshaft and looking up Doc in the Wild West of 1885. But when their time machine breaks down, the travelers are stranded in a land of spurs. More problems arise when Doc falls for pretty schoolteacher Clara Clayton, and Marty tangles with Buford Tannen.";
 			r70.Tagline = "They've saved the best trip for last... But this time they may have gone too far.";
@@ -955,14 +1163,17 @@ namespace FinalProject_Team12.Migrations
 			r70.Actors = "Michael J. Fox, Christopher Lloyd, Mary Steenburgen, Thomas F. Wilson, Lea Thompson, Elisabeth Shue";
 			r70.ReleaseDate = new DateTime(1990, 5, 25);
 			r70.RunningTime = 118;
-			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r70.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r70);
+			db.SaveChanges();
+			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r70.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r71 = new Movie();
+			r71.MovieNumber = 3071;
 			r71.Title = "Robin Hood: Prince of Thieves";
 			r71.Overview = "When the dastardly Sheriff of Nottingham murders Robin's father, the legendary archer vows vengeance. To accomplish his mission, Robin joins forces with a band of exiled villagers (and comely Maid Marian), and together they battle to end the evil sheriff's reign of terror.";
 			r71.Tagline = "For the good of all men, and the love of one woman, he fought to uphold justice by breaking the law.";
@@ -970,11 +1181,14 @@ namespace FinalProject_Team12.Migrations
 			r71.Actors = "Kevin Costner, Morgan Freeman, Christian Slater, Mary Elizabeth Mastrantonio, Alan Rickman, Geraldine McEwan";
 			r71.ReleaseDate = new DateTime(1991, 6, 14);
 			r71.RunningTime = 143;
-			r71.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r71.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r71);
+			db.SaveChanges();
+			r71.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			db.SaveChanges();
 
 			Movie r72 = new Movie();
+			r72.MovieNumber = 3072;
 			r72.Title = "Wayne's World";
 			r72.Overview = "When a sleazy TV exec offers Wayne and Garth a fat contract to tape their late-night public access show at his network, they can't believe their good fortune. But they soon discover the road from basement to big-time is a gnarly one, fraught with danger, temptation and ragin' party opportunities.";
 			r72.Tagline = "You'll laugh. You'll cry. You'll hurl.";
@@ -982,11 +1196,14 @@ namespace FinalProject_Team12.Migrations
 			r72.Actors = "Mike Myers, Dana Carvey, Rob Lowe, Tia Carrere, Lara Flynn Boyle, Chris Farley";
 			r72.ReleaseDate = new DateTime(1992, 2, 14);
 			r72.RunningTime = 94;
-			r72.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r72.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r72);
+			db.SaveChanges();
+			r72.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r73 = new Movie();
+			r73.MovieNumber = 3073;
 			r73.Title = "A League of Their Own";
 			r73.Overview = "Small-town sisters Dottie and Kit join an all-female baseball league formed after World War II brings pro baseball to a standstill. When their team hits the road with its drunken coach, the siblings find troubles and triumphs on and off the field.";
 			r73.Tagline = "To achieve the incredible, you have to attempt the impossible.";
@@ -994,11 +1211,14 @@ namespace FinalProject_Team12.Migrations
 			r73.Actors = "Tom Hanks, Geena Davis, Madonna, Lori Petty, Jon Lovitz, David Strathairn";
 			r73.ReleaseDate = new DateTime(1992, 7, 1);
 			r73.RunningTime = 128;
-			r73.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r73.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r73);
+			db.SaveChanges();
+			r73.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r74 = new Movie();
+			r74.MovieNumber = 3074;
 			r74.Title = "The Last of the Mohicans";
 			r74.Overview = "As the English and French soldiers battle for control of the American colonies in the 18th century, the settlers and native Americans are forced to take sides. Cora and her sister Alice unwittingly walk into trouble but are reluctantly saved by Hawkeye, an orphaned settler adopted by the last of the Mohicans.";
 			r74.Tagline = "The first American hero.";
@@ -1006,16 +1226,19 @@ namespace FinalProject_Team12.Migrations
 			r74.Actors = "Daniel Day-Lewis, Madeleine Stowe, Russell Means, Eric Schweig, Jodhi May, Steven Waddington";
 			r74.ReleaseDate = new DateTime(1992, 9, 25);
 			r74.RunningTime = 112;
-			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
-			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
-			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " War"));
+			r74.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r74);
+			db.SaveChanges();
+			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "History"));
+			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r74.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "War"));
 			db.SaveChanges();
 
 			Movie r75 = new Movie();
+			r75.MovieNumber = 3075;
 			r75.Title = "Aladdin";
 			r75.Overview = "Princess Jasmine grows tired of being forced to remain in the palace and she sneaks out into the marketplace  in disguise where she meets street-urchin Aladdin and the two fall in love, although she may only marry a prince. After being thrown in jail, Aladdin and becomes embroiled in a plot to find a mysterious lamp with which the evil Jafar hopes to rule the land.";
 			r75.Tagline = "Wish granted!";
@@ -1023,16 +1246,19 @@ namespace FinalProject_Team12.Migrations
 			r75.Actors = "Scott Weinger, Robin Williams, Linda Larkin, Jonathan Freeman, Frank Welker, Gilbert Gottfried";
 			r75.ReleaseDate = new DateTime(1992, 11, 25);
 			r75.RunningTime = 90;
-			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r75.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r75);
+			db.SaveChanges();
+			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r75.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r76 = new Movie();
+			r76.MovieNumber = 3076;
 			r76.Title = "The Muppet Christmas Carol";
 			r76.Overview = "A retelling of the classic Dickens tale of Ebenezer Scrooge, miser extraordinaire. He is held accountable for his dastardly ways during night-time visitations by the Ghosts of Christmas Past, Present, and future.";
 			r76.Tagline = "";
@@ -1040,14 +1266,17 @@ namespace FinalProject_Team12.Migrations
 			r76.Actors = "Michael Caine, Don Austen, Meredith Braun, Don Austen, Ed Sanders, Dave Goelz";
 			r76.ReleaseDate = new DateTime(1992, 12, 10);
 			r76.RunningTime = 85;
-			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r76.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r76);
+			db.SaveChanges();
+			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r76.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r77 = new Movie();
+			r77.MovieNumber = 3077;
 			r77.Title = "A Few Good Men";
 			r77.Overview = "When cocky military lawyer Lt. Daniel Kaffee and his co-counsel, Lt. Cmdr. JoAnne Galloway, are assigned to a murder case, they uncover a hazing ritual that could implicate high-ranking officials such as shady Col. Nathan Jessep.";
 			r77.Tagline = "You can't handle the truth!";
@@ -1055,11 +1284,14 @@ namespace FinalProject_Team12.Migrations
 			r77.Actors = "Tom Cruise, Jack Nicholson, Demi Moore, Kevin Bacon, Kevin Pollak, James Marshall";
 			r77.ReleaseDate = new DateTime(1992, 12, 11);
 			r77.RunningTime = 138;
-			r77.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r77.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r77);
+			db.SaveChanges();
+			r77.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r78 = new Movie();
+			r78.MovieNumber = 3078;
 			r78.Title = "Jurassic Park";
 			r78.Overview = "A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. Before opening day, he invites a team of experts and his two eager grandchildren to experience the park and help calm anxious investors. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape.";
 			r78.Tagline = "An adventure 65 million years in the making.";
@@ -1067,12 +1299,15 @@ namespace FinalProject_Team12.Migrations
 			r78.Actors = "Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough, Bob Peck, Martin Ferrero";
 			r78.ReleaseDate = new DateTime(1993, 6, 11);
 			r78.RunningTime = 127;
-			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r78.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r78);
+			db.SaveChanges();
+			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r78.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r79 = new Movie();
+			r79.MovieNumber = 3079;
 			r79.Title = "Hocus Pocus";
 			r79.Overview = "After 300 years of slumber, three sister witches are accidentally resurrected in Salem on Halloween night, and it us up to three kids and their newfound feline friend to put an end to the witches' reign of terror once and for all.";
 			r79.Tagline = "It's just a bunch of Hocus Pocus.";
@@ -1080,13 +1315,16 @@ namespace FinalProject_Team12.Migrations
 			r79.Actors = "Bette Midler, Sarah Jessica Parker, Kathy Najimy, Omri Katz, Thora Birch, Vinessa Shaw";
 			r79.ReleaseDate = new DateTime(1993, 7, 16);
 			r79.RunningTime = 96;
-			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
+			r79.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r79);
+			db.SaveChanges();
+			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r79.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			db.SaveChanges();
 
 			Movie r80 = new Movie();
+			r80.MovieNumber = 3080;
 			r80.Title = "Dazed and Confused";
 			r80.Overview = "The adventures of a group of Texas teens on their last day of school in 1976, centering on student Randall Floyd, who moves easily among stoners, jocks and geeks. Floyd is a star athlete, but he also likes smoking weed, which presents a conundrum when his football coach demands he sign a 'no drugs' pledge.";
 			r80.Tagline = "See it with a bud.";
@@ -1094,12 +1332,15 @@ namespace FinalProject_Team12.Migrations
 			r80.Actors = "Jason London, Rory Cochrane, Wiley Wiggins, Sasha Jenson, Michelle Burke, Adam Goldberg";
 			r80.ReleaseDate = new DateTime(1993, 9, 24);
 			r80.RunningTime = 102;
-			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r80.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r80);
+			db.SaveChanges();
+			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r80.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r81 = new Movie();
+			r81.MovieNumber = 3081;
 			r81.Title = "Four Weddings and a Funeral";
 			r81.Overview = "Four Weddings And A Funeral is a British comedy about a British Man named Charles and an American Woman named Carrie who go through numerous weddings before they determine if they are right for one another.";
 			r81.Tagline = "Five good reasons to stay single.";
@@ -1107,13 +1348,16 @@ namespace FinalProject_Team12.Migrations
 			r81.Actors = "Hugh Grant, Andie MacDowell, James Fleet, Simon Callow, John Hannah, Kristin Scott Thomas";
 			r81.ReleaseDate = new DateTime(1994, 3, 9);
 			r81.RunningTime = 117;
-			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r81.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r81);
+			db.SaveChanges();
+			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r81.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r82 = new Movie();
+			r82.MovieNumber = 3082;
 			r82.Title = "The Lion King";
 			r82.Overview = "A young lion cub named Simba can't wait to be king. But his uncle craves the title for himself and will stop at nothing to get it.";
 			r82.Tagline = "Life's greatest adventure is finding your place in the Circle of Life.";
@@ -1121,13 +1365,16 @@ namespace FinalProject_Team12.Migrations
 			r82.Actors = "Jonathan Taylor Thomas, Matthew Broderick, James Earl Jones, Jeremy Irons, Moira Kelly, Niketa Calame";
 			r82.ReleaseDate = new DateTime(1994, 6, 23);
 			r82.RunningTime = 89;
-			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
-			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
-			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r82.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r82);
+			db.SaveChanges();
+			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r82.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r83 = new Movie();
+			r83.MovieNumber = 3083;
 			r83.Title = "Forrest Gump";
 			r83.Overview = "A man with a low IQ has accomplished great things in his life and been present during significant historic events - in each case, far exceeding what anyone imagined he could do. Yet, despite all the things he has attained, his one true love eludes him. 'Forrest Gump' is the story of a man who rose above his challenges, and who proved that determination, courage, and love are more important than ability.";
 			r83.Tagline = "The world will never be the same, once you've seen it through the eyes of Forrest Gump.";
@@ -1135,13 +1382,16 @@ namespace FinalProject_Team12.Migrations
 			r83.Actors = "Tom Hanks, Robin Wright, Gary Sinise, Mykelti Williamson, Sally Field, Michael Conner Humphreys";
 			r83.ReleaseDate = new DateTime(1994, 7, 6);
 			r83.RunningTime = 142;
-			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r83.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r83);
+			db.SaveChanges();
+			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r83.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r84 = new Movie();
+			r84.MovieNumber = 3084;
 			r84.Title = "The Shawshank Redemption";
 			r84.Overview = "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.";
 			r84.Tagline = "Fear can hold you prisoner. Hope can set you free.";
@@ -1149,12 +1399,15 @@ namespace FinalProject_Team12.Migrations
 			r84.Actors = "Tim Robbins, Morgan Freeman, Bob Gunton, Clancy Brown, Mark Rolston, James Whitmore";
 			r84.ReleaseDate = new DateTime(1994, 9, 23);
 			r84.RunningTime = 142;
-			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
+			r84.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r84);
+			db.SaveChanges();
+			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r84.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			db.SaveChanges();
 
 			Movie r85 = new Movie();
+			r85.MovieNumber = 3085;
 			r85.Title = "Pulp Fiction";
 			r85.Overview = "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.";
 			r85.Tagline = "Just because you are a character doesn't mean you have character.";
@@ -1162,12 +1415,15 @@ namespace FinalProject_Team12.Migrations
 			r85.Actors = "John Travolta, Samuel L. Jackson, Uma Thurman, Bruce Willis, Ving Rhames, Harvey Keitel";
 			r85.ReleaseDate = new DateTime(1994, 10, 8);
 			r85.RunningTime = 154;
-			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
-			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
+			r85.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r85);
+			db.SaveChanges();
+			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
+			r85.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			db.SaveChanges();
 
 			Movie r86 = new Movie();
+			r86.MovieNumber = 3086;
 			r86.Title = "The Usual Suspects";
 			r86.Overview = "Held in an L.A. interrogation room, Verbal Kint attempts to convince the feds that a mythic crime lord, Keyser Soze, not only exists, but was also responsible for drawing him and his four partners into a multi-million dollar heist that ended with an explosion in San Pedro harbor – leaving few survivors. Verbal lures his interrogators with an incredible story of the crime lord's almost supernatural prowess.";
 			r86.Tagline = "Five Criminals. One Line Up. No Coincidence.";
@@ -1175,13 +1431,16 @@ namespace FinalProject_Team12.Migrations
 			r86.Actors = "Stephen Baldwin, Gabriel Byrne, Chazz Palminteri, Kevin Pollak, Pete Postlethwaite, Kevin Spacey";
 			r86.ReleaseDate = new DateTime(1995, 7, 19);
 			r86.RunningTime = 106;
-			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r86.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r86);
+			db.SaveChanges();
+			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
+			r86.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r87 = new Movie();
+			r87.MovieNumber = 3087;
 			r87.Title = "Toy Story";
 			r87.Overview = "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.";
 			r87.Tagline = "Hang on for the comedy that goes to infinity and beyond!";
@@ -1189,13 +1448,16 @@ namespace FinalProject_Team12.Migrations
 			r87.Actors = "Tom Hanks, Tim Allen, Don Rickles, Jim Varney, Wallace Shawn, John Ratzenberger";
 			r87.ReleaseDate = new DateTime(1995, 10, 30);
 			r87.RunningTime = 81;
-			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r87.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r87);
+			db.SaveChanges();
+			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r87.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r88 = new Movie();
+			r88.MovieNumber = 3088;
 			r88.Title = "Sense and Sensibility";
 			r88.Overview = "Rich Mr. Dashwood dies, leaving his second wife and her daughters poor by the rules of inheritance. Two daughters are the titular opposites.";
 			r88.Tagline = "Lose your heart and come to your senses.";
@@ -1203,12 +1465,15 @@ namespace FinalProject_Team12.Migrations
 			r88.Actors = "Kate Winslet, Emma Thompson, Hugh Grant, Tom Wilkinson, Alan Rickman, Imogen Stubbs";
 			r88.ReleaseDate = new DateTime(1995, 12, 13);
 			r88.RunningTime = 136;
-			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r88.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r88);
+			db.SaveChanges();
+			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r88.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r89 = new Movie();
+			r89.MovieNumber = 3089;
 			r89.Title = "Mission: Impossible";
 			r89.Overview = "When Ethan Hunt, the leader of a crack espionage team whose perilous operation has gone awry with no explanation, discovers that a mole has penetrated the CIA, he's surprised to learn that he's the No. 1 suspect. To clear his name, Hunt now must ferret out the real double agent and, in the process, even the score.";
 			r89.Tagline = "Expect the Impossible.";
@@ -1216,13 +1481,16 @@ namespace FinalProject_Team12.Migrations
 			r89.Actors = "Tom Cruise, Jon Voight, Emmanuelle Beart, Henry Czerny, Jean Reno, Ving Rhames";
 			r89.ReleaseDate = new DateTime(1996, 5, 22);
 			r89.RunningTime = 110;
-			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r89.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r89);
+			db.SaveChanges();
+			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r89.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r90 = new Movie();
+			r90.MovieNumber = 3090;
 			r90.Title = "Independence Day";
 			r90.Overview = "On July 2, a giant alien mothership enters orbit around Earth and deploys several dozen saucer-shaped 'destroyer' spacecraft that quickly lay waste to major cities around the planet. On July 3, the United States conducts a coordinated counterattack that fails. On July 4, a plan is devised to gain access to the interior of the alien mothership in space, in order to plant a nuclear missile.";
 			r90.Tagline = "Earth. Take a good look. It might be your last.";
@@ -1230,13 +1498,16 @@ namespace FinalProject_Team12.Migrations
 			r90.Actors = "Will Smith, Bill Pullman, Jeff Goldblum, Mary McDonnell, Judd Hirsch, Robert Loggia";
 			r90.ReleaseDate = new DateTime(1996, 6, 25);
 			r90.RunningTime = 145;
-			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
-			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r90.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r90);
+			db.SaveChanges();
+			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r90.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r91 = new Movie();
+			r91.MovieNumber = 3091;
 			r91.Title = "Austin Powers: International Man of Mystery";
 			r91.Overview = "As a swingin' fashion photographer by day and a groovy British superagent by night, Austin Powers is the '60s' most shagadelic spy, baby! But can he stop megalomaniac Dr. Evil after the bald villain freezes himself and unthaws in the '90s? With the help of sexy sidekick Vanessa Kensington, he just might.";
 			r91.Tagline = "If he were any cooler, he'd still be frozen, baby!";
@@ -1244,13 +1515,16 @@ namespace FinalProject_Team12.Migrations
 			r91.Actors = "Mike Myers, Elizabeth Hurley, Michael York, Mimi Rogers, Seth Green, Fabiana Udenio";
 			r91.ReleaseDate = new DateTime(1997, 5, 2);
 			r91.RunningTime = 94;
-			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
-			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
+			r91.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r91);
+			db.SaveChanges();
+			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
+			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r91.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			db.SaveChanges();
 
 			Movie r92 = new Movie();
+			r92.MovieNumber = 3092;
 			r92.Title = "Men in Black";
 			r92.Overview = "Men in Black follows the exploits of agents Kay and Jay, members of a top-secret organization established to monitor and police alien activity on Earth. The two Men in Black find themselves in the middle of the deadly plot by an intergalactic terrorist who has arrived on Earth to assassinate two ambassadors from opposing galaxies. In order to prevent worlds from colliding, the MiB must track down the terrorist and prevent the destruction of Earth. It's just another typical day for the Men in Black.";
 			r92.Tagline = "Protecting the Earth from the scum of the universe.";
@@ -1258,14 +1532,17 @@ namespace FinalProject_Team12.Migrations
 			r92.Actors = "Tommy Lee Jones, Will Smith, Linda Fiorentino, Vincent D'Onofrio, Rip Torn, Tony Shalhoub";
 			r92.ReleaseDate = new DateTime(1997, 7, 2);
 			r92.RunningTime = 98;
-			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
-			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r92.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r92);
+			db.SaveChanges();
+			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r92.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r93 = new Movie();
+			r93.MovieNumber = 3093;
 			r93.Title = "Titanic";
 			r93.Overview = "84 years later, a 101-year-old woman named Rose DeWitt Bukater tells the story to her granddaughter Lizzy Calvert, Brock Lovett, Lewis Bodine, Bobby Buell and Anatoly Mikailavich on the Keldysh about her life set in April 10th 1912, on a ship called Titanic when young Rose boards the departing ship with the upper-class passengers and her mother, Ruth DeWitt Bukater, and her fiancé, Caledon Hockley. Meanwhile, a drifter and artist named Jack Dawson and his best friend Fabrizio De Rossi win third-class tickets to the ship in a game. And she explains the whole story from departure until the death of Titanic on its first and last voyage April 15th, 1912 at 2:20 in the morning.";
 			r93.Tagline = "Nothing on Earth could come between them.";
@@ -1273,13 +1550,16 @@ namespace FinalProject_Team12.Migrations
 			r93.Actors = "Kate Winslet, Leonardo DiCaprio, Frances Fisher, Billy Zane, Kathy Bates, Gloria Stuart";
 			r93.ReleaseDate = new DateTime(1997, 11, 18);
 			r93.RunningTime = 194;
-			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r93.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r93);
+			db.SaveChanges();
+			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r93.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r94 = new Movie();
+			r94.MovieNumber = 3094;
 			r94.Title = "The Big Lebowski";
 			r94.Overview = "Jeffrey 'The Dude' Lebowski, a Los Angeles slacker who only wants to bowl and drink white Russians, is mistaken for another Jeffrey Lebowski, a wheelchair-bound millionaire, and finds himself dragged into a strange series of events involving nihilists, adult film producers, ferrets, errant toes, and large sums of money.";
 			r94.Tagline = "Times like these call for a Big Lebowski.";
@@ -1287,12 +1567,15 @@ namespace FinalProject_Team12.Migrations
 			r94.Actors = "Jeff Bridges, John Goodman, Julianne Moore, Steve Buscemi, Philip Seymour Hoffman, David Huddleston";
 			r94.ReleaseDate = new DateTime(1998, 3, 6);
 			r94.RunningTime = 117;
-			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
+			r94.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r94);
+			db.SaveChanges();
+			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r94.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			db.SaveChanges();
 
 			Movie r95 = new Movie();
+			r95.MovieNumber = 3095;
 			r95.Title = "Shakespeare in Love";
 			r95.Overview = "Young Shakespeare is forced to stage his latest comedy, 'Romeo and Ethel, the Pirate's Daughter,' before it's even written. When a lovely noblewoman auditions for a role, they fall into forbidden love -- and his play finds a new life (and title). As their relationship progresses, Shakespeare's comedy soon transforms into tragedy.";
 			r95.Tagline = "Love is the only inspiration.";
@@ -1300,12 +1583,15 @@ namespace FinalProject_Team12.Migrations
 			r95.Actors = "Joseph Fiennes, Gwyneth Paltrow, Geoffrey Rush, Tom Wilkinson, Judi Dench, Imelda Staunton";
 			r95.ReleaseDate = new DateTime(1998, 12, 11);
 			r95.RunningTime = 122;
-			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
-			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
+			r95.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r95);
+			db.SaveChanges();
+			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r95.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "History"));
 			db.SaveChanges();
 
 			Movie r96 = new Movie();
+			r96.MovieNumber = 3096;
 			r96.Title = "You've Got Mail";
 			r96.Overview = "Book superstore magnate, Joe Fox and independent book shop owner, Kathleen Kelly fall in love in the anonymity of the Internet – both blissfully unaware that he's putting her out of business.";
 			r96.Tagline = "Someone you pass on the street may already be the love of your life.";
@@ -1313,12 +1599,15 @@ namespace FinalProject_Team12.Migrations
 			r96.Actors = "Tom Hanks, Meg Ryan, Katie Sagona, Greg Kinnear, Parker Posey, Jean Stapleton";
 			r96.ReleaseDate = new DateTime(1998, 12, 17);
 			r96.RunningTime = 119;
-			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r96.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r96);
+			db.SaveChanges();
+			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r96.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r97 = new Movie();
+			r97.MovieNumber = 3097;
 			r97.Title = "Office Space";
 			r97.Overview = "Three office workers strike back at their evil employers by hatching a hapless attempt to embezzle money.";
 			r97.Tagline = "Work sucks.";
@@ -1326,12 +1615,15 @@ namespace FinalProject_Team12.Migrations
 			r97.Actors = "Ron Livingston, Jennifer Aniston, David Herman, Ajay Naidu, Diedrich Bader, Stephen Root";
 			r97.ReleaseDate = new DateTime(1999, 2, 19);
 			r97.RunningTime = 89;
-			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
+			r97.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r97);
+			db.SaveChanges();
+			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r97.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			db.SaveChanges();
 
 			Movie r98 = new Movie();
+			r98.MovieNumber = 3098;
 			r98.Title = "Notting Hill";
 			r98.Overview = "The British comedy from director Roger Michell tells the love story between a famous actress and a simple book seller from London. A look into the attempt for famous people to have a personal and private life and the ramifications that follow. Nominated for three Golden Globes in 2000.";
 			r98.Tagline = "Can the most famous film star in the world fall for the man on the street?";
@@ -1339,13 +1631,16 @@ namespace FinalProject_Team12.Migrations
 			r98.Actors = "Julia Roberts, Hugh Grant, Gina McKee, Tim McInnerny, Rhys Ifans, Emma Chambers";
 			r98.ReleaseDate = new DateTime(1999, 5, 13);
 			r98.RunningTime = 124;
-			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
-			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r98.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r98);
+			db.SaveChanges();
+			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r98.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r99 = new Movie();
+			r99.MovieNumber = 3099;
 			r99.Title = "Toy Story 2";
 			r99.Overview = "Andy heads off to Cowboy Camp, leaving his toys to their own devices. Things shift into high gear when an obsessive toy collector named Al McWhiggen, owner of Al's Toy Barn kidnaps Woody. Andy's toys mount a daring rescue mission, Buzz Lightyear meets his match and Woody has to decide where he and his heart truly belong.";
 			r99.Tagline = "The toys are back!";
@@ -1353,13 +1648,16 @@ namespace FinalProject_Team12.Migrations
 			r99.Actors = "Tom Hanks, Tim Allen, Joan Cusack, Kelsey Grammer, Don Rickles, Jim Varney";
 			r99.ReleaseDate = new DateTime(1999, 10, 30);
 			r99.RunningTime = 92;
-			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r99.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r99);
+			db.SaveChanges();
+			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r99.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r100 = new Movie();
+			r100.MovieNumber = 3100;
 			r100.Title = "Gladiator";
 			r100.Overview = "In the year 180, the death of emperor Marcus Aurelius throws the Roman Empire into chaos. Maximus is one of the Roman army's most capable and trusted generals and a key advisor to the emperor. As Marcus' devious son Commodus ascends to the throne, Maximus is set to be executed. He escapes, but is captured by slave traders. Renamed Spaniard and forced to become a gladiator, Maximus must battle to the death with other men for the amusement of paying audiences. His battle skills serve him well, and he becomes one of the most famous and admired men to fight in the Colosseum. Determined to avenge himself against the man who took away his freedom and laid waste to his family, Maximus believes that he can use his fame and skill in the ring to avenge the loss of his family and former glory. As the gladiator begins to challenge his rule, Commodus decides to put his own fighting mettle to the test by squaring off with Maximus in a battle to the death.";
 			r100.Tagline = "A Hero Will Rise.";
@@ -1367,13 +1665,16 @@ namespace FinalProject_Team12.Migrations
 			r100.Actors = "Russell Crowe, Joaquin Phoenix, Connie Nielsen, Oliver Reed, Richard Harris, Derek Jacobi";
 			r100.ReleaseDate = new DateTime(2000, 5, 1);
 			r100.RunningTime = 155;
-			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
-			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
-			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
+			r100.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r100);
+			db.SaveChanges();
+			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r100.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			db.SaveChanges();
 
 			Movie r101 = new Movie();
+			r101.MovieNumber = 3101;
 			r101.Title = "Gone in Sixty Seconds";
 			r101.Overview = "Upon learning that he has to come out of retirement to steal 50 cars in one night to save his brother Kip's life, former car thief Randall 'Memphis' Raines enlists help from a few 'boost happy' pals to accomplish a seemingly impossible feat. From countless car chases to relentless cops, the high-octane excitement builds as Randall swerves around more than a few roadblocks to keep Kip alive.";
 			r101.Tagline = "Ice Cold, Hot Wired.";
@@ -1381,13 +1682,16 @@ namespace FinalProject_Team12.Migrations
 			r101.Actors = "Nicolas Cage, Angelina Jolie, Giovanni Ribisi, Delroy Lindo, Will Patton, Christopher Eccleston";
 			r101.ReleaseDate = new DateTime(2000, 6, 9);
 			r101.RunningTime = 118;
-			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
-			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r101.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r101);
+			db.SaveChanges();
+			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
+			r101.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r102 = new Movie();
+			r102.MovieNumber = 3102;
 			r102.Title = "X-Men";
 			r102.Overview = "Two mutants, Rogue and Wolverine, come to a private academy for their kind whose resident superhero team, the X-Men, must oppose a terrorist organization with similar powers.";
 			r102.Tagline = "Evolution Begins";
@@ -1395,13 +1699,16 @@ namespace FinalProject_Team12.Migrations
 			r102.Actors = "Patrick Stewart, Hugh Jackman, Ian McKellen, Halle Berry, Famke Janssen, James Marsden";
 			r102.ReleaseDate = new DateTime(2000, 7, 13);
 			r102.RunningTime = 104;
-			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r102.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r102);
+			db.SaveChanges();
+			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r102.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r103 = new Movie();
+			r103.MovieNumber = 3103;
 			r103.Title = "Miss Congeniality";
 			r103.Overview = "When the local FBI office receives a letter from a terrorist known only as 'The Citizen', it's quickly determined that he's planning his next act at the Miss America beauty pageant. Because tough-as-nails Gracie Hart is the only female Agent at the office, she's chosen to go undercover as the contestant from New Jersey.";
 			r103.Tagline = "Never Mess With An Agent In A Dress.";
@@ -1409,13 +1716,16 @@ namespace FinalProject_Team12.Migrations
 			r103.Actors = "Sandra Bullock, Benjamin Bratt, Michael Caine, Candice Bergen, William Shatner, Ernie Hudson";
 			r103.ReleaseDate = new DateTime(2000, 12, 14);
 			r103.RunningTime = 111;
-			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
+			r103.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r103);
+			db.SaveChanges();
+			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
+			r103.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			db.SaveChanges();
 
 			Movie r104 = new Movie();
+			r104.MovieNumber = 3104;
 			r104.Title = "Bridget Jones's Diary";
 			r104.Overview = "A chaotic Bridget Jones meets a snobbish lawyer, and he soon enters her world of imperfections.";
 			r104.Tagline = "Health Warning: Adopting Bridget's lifestyle could seriously damage your health.";
@@ -1423,13 +1733,16 @@ namespace FinalProject_Team12.Migrations
 			r104.Actors = "Renee Zellweger, Colin Firth, Hugh Grant, Gemma Jones, Jim Broadbent, James Callis";
 			r104.ReleaseDate = new DateTime(2001, 4, 13);
 			r104.RunningTime = 97;
-			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r104.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r104);
+			db.SaveChanges();
+			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r104.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r105 = new Movie();
+			r105.MovieNumber = 3105;
 			r105.Title = "Legally Blonde";
 			r105.Overview = "Elle Woods has it all. She's the president of her sorority, a Hawaiian Tropic girl, Miss June in her campus calendar, and, above all, a natural blonde. She dates the cutest fraternity boy on campus and wants nothing more than to be Mrs. Warner Huntington III. But, there's just one thing stopping Warner from popping the question: Elle is too blonde.";
 			r105.Tagline = "Don't judge a book by its hair color!";
@@ -1437,11 +1750,14 @@ namespace FinalProject_Team12.Migrations
 			r105.Actors = "Reese Witherspoon, Luke Wilson, Selma Blair, Matthew Davis, Victor Garber, Jennifer Coolidge";
 			r105.ReleaseDate = new DateTime(2001, 7, 13);
 			r105.RunningTime = 96;
-			r105.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r105.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r105);
+			db.SaveChanges();
+			r105.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r106 = new Movie();
+			r106.MovieNumber = 3106;
 			r106.Title = "Monsters, Inc.";
 			r106.Overview = "James Sullivan and Mike Wazowski are monsters, they earn their living scaring children and are the best in the business... even though they're more afraid of the children than they are of them. When a child accidentally enters their world, James and Mike suddenly find that kids are not to be afraid of and they uncover a conspiracy that could threaten all children across the world.";
 			r106.Tagline = "We Scare Because We Care.";
@@ -1449,13 +1765,16 @@ namespace FinalProject_Team12.Migrations
 			r106.Actors = "John Goodman, Billy Crystal, Mary Gibbs, Steve Buscemi, James Coburn, Jennifer Tilly";
 			r106.ReleaseDate = new DateTime(2001, 11, 1);
 			r106.RunningTime = 92;
-			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r106.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r106);
+			db.SaveChanges();
+			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r106.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r107 = new Movie();
+			r107.MovieNumber = 3107;
 			r107.Title = "Harry Potter and the Philosopher's Stone";
 			r107.Overview = "Harry Potter has lived under the stairs at his aunt and uncle's house his whole life. But on his 11th birthday, he learns he's a powerful wizard -- with a place waiting for him at the Hogwarts School of Witchcraft and Wizardry. As he learns to harness his newfound powers with the help of the school's kindly headmaster, Harry uncovers the truth about his parents' deaths -- and about the villain who's to blame.";
 			r107.Tagline = "Let the Magic Begin.";
@@ -1463,13 +1782,16 @@ namespace FinalProject_Team12.Migrations
 			r107.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris, Tom Felton, Robbie Coltrane";
 			r107.ReleaseDate = new DateTime(2001, 11, 16);
 			r107.RunningTime = 152;
-			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r107.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r107);
+			db.SaveChanges();
+			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r107.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r108 = new Movie();
+			r108.MovieNumber = 3108;
 			r108.Title = "Ocean's Eleven";
 			r108.Overview = "Less than 24 hours into his parole, charismatic thief Danny Ocean is already rolling out his next plan: In one night, Danny's hand-picked crew of specialists will attempt to steal more than $150 million from three Las Vegas casinos. But to score the cash, Danny risks his chances of reconciling with ex-wife, Tess.";
 			r108.Tagline = "Are you in or out?";
@@ -1477,12 +1799,15 @@ namespace FinalProject_Team12.Migrations
 			r108.Actors = "George Clooney, Brad Pitt, Matt Damon, Andy Garcia, Julia Roberts, Casey Affleck";
 			r108.ReleaseDate = new DateTime(2001, 12, 7);
 			r108.RunningTime = 116;
-			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
-			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
+			r108.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r108);
+			db.SaveChanges();
+			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
+			r108.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			db.SaveChanges();
 
 			Movie r109 = new Movie();
+			r109.MovieNumber = 3109;
 			r109.Title = "Harry Potter and the Chamber of Secrets";
 			r109.Overview = "Ignoring threats to his life, Harry returns to Hogwarts to investigate – aided by Ron and Hermione – a mysterious series of attacks.";
 			r109.Tagline = "Hogwarts is back in session.";
@@ -1490,13 +1815,16 @@ namespace FinalProject_Team12.Migrations
 			r109.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris, Alan Rickman, Tom Felton";
 			r109.ReleaseDate = new DateTime(2002, 11, 13);
 			r109.RunningTime = 161;
-			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r109.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r109);
+			db.SaveChanges();
+			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r109.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r110 = new Movie();
+			r110.MovieNumber = 3110;
 			r110.Title = "Finding Nemo";
 			r110.Overview = "Nemo, an adventurous young clownfish, is unexpectedly taken from his Great Barrier Reef home to a dentist's office aquarium. It's up to his worrisome father Marlin and a friendly but forgetful fish Dory to bring Nemo home -- meeting vegetarian sharks, surfer dude turtles, hypnotic jellyfish, hungry seagulls, and more along the way.";
 			r110.Tagline = "There are 3.7 trillion fish in the ocean, they're looking for one.";
@@ -1504,12 +1832,15 @@ namespace FinalProject_Team12.Migrations
 			r110.Actors = "Albert Brooks, Ellen DeGeneres, Alexander Gould, Willem Dafoe, Brad Garrett, Allison Janney";
 			r110.ReleaseDate = new DateTime(2003, 5, 30);
 			r110.RunningTime = 100;
-			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r110.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r110);
+			db.SaveChanges();
+			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r110.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r111 = new Movie();
+			r111.MovieNumber = 3111;
 			r111.Title = "Love Actually";
 			r111.Overview = "Follows seemingly unrelated people as their lives begin to intertwine while they fall in – and out – of love. Affections languish and develop as Christmas draws near.";
 			r111.Tagline = "The ultimate romantic comedy.";
@@ -1517,13 +1848,16 @@ namespace FinalProject_Team12.Migrations
 			r111.Actors = "Keira Knightley, Heike Makatsch, Emma Thompson, Laura Linney, Hugh Grant, January Jones";
 			r111.ReleaseDate = new DateTime(2003, 9, 7);
 			r111.RunningTime = 135;
-			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
-			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Drama"));
+			r111.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r111);
+			db.SaveChanges();
+			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r111.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r112 = new Movie();
+			r112.MovieNumber = 3112;
 			r112.Title = "Elf";
 			r112.Overview = "When young Buddy falls into Santa's gift sack on Christmas Eve, he's transported back to the North Pole and raised as a toy-making elf by Santa's helpers. But as he grows into adulthood, he can't shake the nagging feeling that he doesn't belong. Buddy vows to visit Manhattan and find his real dad, a workaholic publisher.";
 			r112.Tagline = "This holiday, discover your inner elf.";
@@ -1531,13 +1865,16 @@ namespace FinalProject_Team12.Migrations
 			r112.Actors = "Will Ferrell, James Caan, Zooey Deschanel, Mary Steenburgen, Daniel Tay, Ed Asner";
 			r112.ReleaseDate = new DateTime(2003, 10, 9);
 			r112.RunningTime = 97;
-			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
+			r112.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r112);
+			db.SaveChanges();
+			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r112.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			db.SaveChanges();
 
 			Movie r113 = new Movie();
+			r113.MovieNumber = 3113;
 			r113.Title = "Mean Girls";
 			r113.Overview = "Cady Heron is a hit with The Plastics, the A-list girl clique at her new school, until she makes the mistake of falling for Aaron Samuels, the ex-boyfriend of alpha Plastic Regina George.";
 			r113.Tagline = "Welcome to girl world.";
@@ -1545,11 +1882,14 @@ namespace FinalProject_Team12.Migrations
 			r113.Actors = "Lindsay Lohan, Rachel McAdams, Tim Meadows, Ana Gasteyer, Amy Poehler, Tina Fey";
 			r113.ReleaseDate = new DateTime(2004, 4, 30);
 			r113.RunningTime = 97;
-			r113.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r113.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r113);
+			db.SaveChanges();
+			r113.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r114 = new Movie();
+			r114.MovieNumber = 3114;
 			r114.Title = "Harry Potter and the Prisoner of Azkaban";
 			r114.Overview = "Harry, Ron and Hermione return to Hogwarts for another magic-filled year. Harry comes face to face with danger yet again, this time in the form of escaped convict, Sirius Black – and turns to sympathetic Professor Lupin for help.";
 			r114.Tagline = "Something wicked this way comes.";
@@ -1557,13 +1897,16 @@ namespace FinalProject_Team12.Migrations
 			r114.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Gary Oldman, David Thewlis, Alan Rickman";
 			r114.ReleaseDate = new DateTime(2004, 5, 31);
 			r114.RunningTime = 141;
-			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r114.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r114);
+			db.SaveChanges();
+			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r114.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r115 = new Movie();
+			r115.MovieNumber = 3115;
 			r115.Title = "Harry Potter and the Goblet of Fire";
 			r115.Overview = "Harry starts his fourth year at Hogwarts, competes in the treacherous Triwizard Tournament and faces the evil Lord Voldemort. Ron and Hermione help Harry manage the pressure – but Voldemort lurks, awaiting his chance to destroy Harry and all that he stands for.";
 			r115.Tagline = "Dark And Difficult Times Lie Ahead.";
@@ -1571,13 +1914,16 @@ namespace FinalProject_Team12.Migrations
 			r115.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Ralph Fiennes, Michael Gambon, Alan Rickman";
 			r115.ReleaseDate = new DateTime(2005, 11, 5);
 			r115.RunningTime = 157;
-			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r115.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r115);
+			db.SaveChanges();
+			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r115.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r116 = new Movie();
+			r116.MovieNumber = 3116;
 			r116.Title = "Cars";
 			r116.Overview = "Lightning McQueen, a hotshot rookie race car driven to succeed, discovers that life is about the journey, not the finish line, when he finds himself unexpectedly detoured in the sleepy Route 66 town of Radiator Springs. On route across the country to the big Piston Cup Championship in California to compete against two seasoned pros, McQueen gets to know the town's offbeat characters.";
 			r116.Tagline = "Ahhh... it's got that new movie smell.";
@@ -1585,14 +1931,17 @@ namespace FinalProject_Team12.Migrations
 			r116.Actors = "Owen Wilson, Paul Newman, Bonnie Hunt, Larry the Cable Guy, Tony Shalhoub, Cheech Marin";
 			r116.ReleaseDate = new DateTime(2006, 6, 8);
 			r116.RunningTime = 117;
-			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r116.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r116);
+			db.SaveChanges();
+			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r116.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r117 = new Movie();
+			r117.MovieNumber = 3117;
 			r117.Title = "The Departed";
 			r117.Overview = "To take down South Boston's Irish Mafia, the police send in one of their own to infiltrate the underworld, not realizing the syndicate has done likewise. While an undercover cop curries favor with the mob kingpin, a career criminal rises through the police ranks. But both sides soon discover there's a mole among them.";
 			r117.Tagline = "Lies. Betrayal. Sacrifice. How far will you take it?";
@@ -1600,13 +1949,16 @@ namespace FinalProject_Team12.Migrations
 			r117.Actors = "Jack Nicholson, Matt Damon, Jack Nicholson, Mark Wahlberg, Martin Sheen, Ray Winstone";
 			r117.ReleaseDate = new DateTime(2006, 10, 5);
 			r117.RunningTime = 151;
-			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
-			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
+			r117.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r117);
+			db.SaveChanges();
+			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
+			r117.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
 			db.SaveChanges();
 
 			Movie r118 = new Movie();
+			r118.MovieNumber = 3118;
 			r118.Title = "Ratatouille";
 			r118.Overview = "A rat named Remy dreams of becoming a great French chef despite his family's wishes and the obvious problem of being a rat in a decidedly rodent-phobic profession. When fate places Remy in the sewers of Paris, he finds himself ideally situated beneath a restaurant made famous by his culinary hero, Auguste Gusteau. Despite the apparent dangers of being an unlikely - and certainly unwanted - visitor in the kitchen of a fine French restaurant, Remy's passion for cooking soon sets into motion a hilarious and exciting rat race that turns the culinary world of Paris upside down.";
 			r118.Tagline = "He's dying to become a chef.";
@@ -1614,14 +1966,17 @@ namespace FinalProject_Team12.Migrations
 			r118.Actors = "Patton Oswalt, Ian Holm, Lou Romano, Brian Dennehy, Peter Sohn, Peter O'Toole";
 			r118.ReleaseDate = new DateTime(2007, 6, 22);
 			r118.RunningTime = 111;
-			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
+			r118.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r118);
+			db.SaveChanges();
+			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r118.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			db.SaveChanges();
 
 			Movie r119 = new Movie();
+			r119.MovieNumber = 3119;
 			r119.Title = "Transformers";
 			r119.Overview = "Young teenager, Sam Witwicky becomes involved in the ancient struggle between two extraterrestrial factions of transforming robots – the heroic Autobots and the evil Decepticons. Sam holds the clue to unimaginable power and the Decepticons will stop at nothing to retrieve it.";
 			r119.Tagline = "Their war. Our world.";
@@ -1629,13 +1984,16 @@ namespace FinalProject_Team12.Migrations
 			r119.Actors = "Shia LaBeouf, Josh Duhamel, Megan Fox, Rachael Taylor, Tyrese Gibson, Jon Voight";
 			r119.ReleaseDate = new DateTime(2007, 6, 27);
 			r119.RunningTime = 144;
-			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
+			r119.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r119);
+			db.SaveChanges();
+			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
+			r119.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
 			db.SaveChanges();
 
 			Movie r120 = new Movie();
+			r120.MovieNumber = 3120;
 			r120.Title = "Harry Potter and the Order of the Phoenix";
 			r120.Overview = "Returning for his fifth year of study at Hogwarts, Harry is stunned to find that his warnings about the return of Lord Voldemort have been ignored. Left with no choice, Harry takes matters into his own hands, training a small group of students – dubbed 'Dumbledore's Army' – to defend themselves against the dark arts.";
 			r120.Tagline = "Evil Must Be Confronted.";
@@ -1643,14 +2001,17 @@ namespace FinalProject_Team12.Migrations
 			r120.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Michael Gambon, Ralph Fiennes, Tom Felton";
 			r120.ReleaseDate = new DateTime(2007, 6, 28);
 			r120.RunningTime = 138;
-			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Mystery"));
+			r120.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r120);
+			db.SaveChanges();
+			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r120.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Mystery"));
 			db.SaveChanges();
 
 			Movie r121 = new Movie();
+			r121.MovieNumber = 3121;
 			r121.Title = "The Dark Knight";
 			r121.Overview = "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.";
 			r121.Tagline = "Why So Serious?";
@@ -1658,14 +2019,17 @@ namespace FinalProject_Team12.Migrations
 			r121.Actors = "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine, Maggie Gyllenhaal, Gary Oldman";
 			r121.ReleaseDate = new DateTime(2008, 7, 16);
 			r121.RunningTime = 152;
-			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Crime"));
-			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Thriller"));
+			r121.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r121);
+			db.SaveChanges();
+			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Crime"));
+			r121.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Thriller"));
 			db.SaveChanges();
 
 			Movie r122 = new Movie();
+			r122.MovieNumber = 3122;
 			r122.Title = "Star Trek";
 			r122.Overview = "The fate of the galaxy rests in the hands of bitter rivals. One, James Kirk, is a delinquent, thrill-seeking Iowa farm boy. The other, Spock, a Vulcan, was raised in a logic-based society that rejects all emotion. As fiery instinct clashes with calm reason, their unlikely but powerful partnership is the only thing capable of leading their crew through unimaginable danger, boldly going where no one has gone before. The human adventure has begun again.";
 			r122.Tagline = "The future begins.";
@@ -1673,13 +2037,16 @@ namespace FinalProject_Team12.Migrations
 			r122.Actors = "Chris Pine, Zachary Quinto, Leonard Nimoy, Eric Bana, Bruce Greenwood, Karl Urban";
 			r122.ReleaseDate = new DateTime(2009, 5, 6);
 			r122.RunningTime = 127;
-			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
-			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
+			r122.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r122);
+			db.SaveChanges();
+			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
+			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r122.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			db.SaveChanges();
 
 			Movie r123 = new Movie();
+			r123.MovieNumber = 3123;
 			r123.Title = "Up";
 			r123.Overview = "Carl Fredricksen spent his entire life dreaming of exploring the globe and experiencing life to its fullest. But at age 78, life seems to have passed him by, until a twist of fate (and a persistent 8-year old Wilderness Explorer named Russell) gives him a new lease on life.";
 			r123.Tagline = "Fly Up to Venezuela";
@@ -1687,14 +2054,17 @@ namespace FinalProject_Team12.Migrations
 			r123.Actors = "Ed Asner, Christopher Plummer, Jordan Nagai, Bob Peterson, Delroy Lindo, Jerome Ranft";
 			r123.ReleaseDate = new DateTime(2009, 5, 13);
 			r123.RunningTime = 96;
-			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
+			r123.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r123);
+			db.SaveChanges();
+			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r123.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			db.SaveChanges();
 
 			Movie r124 = new Movie();
+			r124.MovieNumber = 3124;
 			r124.Title = "Harry Potter and the Half-Blood Prince";
 			r124.Overview = "As Harry begins his sixth year at Hogwarts, he discovers an old book marked as 'Property of the Half-Blood Prince', and begins to learn more about Lord Voldemort's dark past.";
 			r124.Tagline = "Dark Secrets Revealed";
@@ -1702,13 +2072,16 @@ namespace FinalProject_Team12.Migrations
 			r124.Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson, Tom Felton, Michael Gambon, Jim Broadbent";
 			r124.ReleaseDate = new DateTime(2009, 7, 7);
 			r124.RunningTime = 153;
-			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
+			r124.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r124);
+			db.SaveChanges();
+			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r124.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
 			db.SaveChanges();
 
 			Movie r125 = new Movie();
+			r125.MovieNumber = 3125;
 			r125.Title = "The Princess and the Frog";
 			r125.Overview = "A waitress, desperate to fulfill her dreams as a restaurant owner, is set on a journey to turn a frog prince back into a human being, but she has to do face the same problem after she kisses him.";
 			r125.Tagline = "Every Love Story Begins With a Kiss...";
@@ -1716,14 +2089,17 @@ namespace FinalProject_Team12.Migrations
 			r125.Actors = "Anika Noni Rose, Bruno Campos, Keith David, Michael-Leon Wooley, Jennifer Cody, Jim Cummings";
 			r125.ReleaseDate = new DateTime(2009, 12, 8);
 			r125.RunningTime = 97;
-			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
-			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
-			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
+			r125.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r125);
+			db.SaveChanges();
+			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
+			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r125.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
 			db.SaveChanges();
 
 			Movie r126 = new Movie();
+			r126.MovieNumber = 3126;
 			r126.Title = "Avatar";
 			r126.Overview = "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.";
 			r126.Tagline = "Enter the World of Pandora.";
@@ -1731,14 +2107,17 @@ namespace FinalProject_Team12.Migrations
 			r126.Actors = "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang, Michelle Rodriguez, Giovanni Ribisi";
 			r126.ReleaseDate = new DateTime(2009, 12, 10);
 			r126.RunningTime = 162;
-            r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
-			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
-			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
+			r126.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r126);
+			db.SaveChanges();
+			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
+			r126.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
 			db.SaveChanges();
 
 			Movie r127 = new Movie();
+			r127.MovieNumber = 3127;
 			r127.Title = "Toy Story 3";
 			r127.Overview = "Woody, Buzz, and the rest of Andy's toys haven't been played with in years. With Andy about to go to college, the gang find themselves accidentally left at a nefarious day care center. The toys must band together to escape and return home to Andy.";
 			r127.Tagline = "No toy gets left behind.";
@@ -1746,13 +2125,16 @@ namespace FinalProject_Team12.Migrations
 			r127.Actors = "Tom Hanks, Tim Allen, Ned Beatty, Joan Cusack, Michael Keaton, Whoopi Goldberg";
 			r127.ReleaseDate = new DateTime(2010, 6, 16);
 			r127.RunningTime = 103;
-			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
+			r127.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r127);
+			db.SaveChanges();
+			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r127.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
 			db.SaveChanges();
 
 			Movie r128 = new Movie();
+			r128.MovieNumber = 3128;
 			r128.Title = "The King's Speech";
 			r128.Overview = "The King's Speech tells the story of the man who became King George VI, the father of Queen Elizabeth II. After his brother abdicates, George ('Bertie') reluctantly assumes the throne. Plagued by a dreaded stutter and considered unfit to be king, Bertie engages the help of an unorthodox speech therapist named Lionel Logue. Through a set of unexpected techniques, and as a result of an unlikely friendship, Bertie is able to find his voice and boldly lead the country into war.";
 			r128.Tagline = "Find your voice.";
@@ -1760,12 +2142,15 @@ namespace FinalProject_Team12.Migrations
 			r128.Actors = "Colin Firth, Geoffrey Rush, Helena Bonham Carter, Guy Pearce, Timothy Spall, Michael Gambon";
 			r128.ReleaseDate = new DateTime(2010, 9, 6);
 			r128.RunningTime = 118;
-			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
-			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " History"));
+			r128.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r128);
+			db.SaveChanges();
+			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r128.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "History"));
 			db.SaveChanges();
 
 			Movie r129 = new Movie();
+			r129.MovieNumber = 3129;
 			r129.Title = "Moneyball";
 			r129.Overview = "The story of Oakland Athletics general manager Billy Beane's successful attempt to put together a baseball team on a budget, by employing computer-generated analysis to draft his players.";
 			r129.Tagline = "What are you really worth?";
@@ -1773,11 +2158,14 @@ namespace FinalProject_Team12.Migrations
 			r129.Actors = "Brad Pitt, Jonah Hill, Philip Seymour Hoffman, Robin Wright, Chris Pratt, Stephen Bishop";
 			r129.ReleaseDate = new DateTime(2011, 9, 22);
 			r129.RunningTime = 133;
-			r129.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
+			r129.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r129);
+			db.SaveChanges();
+			r129.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Drama"));
 			db.SaveChanges();
 
 			Movie r130 = new Movie();
+			r130.MovieNumber = 3130;
 			r130.Title = "Brave";
 			r130.Overview = "Brave is set in the mystical Scottish Highlands, where Mérida is the princess of a kingdom ruled by King Fergus and Queen Elinor. An unruly daughter and an accomplished archer, Mérida one day defies a sacred custom of the land and inadvertently brings turmoil to the kingdom. In an attempt to set things right, Mérida seeks out an eccentric old Wise Woman and is granted an ill-fated wish. Also figuring into Mérida’s quest — and serving as comic relief — are the kingdom’s three lords: the enormous Lord MacGuffin, the surly Lord Macintosh, and the disagreeable Lord Dingwall.";
 			r130.Tagline = "Change your fate.";
@@ -1785,16 +2173,19 @@ namespace FinalProject_Team12.Migrations
 			r130.Actors = "Kelly Macdonald, Julie Walters, Billy Connolly, Emma Thompson, Kevin McKidd, Craig Ferguson";
 			r130.ReleaseDate = new DateTime(2012, 6, 21);
 			r130.RunningTime = 93;
-			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
-			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
-			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Action"));
-			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
+			r130.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r130);
+			db.SaveChanges();
+			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r130.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			db.SaveChanges();
 
 			Movie r131 = new Movie();
+			r131.MovieNumber = 3131;
 			r131.Title = "Pitch Perfect";
 			r131.Overview = "College student Beca knows she does not want to be part of a clique, but that's exactly where she finds herself after arriving at her new school. Thrust in among mean gals, nice gals and just plain weird gals, Beca finds that the only thing they have in common is how well they sing together. She takes the women of the group out of their comfort zone of traditional arrangements and into a world of amazing harmonic combinations in a fight to the top of college music competitions.";
 			r131.Tagline = "Get pitch slapped.";
@@ -1802,13 +2193,16 @@ namespace FinalProject_Team12.Migrations
 			r131.Actors = "Anna Kendrick, Skylar Astin, Brittany Snow, Anna Camp, Rebel Wilson, Ben Platt";
 			r131.ReleaseDate = new DateTime(2012, 9, 28);
 			r131.RunningTime = 112;
-			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
-			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Musical"));
-			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Romance"));
+			r131.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r131);
+			db.SaveChanges();
+			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Musical"));
+			r131.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Romance"));
 			db.SaveChanges();
 
 			Movie r132 = new Movie();
+			r132.MovieNumber = 3132;
 			r132.Title = "The Lego Movie";
 			r132.Overview = "An ordinary Lego mini-figure, mistakenly thought to be the extraordinary MasterBuilder, is recruited to join a quest to stop an evil Lego tyrant from gluing the universe together.";
 			r132.Tagline = "The story of a nobody who saved everybody.";
@@ -1816,15 +2210,18 @@ namespace FinalProject_Team12.Migrations
 			r132.Actors = "Chris Pratt, Will Ferrell, Elizabeth Banks, Will Arnett, Nick Offerman, Alison Brie";
 			r132.ReleaseDate = new DateTime(2014, 2, 6);
 			r132.RunningTime = 100;
-			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
-			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Animation"));
-			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Comedy"));
-			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Family"));
-			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Fantasy"));
+			r132.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r132);
+			db.SaveChanges();
+			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
+			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Animation"));
+			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Family"));
+			r132.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Fantasy"));
 			db.SaveChanges();
 
 			Movie r133 = new Movie();
+			r133.MovieNumber = 3133;
 			r133.Title = "Guardians of the Galaxy";
 			r133.Overview = "Light years from Earth, 26 years after being abducted, Peter Quill finds himself the prime target of a manhunt after discovering an orb wanted by Ronan the Accuser.";
 			r133.Tagline = "All heroes start somewhere.";
@@ -1832,13 +2229,16 @@ namespace FinalProject_Team12.Migrations
 			r133.Actors = "Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel, Bradley Cooper, Lee Pace";
 			r133.ReleaseDate = new DateTime(2014, 7, 30);
 			r133.RunningTime = 121;
-			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
-			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Science Fiction"));
-			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == " Adventure"));
+			r133.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r133);
+			db.SaveChanges();
+			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Action"));
+			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Science Fiction"));
+			r133.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Adventure"));
 			db.SaveChanges();
 
 			Movie r134 = new Movie();
+			r134.MovieNumber = 3134;
 			r134.Title = "Bad Moms";
 			r134.Overview = "When three overworked and under-appreciated moms are pushed beyond their limits, they ditch their conventional responsibilities for a jolt of long overdue freedom, fun, and comedic self-indulgence.";
 			r134.Tagline = "Party like a mother.";
@@ -1846,10 +2246,12 @@ namespace FinalProject_Team12.Migrations
 			r134.Actors = "Mila Kunis, Kristen Bell, Kathryn Hahn, Christina Applegate, Jada Pinkett Smith, Annie Mumolo";
 			r134.ReleaseDate = new DateTime(2016, 7, 28);
 			r134.RunningTime = 100;
-			r134.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			r134.CustomerRating = 3;
 			db.Movies.AddOrUpdate(r => r.Title, r134);
 			db.SaveChanges();
-           
+			r134.Genres.Add(db.Genres.FirstOrDefault(x => x.GenreType == "Comedy"));
+			db.SaveChanges();
+
 		}
 	}
 }

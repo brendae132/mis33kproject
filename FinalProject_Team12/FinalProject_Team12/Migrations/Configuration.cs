@@ -4,13 +4,14 @@ namespace FinalProject_Team12.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using FinalProject_Team12.DAL;
 
     internal sealed class Configuration : DbMigrationsConfiguration<FinalProject_Team12.DAL.AppDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "FinalProject_Team12.DAL.AppDbContext";
+            //ContextKey = "FinalProject_Team12.DAL.AppDbContext";
         }
 
         protected override void Seed(FinalProject_Team12.DAL.AppDbContext context)
@@ -19,6 +20,7 @@ namespace FinalProject_Team12.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
 
             SeedIdentity si = new SeedIdentity();
             si.AddAdmin(context);

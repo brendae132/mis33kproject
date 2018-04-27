@@ -6,14 +6,14 @@ namespace FinalProject_Team12.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
+    [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
     public sealed partial class InitialSetup : IMigrationMetadata
     {
         private readonly ResourceManager Resources = new ResourceManager(typeof(InitialSetup));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804082313421_InitialSetup"; }
+            get { return "201804271632261_InitialSetup"; }
         }
         
         string IMigrationMetadata.Source

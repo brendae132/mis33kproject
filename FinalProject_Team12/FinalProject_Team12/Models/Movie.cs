@@ -12,17 +12,29 @@ namespace FinalProject_Team12.Models
     {
             public Int32 MovieID { get; set; }
 
+            //for generating movie #
+            [Display(Name = "Movie Number")]
+            public Int32 MovieNumber { get; set; }
+
             [Required(ErrorMessage = "Title is required.")]
             [Display(Name = "Title")]
             public String Title { get; set; }
 
-            [Required(ErrorMessage = "Actors is required.")]
-            [Display(Name = "Actors")]
-            public String Actors { get; set; }
-
+            [Required(ErrorMessage = "Overview is required.")]
+            [Display(Name = "Overview")]
+            public String Overview { get; set; }
 
             [Display(Name = "Tagline")]
             public String Tagline { get; set; }
+
+            [Required(ErrorMessage = "MPAA rating is required.")]
+            [EnumDataType(typeof(MPAARating), ErrorMessage = "Enter a valid MPAA rating.")]
+            [Display(Name = "MPAA Rating")]
+            public MPAARating MPAARating { get; set; }
+
+            [Required(ErrorMessage = "Actors is required.")]
+            [Display(Name = "Actors")]
+            public String Actors { get; set; }
 
             [Required(ErrorMessage = "Release year is required.")]
             [DataType(DataType.Date, ErrorMessage = "Enter valid release year.")]
@@ -30,32 +42,18 @@ namespace FinalProject_Team12.Models
             [DisplayFormat(DataFormatString = "{0:mm/dd/yyyy}", ApplyFormatInEditMode = true)]
             public DateTime ReleaseDate { get; set; }
 
-            [Required(ErrorMessage = "MPAA rating is required.")]
-            [EnumDataType(typeof(MPAARating), ErrorMessage = "Enter a valid MPAA rating.")]
-            [Display(Name = "MPAA Rating")]
-            public MPAARating MPAARating { get; set; }
-
-            //TODO: Write the calculations for overall movie rating here: 
-            [Required(ErrorMessage = "Customer rating is required.")]
-            [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5")]
-            [Display(Name = "Customer Rating")]
-            public Decimal CustomerRating { get; set; }
-
             [Required(ErrorMessage = "Duration is required.")]
             [Display(Name = "Running Time (minutes)")]
             public Int32 RunningTime { get; set; }
 
-            [Display(Name = "Overview")]
-            public String Overview { get; set; }
 
-            ////for generating movie #
-            //[Display(Name = "Movie Number")]
-            //public Int32 MovieNumber { get; set; }
+            //TODO: Write the calculations for overall movie rating here: 
+            //[Required(ErrorMessage = "Customer rating is required.")]
+            [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5")]
+            [Display(Name = "Customer Rating")]
+            public Decimal CustomerRating { get; set; }
 
-
-
-            //for reports
-            [Required(ErrorMessage = "Revenue is required.")]
+            //TODO: revenue for reports
             [Display(Name = "Revenue")]
             public Int64 Revenue { get; set; }
 
@@ -63,7 +61,6 @@ namespace FinalProject_Team12.Models
             public virtual List<Genre> Genres { get; set; }
             public virtual List<Screening> Screenings { get; set; }
             public virtual List<MovieReview> MovieReviews { get; set; }
-           // public virtual List<Actor> Actors { get; set; }
 
             public Movie()
             {

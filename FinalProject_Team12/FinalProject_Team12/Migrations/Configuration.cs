@@ -30,6 +30,14 @@ namespace FinalProject_Team12.Migrations
             //seed the movies
             MovieData AddMovies = new MovieData();
             AddMovies.SeedMovies(context);
+
+            //seed the customers
+            CustomerData AddCustomer = new CustomerData();
+            AddCustomer.SeedCustomers(context);
+
+            //seed the employees
+            EmployeeData AddEmployees = new EmployeeData();
+            AddEmployees.SeedEmployees(context);
         }
     }
 }

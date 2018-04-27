@@ -46,11 +46,11 @@ namespace FinalProject_Team12.Models
             [Display(Name = "Running Time (minutes)")]
             public Int32 RunningTime { get; set; }
 
-
             //TODO: Write the calculations for overall movie rating here: 
             //[Required(ErrorMessage = "Customer rating is required.")]
-            [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5")]
+            [Range(1, 5, ErrorMessage = "Customer rating must be between 1 and 5")]
             [Display(Name = "Customer Rating")]
+            [DisplayFormat(DataFormatString = "{0:0.0}")]
             public Decimal CustomerRating { get; set; }
 
             //TODO: revenue for reports

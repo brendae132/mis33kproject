@@ -68,7 +68,7 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
-        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32 SelectedGenre, DateTime ReleaseYear, MPAARating SelectedMPAARating, string NumberofStars, StarRating SelectedStar, Decimal AverageRating, DateTime? SelectedDate)
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32 SelectedGenre, DateTime ReleaseYear, MPAARating SelectedMPAARating, string NumberofStars, StarRating SelectedStar, Decimal CustomerRating, DateTime? SelectedDate)
         //??? "string NumberOfStars"
 
         {
@@ -156,11 +156,11 @@ namespace FinalProject_Team12.Controllers
                 {
                     ViewBag.SelectedStarOption = "The records greater than the selected rank should be shown.";
 
-                    query = query.Where(r => r.AverageRating >= decStarOptions);
+                    query = query.Where(r => r.CustomerRating >= decStarOptions);
                 }
                 else
                 {
-                    query = query.Where(r => r.AverageRating <= decStarOptions);
+                    query = query.Where(r => r.CustomerRating <= decStarOptions);
 
                     ViewBag.SelectedStarOption = "The records lesser than the selected rank should be shown.";
                 }

@@ -21,7 +21,7 @@ namespace FinalProject_Team12.Models
         [Range(1, 5, ErrorMessage = "Customer rating must be between 1 and 5")]
         [Display(Name = "Customer Rating")]
         [DisplayFormat(DataFormatString = "{0:0.0}")]
-        public Decimal CustomerRating { get; set; }
+        public Decimal Rating { get; set; }
 
         //Customer should also have the option of writing a full review limited to 100 characters.
         //Customers may not review unless they have purchased a ticket for that movie.

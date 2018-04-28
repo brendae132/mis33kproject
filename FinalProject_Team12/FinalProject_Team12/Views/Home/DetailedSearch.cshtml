@@ -9,22 +9,30 @@
 @using (Html.BeginForm("DisplaySearchResults", "Home", FormMethod.Get))
 {
 <p class="form-group">
-    Search Repository Name: @Html.TextBox("SearchName", null, new { @class = "form-control"}) <br />
+    Search Repository Name: @Html.TextBox("SearchName", null, new { @class = "form-control" }) <br />
 
-    Search Description: @Html.TextBox("Description", null, new { @class = "form-control"}) <br />
+    Search Tagline: @Html.TextBox("SearchTagline", null, new { @class = "form-control" }) <br />
 
-    Select a Language: @Html.DropDownList("SelectedLanguage",(SelectList)ViewBag.AllLanguages, new { @class = "form-control"})
+    Select a Genre: @Html.DropDownList("SelectedGenre", (SelectList)ViewBag.AllGenres, new { @class = "form-control" })
 
-    Number of Stars: @Html.TextBox("NumberofStars", null, new { @class = "form-control"})
+    Search Release Year: @Html.TextBox("ReleaseYear", null, new { @class = "form-control" }) <br />
+
+    Select MPAA Rating: @Html.TextBox("SelectedMPAARating", null, new { @class = "form-control" }) <br />
+
+    Number of Stars: @Html.TextBox("NumberofStars", null, new { @class = "form-control" })
+
+    Selected Star: @Html.TextBox("SelectedStar", null, new { @class = "form-control" })
+
+    Search Average Rating: @Html.TextBox("AverageRating", null, new { @class = "form-control" })
 
     <div class="form-group">
-        <label class="radio">@Html.RadioButton("SelectedStar", StarRank.GreaterThan, true)GreaterThan</label>
-        <label class="radio">@Html.RadioButton("SelectedStar", StarRank.LessThan)LessThan</label>
+        <label class="radio">@Html.RadioButton("SelectedStar", StarRating.GreaterThan, true)GreaterThan</label>
+        <label class="radio">@Html.RadioButton("SelectedStar", StarRating.LessThan)LessThan</label>
     </div>
 
     <div class="form-group">
-        Modified After: <input type="date" name="datSelectedDate" class="form-control"/>
-            <br />
+        Modified After: <input type="date" name="SelectedDate" class="form-control" />
+        <br />
     </div>
     <input type="submit" value="Search" class="btn btn-default" />
 </p>

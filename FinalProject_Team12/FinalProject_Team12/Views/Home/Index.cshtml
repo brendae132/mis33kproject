@@ -1,4 +1,5 @@
-﻿@model IEnumerable<FinalProject_Team12.Models.Repository>
+﻿@model IEnumerable<FinalProject_Team12.Models.Movie>
+
 
 @{
     ViewBag.Title = "Index";
@@ -15,7 +16,7 @@
 }
 
 <p>
-    Displaying @ViewBag.SelectedRepositories out of @ViewBag.TotalRepositories Repositories
+    Displaying @ViewBag.SelectedMovies out of @ViewBag.TotalMovies Movies
 </p>
 
 <h2>Index</h2>
@@ -23,63 +24,70 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserName)
+            @Html.DisplayNameFor(model => model.MovieNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RepositoryName)
+            @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Overview)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tags)
+            @Html.DisplayNameFor(model => model.Tagline)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.URL)
+            @Html.DisplayNameFor(model => model.MPAARating)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastUpdate)
+            @Html.DisplayNameFor(model => model.Actors)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StarCount)
+            @Html.DisplayNameFor(model => model.ReleaseDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Language)
+            @Html.DisplayNameFor(model => model.RunningTime)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AverageRating)
+        </th>
+
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RepositoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tags)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.URL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastUpdate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StarCount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem=> item.Language.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.RepositoryID })
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MovieNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Overview)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tagline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MPAARating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Actors)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RunningTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AverageRating)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.MovieID })
 
-            </td>
-        </tr>
+        </td>
+    </tr>
     }
 
 </table>

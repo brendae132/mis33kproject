@@ -47,11 +47,13 @@ namespace FinalProject_Team12.Models
             public Int32 RunningTime { get; set; }
 
             //TODO: Write the calculations for overall movie rating here: 
-            //[Required(ErrorMessage = "Customer rating is required.")]
-            [Range(1, 5, ErrorMessage = "Customer rating must be between 1 and 5")]
-            [Display(Name = "Customer Rating")]
+
+            [Display(Name = "Average Rating")]
             [DisplayFormat(DataFormatString = "{0:0.0}")]
-            public Decimal CustomerRating { get; set; }
+            public Decimal AverageRating //Using CustomerRating from Movie.cs
+            {
+                get { return MovieReviews.Average(x => x.CustomerRating); } //Supposed to follow the logic of "get { return OrderDetails.Sum(rd => rd.ExtendedPrice); }"
+            }
 
             //TODO: revenue for reports
             [Display(Name = "Revenue")]
@@ -73,7 +75,12 @@ namespace FinalProject_Team12.Models
             {
                 Screenings = new List<Screening>();
             }
-        }
+
+            if (MovieReviews == null)
+            {
+                MovieReviews = new List<MovieReview>();
+            }
+            }
     }
 
 }

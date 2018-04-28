@@ -12,17 +12,16 @@ namespace FinalProject_Team12.Models
         [Required(ErrorMessage = "Movie Review ID is required")]
         public Int32 MovieReviewID { get; set; }
 
-        //***Fixed this:
-        //Having "Rating" here alone is incorrect. The rating here on MovieReview must be an average of previously submitted customer reviews
-        //Divided by number of reviews for that particular movie. Prof. Gray mentioned writing the equivalent of
-        //"get { return OrderDetails.Sum(rd => rd.ExtendedPrice); }"
+        //***Working on fixing this:
+        //Having our previous version of "Rating" here alone was incorrect because:
+        //The rating here on MovieReview must be an average of previously submitted customer reviews
+        //Divided by number of reviews for that particular movie. Prof. Gray mentioned writing the equivalent of OrderDetails/Order's Subtotal calculation
         //Movie ratings are a simple average of approved customer ratings, carried to 1 decimal place.
-        [Display(Name = "Average Rating")]
+        //[Required(ErrorMessage = "Customer rating is required.")]
+        [Range(1, 5, ErrorMessage = "Customer rating must be between 1 and 5")]
+        [Display(Name = "Customer Rating")]
         [DisplayFormat(DataFormatString = "{0:0.0}")]
-        public Decimal AverageRating //Using CustomerRating from Movie.cs
-        {
-            get { return Movie.Average(x => x.CustomerRating); }
-        }
+        public Decimal CustomerRating { get; set; }
 
         //Customer should also have the option of writing a full review limited to 100 characters.
         //Customers may not review unless they have purchased a ticket for that movie.

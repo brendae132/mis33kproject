@@ -48,7 +48,7 @@
             @Html.DisplayNameFor(model => model.RunningTime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AverageRating)
+            @Html.DisplayNameFor(model => model.CustomerRating)
         </th>
 
     </tr>
@@ -81,7 +81,7 @@
             @Html.DisplayFor(modelItem => item.RunningTime)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AverageRating)
+            @Html.DisplayFor(modelItem => item.CustomerRating)
         </td>
         <td>
             @Html.ActionLink("Details", "Details", new { id = item.MovieID })

@@ -50,10 +50,15 @@ namespace FinalProject_Team12.Models
 
             [Display(Name = "Customer Rating")]
             [DisplayFormat(DataFormatString = "{0:0.0}")]
+           
             public Decimal CustomerRating //Using CustomerRating from Movie.cs
             {
-                get { return MovieReviews.Average(x => x.Rating); } //Supposed to follow the logic of "get { return OrderDetails.Sum(rd => rd.ExtendedPrice); }"
+                get; set;//Supposed to follow the logic of "get { return OrderDetails.Sum(rd => rd.ExtendedPrice); }"
+
+
+                //{ return MovieReviews.Average(x => x.Rating); }
             }
+             
 
             //TODO: revenue for reports
             [Display(Name = "Revenue")]

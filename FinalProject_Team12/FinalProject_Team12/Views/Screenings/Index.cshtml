@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<FinalProject_Team12.Models.Screening>
 
 @{
-    ViewBag.Title = "Screenings";
+    ViewBag.Title = "Index";
 }
 
-<h2>Screenings</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,10 +12,19 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Movie.Title)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.StartTime)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TheaterNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScreeningDate)
         </th>
         <th></th>
     </tr>
@@ -23,10 +32,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Movie.Title)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.StartTime)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TheaterNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScreeningDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ScreeningID }) |

@@ -45,7 +45,7 @@ namespace FinalProject_Team12.Controllers
             //I assumed that adding navigational properties between MovieReview and Movie would help, but the error remained.
             //One MovieReview to Many Movies relationship has been added
         }
-        
+
         // GET: Vendor/Details/5
         public ActionResult Details(int? id)
         {
@@ -69,7 +69,7 @@ namespace FinalProject_Team12.Controllers
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
         public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32? SelectedGenre, DateTime? ReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors)
-        //??? "string NumberOfStars"
+        
 
         {
             //Create query
@@ -105,13 +105,13 @@ namespace FinalProject_Team12.Controllers
             {
                 query = query.Where(r => r.ReleaseDate.Equals(ReleaseDate));
             }
-                //TODO: ***SEARCH FOR 'RELEASE YEAR' HERE. Using ReleaseDate.Equals this way is not entirely correct...
-                //I think it's supposed to perform a search for release dates *containing* the selected year 
-                //I temporarily wrote "Equals" even though it isn't quite what I want it to do
-                //What is the equivalent of "Contains" for numbers?
-            
+            //TODO: ***SEARCH FOR 'RELEASE YEAR' HERE. Using ReleaseDate.Equals this way is not entirely correct...
+            //I think it's supposed to perform a search for release dates *containing* the selected year 
+            //I temporarily wrote "Equals" even though it isn't quite what I want it to do
+            //What is the equivalent of "Contains" for numbers?
+
             //code for MPAARating
-            
+
             if (SelectedMPAARating == MPAARating.G)
             {
 
@@ -136,7 +136,7 @@ namespace FinalProject_Team12.Controllers
                 query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
             }
 
-           
+
 
             //code for NumberofStars
             if (NumberofStars != null && NumberofStars != "") //Make sure string is a valid number
@@ -196,7 +196,7 @@ namespace FinalProject_Team12.Controllers
                 ViewBag.UpdatedStarCount = "Number of Stars was not specified";
             }
 
-            
+
 
             if (SelectedDate != null)
             {
@@ -204,7 +204,7 @@ namespace FinalProject_Team12.Controllers
                 ViewBag.SelectedDate = "The selected date is " + dateSelected.ToLongDateString();
                 //TODO: Update this query when we have completed our Screenings class/controller.
                 //This is supposed to reflect the available showings for a selected day
-                query = query.Where(r => r.Screenings.Equals (SelectedDate));
+                query = query.Where(r => r.Screenings.Equals(SelectedDate));
             }
             else //They didn't pick a date
             {
@@ -217,6 +217,7 @@ namespace FinalProject_Team12.Controllers
             }
 
             ViewBag.TotalMovies = db.Movies.ToList().Count(); //Repopulate the Viewbag for the X out of Y line!
+            
             //This is for Detailed Search Results
             List<Movie> SelectedMovies = query.ToList();
             ViewBag.SelectedMovies = SelectedMovies.ToList().Count();
@@ -228,7 +229,45 @@ namespace FinalProject_Team12.Controllers
             return View("Index", SelectedMovies);
 
         }
+
+
+        [Authorize(Roles = "Manager")]
+        // GET: Screenings/Create
+        public ActionResult AddMovie()
+        {
+            
+            return View();
+        }
+
+
+        // POST: Products/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //Note: changed the bind to include 
+        public ActionResult AddMovie([Bind(Include = "MovieNumber,Title,Overview,Tagline,MPAARating,Actors, ReleaseDate, RunningTime, CustomerRating")] Movie movie, int SelectedMovie)
+        {
+            //ask for the next sku number
+            //TODO: HOW DOES THIS APPLY
+            movie.MovieNumber = Utilities.GenerateMovieNumber.GetMovieNumber();
         
+            //add movies
+
+            //Movie mov = db.Movies.Find(SelectedMovie);
+            //movie.Movie = mov;
+
+            if (ModelState.IsValid)
+            {
+                db.Movies.Add(movie);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            //Populate the view bag with the department list
+            return View(movie);
+        }
+
+
         public MultiSelectList GetAllGenres()
         {
             List<Genre> Genres = db.Genres.ToList();
@@ -244,27 +283,5 @@ namespace FinalProject_Team12.Controllers
             return AllGenres;
         }
 
-        //public SelectList GetAllActors()
-        //{
-          //List<Actor> Actors = db.Actors.ToList();
-
-            //Add a record for all languages
-            //Actor SelectNone = new Models.Actor() { ActorID = 0, ActorName = "All Actors" };
-            //Actor.Add(SelectNone);
-
-            //foreach (Movie m in db.Movies.ToList())
-           // {
-                //foreach (String a in m.Actors)
-                //{
-                    //if (!ActorsList.Contains(a))
-                    //{
-                        //ActorsList.Add(a);
-                    //}
-                //}
-            }
-            //SelectList AllActors = new SelectList(Actors.OrderBy(m => m.ActorID), "ActorID");
-
-            //return AllActors;
-        
-    
+    }
 }

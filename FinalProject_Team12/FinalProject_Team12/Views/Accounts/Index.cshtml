@@ -1,4 +1,6 @@
-﻿@model FinalProject_Team12.Models.IndexViewModel
+﻿
+@model FinalProject_Team12.Models.IndexViewModel
+
 @{
     ViewBag.Title = "Manage";
 }
@@ -23,10 +25,13 @@
                 @Html.ActionLink("Change your password", "ChangePassword")
             }
             ]
-        
+
         </dd>
+
+        <dd>@Html.ActionLink("Edit profile information", "EditProfile")</dd>
+
     </dl>
 
-   
+
 </div>
 <hr />

@@ -15,7 +15,7 @@ namespace FinalProject_Team12.Controllers
     public class HomeController : Controller
     {
         //Create an instance of AppDbContext to use in your Controller actions
-        private AppDbContext db = new AppDbContext();
+        AppDbContext db = new AppDbContext();
         // GET: Home
         public ActionResult Index(String SearchString)
         {
@@ -30,7 +30,7 @@ namespace FinalProject_Team12.Controllers
             if (SearchString != null)
             {
                 //Add in 'where' clauses to limit the data
-                //query = query.Where(r => r.Title.Contains(SearchString) || r.Actors.Contains(SearchString));
+                query = query.Where(r => r.Title.Contains(SearchString) || r.Actors.Contains(SearchString));
                 //TODO: Actor names as well?
                 //Will search names in BOTH Repository Names and User Names
             }
@@ -68,7 +68,7 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
-        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32 SelectedGenre, DateTime ReleaseYear, MPAARating SelectedMPAARating, string NumberofStars, StarRating SelectedStar, Decimal CustomerRating, DateTime? SelectedDate)
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32? SelectedGenre, DateTime? ReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors)
         //??? "string NumberOfStars"
 
         {
@@ -101,20 +101,44 @@ namespace FinalProject_Team12.Controllers
                 query = query.Where(r => r.Genres.Equals(SelectedGenre));
             }
 
-            if (ReleaseYear != null)
+            if (ReleaseDate != null)
             {
-                query = query.Where(r => r.ReleaseDate.Equals(ReleaseYear));
+                query = query.Where(r => r.ReleaseDate.Equals(ReleaseDate));
             }
                 //TODO: ***SEARCH FOR 'RELEASE YEAR' HERE. Using ReleaseDate.Equals this way is not entirely correct...
                 //I think it's supposed to perform a search for release dates *containing* the selected year 
                 //I temporarily wrote "Equals" even though it isn't quite what I want it to do
                 //What is the equivalent of "Contains" for numbers?
+            
+            //code for MPAARating
+            
+            if (SelectedMPAARating == MPAARating.G)
+            {
 
-            if (SelectedMPAARating != 0) //Is this correct?
+                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
+            }
+
+            if (SelectedMPAARating == MPAARating.PG)
             {
                 query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
             }
 
+            if (SelectedMPAARating == MPAARating.PG13)
+            {
+                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
+            }
+            if (SelectedMPAARating == MPAARating.R)
+            {
+                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
+            }
+            if (SelectedMPAARating == MPAARating.Unrated)
+            {
+                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
+            }
+
+           
+
+            //code for NumberofStars
             if (NumberofStars != null && NumberofStars != "") //Make sure string is a valid number
             {
                 Decimal decStars;
@@ -136,18 +160,18 @@ namespace FinalProject_Team12.Controllers
 
 
 
-        //As part of HW 5. On the Orders/Details View
-        //[Display(Name = "Order Subtotal")]
-        //[DisplayFormat(DataFormatString = "{0:C}")]
-        //public Decimal OrderSubtotal
-        //{
-        //   get { return OrderDetails.Sum(od => od.ExtendedPrice); }
-        //}
-        //TODO: Write the calculations for overall movie rating in Movie.cs: 
-        //Then, use that variable of overall rating here: 
+                //As part of HW 5. On the Orders/Details View
+                //[Display(Name = "Order Subtotal")]
+                //[DisplayFormat(DataFormatString = "{0:C}")]
+                //public Decimal OrderSubtotal
+                //{
+                //   get { return OrderDetails.Sum(od => od.ExtendedPrice); }
+                //}
+                //TODO: Write the calculations for overall movie rating in Movie.cs: 
+                //Then, use that variable of overall rating here: 
 
 
-                
+
                 //Rating = Convert.ToDecimal(NumberofStars);
                 Decimal decStarOptions;
                 decStarOptions = Convert.ToDecimal(NumberofStars);
@@ -187,6 +211,10 @@ namespace FinalProject_Team12.Controllers
                 ViewBag.SelectedDate = "No date was selected.";
             }
 
+            if (SearchActors != null)
+            {
+                query = query.Where(r => r.Actors.Contains(SearchActors));
+            }
 
             ViewBag.TotalMovies = db.Movies.ToList().Count(); //Repopulate the Viewbag for the X out of Y line!
             //This is for Detailed Search Results
@@ -194,14 +222,14 @@ namespace FinalProject_Team12.Controllers
             ViewBag.SelectedMovies = SelectedMovies.ToList().Count();
 
             //Display repositories in descending order
-            //SelectedMovies.OrderByDescending(r => r.Rating);
+            SelectedMovies.OrderByDescending(r => r.MPAARating);
 
             //Send the list to View
             return View("Index", SelectedMovies);
 
         }
         
-        public SelectList GetAllGenres()
+        public MultiSelectList GetAllGenres()
         {
             List<Genre> Genres = db.Genres.ToList();
 
@@ -218,7 +246,7 @@ namespace FinalProject_Team12.Controllers
 
         //public SelectList GetAllActors()
         //{
-          //  List<Actor> Actors = db.Actors.ToList();
+          //List<Actor> Actors = db.Actors.ToList();
 
             //Add a record for all languages
             //Actor SelectNone = new Models.Actor() { ActorID = 0, ActorName = "All Actors" };

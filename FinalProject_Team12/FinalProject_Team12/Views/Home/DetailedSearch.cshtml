@@ -1,4 +1,5 @@
 ﻿@using FinalProject_Team12.Controllers
+@using FinalProject_Team12.Models
 
 @{
     ViewBag.Title = "DetailedSearch";
@@ -9,25 +10,34 @@
 @using (Html.BeginForm("DisplaySearchResults", "Home", FormMethod.Get))
 {
 <p class="form-group">
-    Search Repository Name: @Html.TextBox("SearchName", null, new { @class = "form-control" }) <br />
+    Search Movie Name: @Html.TextBox("SearchName", null, new { @class = "form-control" }) <br />
 
     Search Tagline: @Html.TextBox("SearchTagline", null, new { @class = "form-control" }) <br />
 
-    Select a Genre: @Html.DropDownList("SelectedGenre", (SelectList)ViewBag.AllGenres, new { @class = "form-control" })
+    Select a Genre: @Html.DropDownList("SelectedGenre", (MultiSelectList)ViewBag.AllGenres, new { @class = "form-control" })
 
-    Search Release Year: @Html.TextBox("ReleaseYear", null, new { @class = "form-control" }) <br />
-
-    Select MPAA Rating: @Html.TextBox("SelectedMPAARating", null, new { @class = "form-control" }) <br />
+    Search Release Date: <input type="date" name="ReleaseDate" class="form-control" /> <br />
 
     Number of Stars: @Html.TextBox("NumberofStars", null, new { @class = "form-control" })
+    <div class="form-group">
+        <label class="radio">@Html.RadioButton("SelectedStar", StarRating.GreaterThan, true)GreaterThan</label>
+        <label class="radio">@Html.RadioButton("SelectedStar", StarRating.LessThan)LessThan</label>
+    </div>
+
 
     Selected Star: @Html.TextBox("SelectedStar", null, new { @class = "form-control" })
 
     Search Customer Rating: @Html.TextBox("CustomerRating", null, new { @class = "form-control" })
 
+    Search Actors: @Html.TextBox("SearchActors", null, new { @class = "form-control" })
+
+    Select MPAA Rating:
     <div class="form-group">
-        <label class="radio">@Html.RadioButton("SelectedStar", StarRating.GreaterThan, true)GreaterThan</label>
-        <label class="radio">@Html.RadioButton("SelectedStar", StarRating.LessThan)LessThan</label>
+        <label class="radio">@Html.RadioButton("SelectedMPAARating", MPAARating.G, true)G</label>
+        <label class="radio">@Html.RadioButton("SelectedMPAARating", MPAARating.PG)PG</label>
+        <label class="radio">@Html.RadioButton("SelectedMPAARating", MPAARating.PG13)PG13</label>
+        <label class="radio">@Html.RadioButton("SelectedMPAARating", MPAARating.R)R</label>
+        <label class="radio">@Html.RadioButton("SelectedMPAARating", MPAARating.Unrated)Unrated</label>
     </div>
 
     <div class="form-group">

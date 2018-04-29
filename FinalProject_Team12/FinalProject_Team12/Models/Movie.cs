@@ -36,10 +36,10 @@ namespace FinalProject_Team12.Models
             [Display(Name = "Actors")]
             public String Actors { get; set; }
 
-            [Required(ErrorMessage = "Release year is required.")]
-            [DataType(DataType.Date, ErrorMessage = "Enter valid release year.")]
-            [Display(Name = "Release Year")]
-            [DisplayFormat(DataFormatString = "{0:mm/dd/yyyy}", ApplyFormatInEditMode = true)]
+            [Required(ErrorMessage = "Release Date is required.")]
+            [DataType(DataType.Date, ErrorMessage = "Enter valid release date.")]
+            [Display(Name = "Release Date")]
+            [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
             public DateTime ReleaseDate { get; set; }
 
             [Required(ErrorMessage = "Duration is required.")]

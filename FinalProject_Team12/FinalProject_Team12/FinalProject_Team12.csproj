@@ -254,6 +254,10 @@
     <Compile Include="Migrations\201804280533006_Update CustomerRating.Designer.cs">
       <DependentUpon>201804280533006_Update CustomerRating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804291746382_ModifyMovie.cs" />
+    <Compile Include="Migrations\201804291746382_ModifyMovie.Designer.cs">
+      <DependentUpon>201804291746382_ModifyMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\CustomerData.cs" />
     <Compile Include="Migrations\EmployeeData.cs" />
@@ -329,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804280533006_Update CustomerRating.resx">
       <DependentUpon>201804280533006_Update CustomerRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804291746382_ModifyMovie.resx">
+      <DependentUpon>201804291746382_ModifyMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

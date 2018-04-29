@@ -1,4 +1,4 @@
-﻿
+﻿@using FinalProject_Team12.Models
 @model FinalProject_Team12.Models.Movie
 
 @{
@@ -83,7 +83,17 @@
             @Html.DisplayFor(model => model.CustomerRating)
         </dd>
 
-        
+        <dt>
+            @Html.DisplayNameFor(model => model.Genres)
+        </dt>
+
+        <dd>
+            @foreach (Genre gen in Model.Genres)
+            {
+                @Html.DisplayFor(modelItem => gen.GenreType)
+            }
+        </dd>
+
     </dl>
 </div>
 <p>

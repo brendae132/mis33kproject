@@ -312,6 +312,13 @@
     <Content Include="Views\Screenings\Edit.cshtml" />
     <Content Include="Views\Screenings\Index.cshtml" />
     <Content Include="Views\Screenings\Delete.cshtml" />
+    <Content Include="Views\Orders\AddToOrder.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\RemoveFromOrder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

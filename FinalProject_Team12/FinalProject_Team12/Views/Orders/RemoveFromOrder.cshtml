@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FinalProject_Team12.Models.Ticket>
+
+@{
+    ViewBag.Title = "RemoveFromOrder";
+}
+
+<h2>RemoveFromOrder</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatsReserved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExtendedPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Movie.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatsReserved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExtendedPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Tickets", new { id=item.OrderDetailID }, null) |
+            @Html.ActionLink("Delete", "Delete", "Tickets", new { id=item.OrderDetailID }, null)
+        </td>
+    </tr>
+}
+
+</table>

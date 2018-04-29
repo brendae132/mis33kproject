@@ -276,7 +276,7 @@
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\GenerateNextOrderNumber.cs" />
-    <Compile Include="Utilities\GenerateMovieID.cs" />
+    <Compile Include="Utilities\GenerateMovieNumber.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -312,6 +312,7 @@
     <Content Include="Views\Screenings\Edit.cshtml" />
     <Content Include="Views\Screenings\Index.cshtml" />
     <Content Include="Views\Screenings\Delete.cshtml" />
+    <Content Include="Views\Home\AddMovie.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

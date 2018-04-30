@@ -68,8 +68,7 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
-        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32? SelectedGenre, DateTime? ReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors)
-        
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, int[] SelectedGenre, DateTime? SelectedReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors)
 
         {
             //Create query
@@ -90,20 +89,20 @@ namespace FinalProject_Team12.Controllers
             //Allow user to see all genres
             //TODO: Double check if the following for SelectedGenre is correct:
             //How to give user options to select available genres?
-            if (SelectedGenre == 0)
+            if (SelectedGenre == null)
             {
                 ViewBag.SelectedGenre = "No genre was selected";
             }
             else
             {
                 Genre GenreToDisplay = db.Genres.Find(SelectedGenre);
-                ViewBag.SelectedGenre = "The selected genre is " + GenreToDisplay.GenreType;
-                query = query.Where(r => r.Genres.Equals(SelectedGenre));
+                ViewBag.SelectedGenre = GenreToDisplay.GenreType; //Is this necessary? Or will a != null suffice? (deleting Viewbags?)
+                query = query.Where(r => r.Genres.Equals(SelectedGenre)); //Is this not being connected to "Movies"? Why won't it work? 
             }
 
-            if (ReleaseDate != null)
+            if (SelectedReleaseDate != null)
             {
-                query = query.Where(r => r.ReleaseDate.Equals(ReleaseDate));
+                query = query.Where(r => r.ReleaseDate.Equals(SelectedReleaseDate));
             }
             //TODO: ***SEARCH FOR 'RELEASE YEAR' HERE. Using ReleaseDate.Equals this way is not entirely correct...
             //I think it's supposed to perform a search for release dates *containing* the selected year 
@@ -217,7 +216,7 @@ namespace FinalProject_Team12.Controllers
             }
 
             ViewBag.TotalMovies = db.Movies.ToList().Count(); //Repopulate the Viewbag for the X out of Y line!
-            
+
             //This is for Detailed Search Results
             List<Movie> SelectedMovies = query.ToList();
             ViewBag.SelectedMovies = SelectedMovies.ToList().Count();

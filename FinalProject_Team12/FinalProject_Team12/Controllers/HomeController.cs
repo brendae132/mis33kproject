@@ -68,7 +68,12 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
+<<<<<<< HEAD
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32 SelectedGenre, DateTime? ReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, string SearchActors) //DateTime? SelectedDate
+
+=======
         public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, int[] SelectedGenre, DateTime? SelectedReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors)
+>>>>>>> a96b8714e6153cc75c454087f31511ef99fa2c39
 
         {
             //Create query
@@ -93,11 +98,18 @@ namespace FinalProject_Team12.Controllers
             {
                 ViewBag.SelectedGenre = "No genre was selected";
             }
+
             else
             {
+                query = query.Where(r => r.Genres.Equals(SelectedGenre));
                 Genre GenreToDisplay = db.Genres.Find(SelectedGenre);
+<<<<<<< HEAD
+                ViewBag.SelectedGenre = "The selected genre is " + GenreToDisplay.GenreType;
+               
+=======
                 ViewBag.SelectedGenre = GenreToDisplay.GenreType; //Is this necessary? Or will a != null suffice? (deleting Viewbags?)
                 query = query.Where(r => r.Genres.Equals(SelectedGenre)); //Is this not being connected to "Movies"? Why won't it work? 
+>>>>>>> a96b8714e6153cc75c454087f31511ef99fa2c39
             }
 
             if (SelectedReleaseDate != null)
@@ -113,7 +125,6 @@ namespace FinalProject_Team12.Controllers
 
             if (SelectedMPAARating == MPAARating.G)
             {
-
                 query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
             }
 
@@ -138,7 +149,7 @@ namespace FinalProject_Team12.Controllers
 
 
             //code for NumberofStars
-            if (NumberofStars != null && NumberofStars != "") //Make sure string is a valid number
+            if (NumberofStars != null & NumberofStars != "") //Make sure string is a valid number
             {
                 Decimal decStars;
                 try
@@ -197,18 +208,18 @@ namespace FinalProject_Team12.Controllers
 
 
 
-            if (SelectedDate != null)
-            {
-                DateTime dateSelected = SelectedDate ?? new DateTime(1900, 1, 1);
-                ViewBag.SelectedDate = "The selected date is " + dateSelected.ToLongDateString();
-                //TODO: Update this query when we have completed our Screenings class/controller.
-                //This is supposed to reflect the available showings for a selected day
-                query = query.Where(r => r.Screenings.Equals(SelectedDate));
-            }
-            else //They didn't pick a date
-            {
-                ViewBag.SelectedDate = "No date was selected.";
-            }
+            //if (SelectedDate != null)
+            //{
+            //    DateTime dateSelected = SelectedDate ?? new DateTime(1900, 1, 1);
+            //    //ViewBag.SelectedDate = "The selected date is " + dateSelected.ToLongDateString();
+            //    //TODO: Update this query when we have completed our Screenings class/controller.
+            //    //This is supposed to reflect the available showings for a selected day
+            //    //query = query.Where(r => r.Screenings.Equals(SelectedDate));
+            //}
+            //else //They didn't pick a date
+            //{
+            //    ViewBag.SelectedDate = "No date was selected.";
+            //}
 
             if (SearchActors != null)
             {
@@ -234,7 +245,7 @@ namespace FinalProject_Team12.Controllers
         // GET: Screenings/Create
         public ActionResult AddMovie()
         {
-            
+            ViewBag.AllGenres = GetAllGenres();
             return View();
         }
 
@@ -245,12 +256,24 @@ namespace FinalProject_Team12.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //Note: changed the bind to include 
-        public ActionResult AddMovie([Bind(Include = "MovieNumber,Title,Overview,Tagline,MPAARating,Actors, ReleaseDate, RunningTime, CustomerRating")] Movie movie, int SelectedMovie)
+        public ActionResult AddMovie([Bind(Include = "MovieNumber,Title,Overview,Tagline,MPAARating,Actors, ReleaseDate, RunningTime, CustomerRating")] Movie movie, int[] SelectedGenre)
         {
             //ask for the next sku number
             //TODO: HOW DOES THIS APPLY
             movie.MovieNumber = Utilities.GenerateMovieNumber.GetMovieNumber();
-        
+            
+            if (SelectedGenre == null)
+            {
+                ViewBag.SelectedGenre = "No genre was selected";
+            }
+            else
+            {
+                Genre GenreToDisplay = db.Genres.Find(SelectedGenre);
+                ViewBag.SelectedGenre = GenreToDisplay.GenreType;
+
+                //NOTE: This line of code is not going to work because you are trying to add a movie not filter results to display
+                //query = query.Where(r => r.Genres.Equals(SelectedGenre));
+            }
             //add movies
 
             //Movie mov = db.Movies.Find(SelectedMovie);
@@ -262,7 +285,8 @@ namespace FinalProject_Team12.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //Populate the view bag with the department list
+            //Populate the view bag with list
+            ViewBag.AllGenres = GetAllGenres();
             return View(movie);
         }
 
@@ -276,7 +300,7 @@ namespace FinalProject_Team12.Controllers
             Genres.Add(SelectNone);
 
             //Convert list to select list
-            SelectList AllGenres = new SelectList(Genres.OrderBy(m => m.GenreID), "GenreID", "GenreType");
+            MultiSelectList AllGenres = new MultiSelectList(Genres.OrderBy(m => m.GenreID), "GenreID", "GenreType");
 
             //Return the select list
             return AllGenres;

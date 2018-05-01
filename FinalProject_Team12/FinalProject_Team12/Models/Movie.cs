@@ -53,10 +53,7 @@ namespace FinalProject_Team12.Models
            
             public Decimal CustomerRating //Using CustomerRating from Movie.cs
             {
-                get; set;//Supposed to follow the logic of "get { return OrderDetails.Sum(rd => rd.ExtendedPrice); }"
-
-
-                //{ return MovieReviews.Average(x => x.Rating); }
+                get { return MovieReviews.Average(x => x.Rating); } //Supposed to follow the logic of "get { return OrderDetails.Sum(rd => rd.ExtendedPrice); }"
             }
              
 

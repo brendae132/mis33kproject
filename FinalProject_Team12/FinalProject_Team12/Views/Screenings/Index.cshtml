@@ -26,6 +26,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ScreeningDate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
         <th></th>
     </tr>
 
@@ -47,9 +50,12 @@
             @Html.DisplayFor(modelItem => item.ScreeningDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ScreeningID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ScreeningID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ScreeningID })
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ScreeningID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ScreeningID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ScreeningID })
         </td>
     </tr>
 }

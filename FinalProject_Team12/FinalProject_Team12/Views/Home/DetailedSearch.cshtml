@@ -14,7 +14,7 @@
 
     Search Tagline: @Html.TextBox("SearchTagline", null, new { @class = "form-control" }) <br />
 
-    Select a Genre: @Html.ListBox("SelectedGenre", (MultiSelectList)ViewBag.AllGenres, new { @class = "form-control" })
+    Select a Genre: @Html.ListBox("GenreID", (MultiSelectList)ViewBag.AllGenres, new { @class = "form-control" })
 
     Search Release Date: <input type="date" name="ReleaseDate" class="form-control" /> <br />
 

@@ -68,7 +68,7 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
-        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, int[] SelectedGenre, DateTime? SelectedReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors) //DateTime? SelectedDate
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, int GenreID, DateTime? SelectedReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors) //DateTime? SelectedDate
 
 
 
@@ -91,16 +91,16 @@ namespace FinalProject_Team12.Controllers
             //Allow user to see all genres
             //TODO: Double check if the following for SelectedGenre is correct:
             //How to give user options to select available genres?
-            if (SelectedGenre == null)
+            if (GenreID == 0)
             {
                 ViewBag.SelectedGenre = "No genre was selected";
             }
 
             else
             {
-                query = query.Where(r => r.Genres.Equals(SelectedGenre));
-                Genre GenreToDisplay = db.Genres.Find(SelectedGenre);
-
+             
+                Genre GenreToDisplay = db.Genres.Find(GenreID);
+                query = query.Where(r => r.Genre.ID == GenreID);
                 ViewBag.SelectedGenre = "The selected genre is " + GenreToDisplay.GenreType;
                
 

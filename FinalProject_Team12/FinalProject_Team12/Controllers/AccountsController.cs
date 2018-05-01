@@ -11,6 +11,8 @@ using Microsoft.Owin.Security;
 using FinalProject_Team12.DAL;
 
 using FinalProject_Team12.Models;
+using System.Net;
+using System.Data.Entity;
 
 namespace FinalProject_Team12.Controllers
 {
@@ -209,7 +211,52 @@ namespace FinalProject_Team12.Controllers
             return View(model);
         }
 
-        //
+        // GET: Products/Edit/5
+        public ActionResult EditProfile(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AppUser user = db.Users.Find(id);
+
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            //populate the view bag with the vendor list
+            return View(user);
+        }
+        
+        // POST: Products/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditProfile([Bind(Include = "UserName,Street,City,State,ZipCode,PhoneNumber,Birthday")] AppUser user)
+        {
+            if (ModelState.IsValid)
+            {
+                //find the user to edit
+                AppUser userToChange = db.Users.Find(user.UserName);
+
+
+                //change scalar properties
+                userToChange.Street = user.Street;
+                userToChange.City = user.City;
+                userToChange.State = user.State;
+                userToChange.ZipCode = user.ZipCode;
+                userToChange.PhoneNumber = user.PhoneNumber;
+                userToChange.Birthday = user.Birthday;
+
+                db.Entry(userToChange).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            
+            return View(user);
+        }
+
 
         // POST: /Accounts/LogOff
         [HttpPost]

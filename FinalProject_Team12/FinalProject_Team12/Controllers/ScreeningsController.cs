@@ -50,7 +50,7 @@ namespace FinalProject_Team12.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //Note: changed the bind to include 
-        public ActionResult Create([Bind(Include = "ScreeningID,Price,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int SelectedMovie)
+        public ActionResult Create([Bind(Include = "ScreeningID,Price,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int? SelectedMovie)
         {
 
             //add movies
@@ -97,11 +97,7 @@ namespace FinalProject_Team12.Controllers
                 //match found
             }
 
-            //if (AppUser.Birthday.Year <= 1958)
-            //{
-            //    price = 8;
-            //    //match found
-            //}
+            
 
             if (ModelState.IsValid)
             {

@@ -100,11 +100,9 @@ namespace FinalProject_Team12.Controllers
             {
              
                 Genre GenreToDisplay = db.Genres.Find(GenreID);
-                query = query.Where(r => r.Genre.ID == GenreID);
+                query = query.Where(r => Genre. == GenreID);
                 ViewBag.SelectedGenre = "The selected genre is " + GenreToDisplay.GenreType;
-               
-
-           
+              
 
             }
 

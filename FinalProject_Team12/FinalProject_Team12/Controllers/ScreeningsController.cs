@@ -37,11 +37,20 @@ namespace FinalProject_Team12.Controllers
 
         [Authorize(Roles = "Manager")]
         // GET: Screenings/Create
-        public ActionResult Create()
+        public ActionResult Create(int ScreeningID)
         {
+            Screening screening = db.Screenings.Find(ScreeningID);
+
+
+            Decimal Price = Utilities.GenerateTicketPrice.GetTicketPrice(screening);
+
+            ViewBag.CurrentTicketPrice = Price;
+            ViewBag.CurrentStartTime = screening.StartTime;
+
             //NOTE: should this be scheduled movies? 
             ViewBag.AllMovies = GetAllMovies();
             return View();
+
         }
 
         // POST: Products/Create
@@ -58,46 +67,8 @@ namespace FinalProject_Team12.Controllers
             Movie mov = db.Movies.Find(SelectedMovie);
             screening.Movie = mov;
 
-            TimeSpan matinees = new TimeSpan(12, 0, 0); //12 o'clock
-            TimeSpan tuesdaydiscount = new TimeSpan(17, 0, 0); //5 o'clock
-            string monday = "Monday";
-            string tuesday = "Tuesday";
-            string wednesday = "Wednesday";
-            string thursday = "Thursday";
-            string friday = "Friday";
-            string saturday = "Saturday";
-            string sunday = "Sunday";
-            String dayofweek = screening.StartTime.DayOfWeek.ToString();
-
-            decimal price = screening.Price;
-
-            if (dayofweek == monday || dayofweek == tuesday || dayofweek == wednesday || dayofweek == thursday || dayofweek == friday && screening.StartTime.TimeOfDay < matinees)
-            {
-                price = 8;
-                //match found
-            }
-            if (dayofweek == monday || dayofweek == tuesday || dayofweek == wednesday || dayofweek == thursday && screening.StartTime.TimeOfDay >= matinees)
-            {
-                price = 10;
-                //match found
-            }
-            if (screening.StartTime.TimeOfDay < tuesdaydiscount && dayofweek == tuesday)
-            {
-                price = 8;
-                //match found
-            }
-            if (dayofweek == friday && screening.StartTime.TimeOfDay >= matinees)
-            {
-                price = 12;
-                //match found
-            }
-            if (dayofweek == saturday || dayofweek == sunday)
-            {
-                price = 12;
-                //match found
-            }
-
-            
+            //is it ok to just pass screening? not start time?
+            screening.Price = Utilities.GenerateTicketPrice.GetTicketPrice(screening);
 
             if (ModelState.IsValid)
             {
@@ -107,6 +78,8 @@ namespace FinalProject_Team12.Controllers
             }
             //Populate the view bag with the movie list
 
+            ViewBag.CurrentTicketPrice = screening.Price;
+            ViewBag.CurrentStartTime = screening.StartTime;
             ViewBag.AllMovies = GetAllMovies();
             return View(screening);
         }
@@ -146,7 +119,7 @@ namespace FinalProject_Team12.Controllers
                 Movie mov = db.Movies.Find(SelectedMovie);
                 screeningToChange.Movie = mov;
 
-                screeningToChange.Price = screening.Price;
+                //screeningToChange.Price = screening.Price;
                 screeningToChange.StartTime = screening.StartTime;
                 screeningToChange.EndTime = screening.EndTime;
                 screeningToChange.TheaterNum = screening.TheaterNum;
@@ -157,6 +130,8 @@ namespace FinalProject_Team12.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CurrentTicketPrice = screening.Price;
+            ViewBag.CurrentStartTime = screening.StartTime;
             ViewBag.AllMovies = GetAllMovies(screening);
             return View(screening);
         }

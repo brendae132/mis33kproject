@@ -44,7 +44,7 @@ namespace FinalProject_Team12.Controllers
 
             Decimal Price = Utilities.GenerateTicketPrice.GetTicketPrice(screening);
 
-            ViewBag.CurrentTicketPrice = Price;
+            ViewBag.CurrentTicketPrice = screening.Price;
             ViewBag.CurrentStartTime = screening.StartTime;
 
             //NOTE: should this be scheduled movies? 

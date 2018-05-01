@@ -1,0 +1,63 @@
+﻿@model Gutierrez_Anamaria_HW7.Models.Order
+@using Gutierrez_Anamaria_HW7.Models
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Order</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.OrderID)
+    @Html.HiddenFor(model => model.OrderNumber)
+    @Html.HiddenFor(model => model.OrderDate)
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save Notes" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<h4>Products</h4>
+<table class="table table-sm table-striped table-hover">
+    <tr>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Quantity</th>
+        <th>Extended Price</th>
+    </tr>
+    @foreach (OrderDetail od in Model.OrderDetails)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => od.Product.Name)</td>
+            <td>@Html.DisplayFor(modelItem => od.ProductPrice)</td>
+            <td>@Html.DisplayFor(modelItem => od.Quantity)</td>
+            <td>@Html.DisplayFor(modelItem => od.ExtendedPrice)</td>
+        </tr>
+    }
+</table>
+
+
+<div>
+    @Html.ActionLink("Add Another Product", "AddToOrder", new { OrderID = Model.OrderID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Edit Existing Items", "RemoveFromOrder", new { OrderID = Model.OrderID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+</div>

@@ -50,16 +50,54 @@ namespace FinalProject_Team12.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //Note: changed the bind to include 
-        public ActionResult Create([Bind(Include = "ScreeningID,Price,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int SelectedMovie)
+        public ActionResult Create([Bind(Include = "ScreeningID,Price,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int? SelectedMovie)
         {
-            //ask for the next sku number
-            //TODO: HOW DOES THIS APPLY
-            //screening.SKU = Utilities.GenerateSKU.GetNextSKU();
 
             //add movies
 
             Movie mov = db.Movies.Find(SelectedMovie);
             screening.Movie = mov;
+
+            TimeSpan matinees = new TimeSpan(12, 0, 0); //12 o'clock
+            TimeSpan tuesdaydiscount = new TimeSpan(17, 0, 0); //5 o'clock
+            string monday = "Monday";
+            string tuesday = "Tuesday";
+            string wednesday = "Wednesday";
+            string thursday = "Thursday";
+            string friday = "Friday";
+            string saturday = "Saturday";
+            string sunday = "Sunday";
+            String dayofweek = screening.StartTime.DayOfWeek.ToString();
+
+            decimal price = screening.Price;
+
+            if (dayofweek == monday || dayofweek == tuesday || dayofweek == wednesday || dayofweek == thursday || dayofweek == friday && screening.StartTime.TimeOfDay < matinees)
+            {
+                price = 8;
+                //match found
+            }
+            if (dayofweek == monday || dayofweek == tuesday || dayofweek == wednesday || dayofweek == thursday && screening.StartTime.TimeOfDay >= matinees)
+            {
+                price = 10;
+                //match found
+            }
+            if (screening.StartTime.TimeOfDay < tuesdaydiscount && dayofweek == tuesday)
+            {
+                price = 8;
+                //match found
+            }
+            if (dayofweek == friday && screening.StartTime.TimeOfDay >= matinees)
+            {
+                price = 12;
+                //match found
+            }
+            if (dayofweek == saturday || dayofweek == sunday)
+            {
+                price = 12;
+                //match found
+            }
+
+            
 
             if (ModelState.IsValid)
             {
@@ -67,7 +105,7 @@ namespace FinalProject_Team12.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //Populate the view bag with the department list
+            //Populate the view bag with the movie list
 
             ViewBag.AllMovies = GetAllMovies();
             return View(screening);

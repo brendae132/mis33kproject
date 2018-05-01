@@ -68,12 +68,9 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
-<<<<<<< HEAD
-        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, Int32 SelectedGenre, DateTime? ReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, string SearchActors) //DateTime? SelectedDate
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, int[] SelectedGenre, DateTime? SelectedReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors) //DateTime? SelectedDate
 
-=======
-        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, int[] SelectedGenre, DateTime? SelectedReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors)
->>>>>>> a96b8714e6153cc75c454087f31511ef99fa2c39
+
 
         {
             //Create query
@@ -103,13 +100,12 @@ namespace FinalProject_Team12.Controllers
             {
                 query = query.Where(r => r.Genres.Equals(SelectedGenre));
                 Genre GenreToDisplay = db.Genres.Find(SelectedGenre);
-<<<<<<< HEAD
+
                 ViewBag.SelectedGenre = "The selected genre is " + GenreToDisplay.GenreType;
                
-=======
-                ViewBag.SelectedGenre = GenreToDisplay.GenreType; //Is this necessary? Or will a != null suffice? (deleting Viewbags?)
-                query = query.Where(r => r.Genres.Equals(SelectedGenre)); //Is this not being connected to "Movies"? Why won't it work? 
->>>>>>> a96b8714e6153cc75c454087f31511ef99fa2c39
+
+           
+
             }
 
             if (SelectedReleaseDate != null)

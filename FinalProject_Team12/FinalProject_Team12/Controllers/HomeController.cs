@@ -68,7 +68,7 @@ namespace FinalProject_Team12.Controllers
         }
 
         //The customer should be able to search movies by title, tagline, genre, release year, MPAA rating (G, PG, PG-2113, etc.), customer rating (see below), and actors. 
-        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, int GenreID, DateTime? SelectedReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors) //DateTime? SelectedDate
+        public ActionResult DisplaySearchResults(string SearchName, string SearchTagline, int SelectedGenreID, DateTime? SelectedReleaseDate, MPAARating? SelectedMPAARating, string NumberofStars, StarRating? SelectedStar, Decimal? CustomerRating, DateTime? SelectedDate, string SearchActors) //DateTime? SelectedDate
 
         {
             //Create query
@@ -89,15 +89,15 @@ namespace FinalProject_Team12.Controllers
             //Allow user to see all genres
             //TODO: Double check if the following for SelectedGenre is correct:
             //How to give user options to select available genres?
-            if (GenreID == 0)
+            if (SelectedGenreID == 0)
             {
                 ViewBag.GenreID = "No genre was selected";
             }
 
             else
             {
-                Genre GenreToDisplay = db.Genres.Find(GenreID);
-                query = query.Where(r => r.Genres.Any(g => g.GenreID == GenreID));
+                Genre GenreToDisplay = db.Genres.Find(SelectedGenreID);
+                query = query.Where(r => r.Genres.Any(g => g.GenreID == SelectedGenreID));
                 ViewBag.GenreID = "The selected genre is " + GenreToDisplay.GenreID;
               
 
@@ -116,25 +116,25 @@ namespace FinalProject_Team12.Controllers
 
             if (SelectedMPAARating == MPAARating.G)
             {
-                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
+                query = query.Where(r => r.MPAARating == MPAARating.G);
             }
 
             if (SelectedMPAARating == MPAARating.PG)
             {
-                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
+                query = query.Where(r => r.MPAARating == MPAARating.PG);
             }
 
             if (SelectedMPAARating == MPAARating.PG13)
             {
-                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
+                query = query.Where(r => r.MPAARating == MPAARating.PG13);
             }
             if (SelectedMPAARating == MPAARating.R)
             {
-                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
+                query = query.Where(r => r.MPAARating == MPAARating.R);
             }
             if (SelectedMPAARating == MPAARating.Unrated)
             {
-                query = query.Where(r => r.MPAARating.Equals(SelectedMPAARating));
+                query = query.Where(r => r.MPAARating == MPAARating.Unrated);
             }
 
 

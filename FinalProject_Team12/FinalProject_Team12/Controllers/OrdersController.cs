@@ -216,6 +216,13 @@ namespace FinalProject_Team12.Controllers
             return slAvailableSeats;
         }
 
+        public ActionResult CheckOut(List<Ticket> Tickets)
+        {
+            //TODO:call price, sub, total
+            //TODO:viewbad CC1 CC2
+            return View();
+        }
+
         // GET: Orders/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -300,12 +307,8 @@ namespace FinalProject_Team12.Controllers
             //Get the list of screenings in order by screening time
             List<Screening> allScreening = db.Screenings.OrderBy(p => p.StartTime).ToList();
 
-            if (allScreening.Count == 0) {
-                
-            }
-
             //convert the list to a select lsit
-            SelectList selScreenings = new SelectList(allScreening, "Screening", "StartTime");
+            SelectList selScreenings = new SelectList(allScreening, "Title");
 
             //return the select list
             return selScreenings;

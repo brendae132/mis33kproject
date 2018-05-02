@@ -31,7 +31,7 @@ namespace FinalProject_Team12.Utilities
 
             if (dayofweek == monday || dayofweek == tuesday || dayofweek == wednesday || dayofweek == thursday || dayofweek == friday && screening.StartTime.TimeOfDay < matinees)
             {
-                return price = 8;
+                price = 8;
                 //match found
             }
             if (dayofweek == monday || dayofweek == tuesday || dayofweek == wednesday || dayofweek == thursday && screening.StartTime.TimeOfDay >= matinees)

@@ -32,6 +32,13 @@ namespace FinalProject_Team12.Models
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         public DateTime OrderDate { get; set; }
 
+        [Display(Name = "Order Time")]
+        [DisplayFormat(DataFormatString = "{0:hh:mm tt}", ApplyFormatInEditMode = true)]
+        public DateTime OrderTime
+        {
+            get { return DateTime.Now; }
+        }
+
         [Display(Name = "Order Number")]
         public Int32 OrderNumber { get; set; }
 

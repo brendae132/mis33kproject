@@ -48,13 +48,13 @@ namespace FinalProject_Team12.Models
 
             //TODO: Write the calculations for overall movie rating here: 
 
-            [Display(Name = "Customer Rating")]
-            [DisplayFormat(DataFormatString = "{0:0.0}")]
+            //[Display(Name = "Customer Rating")]
+            //[DisplayFormat(DataFormatString = "{0:0.0}")]
            
-            public Decimal CustomerRating //Using CustomerRating from Movie.cs
-            {
-                get { return MovieReviews.Average(x => x.Rating); } //Supposed to follow the logic of "get { return OrderDetails.Sum(rd => rd.ExtendedPrice); }"
-            }
+            //public Decimal CustomerRating 
+            //{
+            //    get { return MovieReviews.Average(x => x.Rating); } 
+            //}
              
 
             //TODO: revenue for reports

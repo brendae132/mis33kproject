@@ -37,15 +37,14 @@ namespace FinalProject_Team12.Controllers
 
         [Authorize(Roles = "Manager")]
         // GET: Screenings/Create
-        public ActionResult Create(int ScreeningID)
+        public ActionResult Create()
         {
-            Screening screening = db.Screenings.Find(ScreeningID);
+            //Screening screening = db.Screenings.Find(ScreeningID);
 
+            //Decimal Price = Utilities.GenerateTicketPrice.GetTicketPrice(screening);
 
-            Decimal Price = Utilities.GenerateTicketPrice.GetTicketPrice(screening);
-
-            ViewBag.CurrentTicketPrice = screening.Price;
-            ViewBag.CurrentStartTime = screening.StartTime;
+            //ViewBag.CurrentTicketPrice = screening.Price;
+            //ViewBag.CurrentStartTime = screening.StartTime;
 
             //NOTE: should this be scheduled movies? 
             ViewBag.AllMovies = GetAllMovies();
@@ -78,8 +77,8 @@ namespace FinalProject_Team12.Controllers
             }
             //Populate the view bag with the movie list
 
-            ViewBag.CurrentTicketPrice = screening.Price;
-            ViewBag.CurrentStartTime = screening.StartTime;
+            //ViewBag.CurrentTicketPrice = screening.Price;
+            //ViewBag.CurrentStartTime = screening.StartTime;
             ViewBag.AllMovies = GetAllMovies();
             return View(screening);
         }

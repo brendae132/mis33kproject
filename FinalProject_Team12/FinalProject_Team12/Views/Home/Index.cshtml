@@ -59,7 +59,14 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Screenings)
+                @foreach (Screening scr in item.Screenings)
+                {
+
+                    @Html.DisplayFor(modelItem => scr.StartTime);
+
+                 }
+                
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MPAARating)
@@ -73,16 +80,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CustomerRating)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Genres.GenreType)
+            <td>
 
-                @foreach (Genre gen in Model.Genres)
-                    {
+                @foreach (Genre gen in item.Genres)
+                {
 
-                        @Html.DisplayFor(modelItem => gen.GenreType)
+                    @Html.DisplayFor(modelItem => gen.GenreType);
 
-                    }
-            </td>*@
+                }
+            </td>
             <td>
                 @Html.ActionLink("Details", "Details", new { id = item.MovieID })
 

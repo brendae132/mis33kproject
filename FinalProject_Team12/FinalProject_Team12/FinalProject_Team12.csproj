@@ -320,6 +320,7 @@
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Orders\RemoveFromOrder.cshtml" />
+    <Content Include="Views\Orders\AvailableSeats.cshtml" />
     <Content Include="Views\View.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

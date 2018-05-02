@@ -121,6 +121,8 @@ namespace FinalProject_Team12.Controllers
             //Populate the view bag with the list of screening
             ViewBag.AllScreenings = GetAllScreenings();
 
+             //GetAllScreenings().
+
             //Give the view the registration detail object we just created
             return View(od);
         }
@@ -159,6 +161,68 @@ namespace FinalProject_Team12.Controllers
             return View(od);
 
         }
+
+        public static SelectList AvailableSeats(List<Ticket> Tickets)
+        {
+            List<String> TakenSeatNames = new List<String>();
+            foreach (Ticket t in Tickets)
+            {
+                //TODO:should this be seat seatnumber or seat resevrve?
+                TakenSeatNames.Add(t.SeatNumber);
+            }
+
+            List<String> AllSeatNames = new List<String>();
+            AllSeatNames.Add("A1");
+            AllSeatNames.Add("A2");
+            AllSeatNames.Add("A3");
+            AllSeatNames.Add("A4");
+            AllSeatNames.Add("A5");
+            AllSeatNames.Add("A6");
+            AllSeatNames.Add("A7");
+            AllSeatNames.Add("A8");
+
+            AllSeatNames.Add("B1");
+            AllSeatNames.Add("B2");
+            AllSeatNames.Add("B3");
+            AllSeatNames.Add("B4");
+            AllSeatNames.Add("B5");
+            AllSeatNames.Add("B6");
+            AllSeatNames.Add("B7");
+            AllSeatNames.Add("B8");
+
+            AllSeatNames.Add("C1");
+            AllSeatNames.Add("C2");
+            AllSeatNames.Add("C3");
+            AllSeatNames.Add("C4");
+            AllSeatNames.Add("C5");
+            AllSeatNames.Add("C6");
+            AllSeatNames.Add("C7");
+            AllSeatNames.Add("C8");
+
+            AllSeatNames.Add("D1");
+            AllSeatNames.Add("D2");
+            AllSeatNames.Add("D3");
+            AllSeatNames.Add("D4");
+            AllSeatNames.Add("D5");
+            AllSeatNames.Add("D6");
+            AllSeatNames.Add("D7");
+            AllSeatNames.Add("D8");
+
+
+            List<String> AvailableSeats = AllSeatNames.Except(TakenSeatNames).ToList();
+
+            SelectList slAvailableSeats = new SelectList(AvailableSeats);
+
+            return slAvailableSeats;
+        }
+
+        public ActionResult CheckOut(List<Ticket> Tickets)
+        {
+            //TODO:call price, sub, total
+            //TODO:viewbad CC1 CC2
+            return View();
+        }
+
         // GET: Orders/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -303,7 +367,7 @@ namespace FinalProject_Team12.Controllers
             List<Screening> allScreening = db.Screenings.OrderBy(p => p.StartTime).ToList();
 
             //convert the list to a select lsit
-            SelectList selScreenings = new SelectList(allScreening, "Screening", "StartTime");
+            SelectList selScreenings = new SelectList(allScreening, "Title");
 
             //return the select list
             return selScreenings;

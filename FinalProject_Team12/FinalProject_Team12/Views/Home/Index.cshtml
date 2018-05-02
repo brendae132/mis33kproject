@@ -54,19 +54,17 @@
     @foreach (var item in Model)
     {
         <tr>
-
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
                 @foreach (Screening scr in item.Screenings)
                 {
-
-                    @Html.DisplayFor(modelItem => scr.StartTime);
-
-                 }
                 
-
+                    <strong>@Html.DisplayFor(modelItem => scr.ScreeningDate);</strong>
+                    @Html.DisplayFor(modelItem => scr.StartTime);
+                <br />
+                 }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MPAARating)
@@ -81,17 +79,14 @@
                 @Html.DisplayFor(modelItem => item.CustomerRating)
             </td>
             <td>
-
                 @foreach (Genre gen in item.Genres)
                 {
-
                     @Html.DisplayFor(modelItem => gen.GenreType);
-
+                    <br />
                 }
             </td>
             <td>
                 @Html.ActionLink("Details", "Details", new { id = item.MovieID })
-
             </td>
         </tr>
     }

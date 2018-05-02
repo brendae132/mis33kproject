@@ -105,7 +105,7 @@ namespace FinalProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ScreeningID,Price,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int SelectedMovie)
+        public ActionResult Edit([Bind(Include = "ScreeningID,Price,StartTime,EndTime,TheaterNum,ScreeningDate")] Screening screening, int? SelectedMovie)
         {
             if (ModelState.IsValid)
             {

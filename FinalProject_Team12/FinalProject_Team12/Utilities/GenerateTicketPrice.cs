@@ -29,12 +29,12 @@ namespace FinalProject_Team12.Utilities
 
             decimal price = screening.Price;
 
-            if (dayofweek == monday || dayofweek == tuesday || dayofweek == wednesday || dayofweek == thursday || dayofweek == friday && screening.StartTime.TimeOfDay < matinees)
+            if ((dayofweek == monday && screening.StartTime.TimeOfDay < matinees) || (dayofweek == tuesday && screening.StartTime.TimeOfDay < matinees ) || (dayofweek == wednesday && screening.StartTime.TimeOfDay < matinees) || (dayofweek == thursday && screening.StartTime.TimeOfDay < matinees) || (dayofweek == friday && screening.StartTime.TimeOfDay < matinees))
             {
                 price = 8;
                 //match found
             }
-            if (dayofweek == monday || dayofweek == tuesday || dayofweek == wednesday || dayofweek == thursday && screening.StartTime.TimeOfDay >= matinees)
+            if ((dayofweek == monday && screening.StartTime.TimeOfDay >= matinees) || (dayofweek == tuesday && screening.StartTime.TimeOfDay >= matinees) || (dayofweek == wednesday && screening.StartTime.TimeOfDay >= matinees) || (dayofweek == thursday && screening.StartTime.TimeOfDay >= matinees))
             {
                 price = 10;
                 //match found

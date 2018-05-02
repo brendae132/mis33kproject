@@ -23,13 +23,13 @@ namespace FinalProject_Team12.Models
         [Required(ErrorMessage = "Start time is required.")]
         [DataType(DataType.Time, ErrorMessage = "Enter valid start time.")]
         [Display(Name = "Start Time")]
-        [DisplayFormat(DataFormatString = "{0:hh:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:hh:mm tt}", ApplyFormatInEditMode = true)]
         public DateTime StartTime { get; set; }
 
         [Required(ErrorMessage = "End time is required.")]
         [DataType(DataType.Time, ErrorMessage = "Enter valid end time.")]
         [Display(Name = "End Time")]
-        [DisplayFormat(DataFormatString = "{0:hh:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:hh:mm tt}", ApplyFormatInEditMode = true)]
         public DateTime EndTime { get; set; }
 
         [Display(Name = "Theater Number")]

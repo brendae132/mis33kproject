@@ -302,9 +302,9 @@ namespace FinalProject_Team12.Controllers
         }
 
 
-        public ActionResult DetailedMovieReports() //TODO: Genres section
+        public ActionResult MovieReports() //TODO: Genres section
         {
-            //ViewBag.AllGenres = GetAllGenres();
+            ViewBag.AllMovies = GetAllMovies();
             return View();
         }
 
@@ -317,44 +317,12 @@ namespace FinalProject_Team12.Controllers
             //Search by customer should either show all customers or just a particular customer.
             //You can just show a drop - down list of customers or let them search by name
 
-            ViewBag.TotalMovies = db.Movies.ToList().Count();
-            List<Movie> SearchReportsbyMovies = new List<Movie>();
-            var query = from r in db.Movies select r;
+            ViewBag.TotalOrders = db.Orders.ToList().Count();
+            List<Order> SearchReports = new List<Order>();
+            var query = from r in db.Orders select r;
 
-            //Search by movie
-            //Check to see if search string is null
-            if (SearchTitle != null)
-            {
-                query = query.Where(r => r.Title.Contains(SearchTitle));
-            }
-
-            if (SearchDateRange != null)
-            {
-                query = query.Where(r => r.Order.Equals(g => g.OrderDate == SearchDateRange));
-            }
-
-            //Search by MPAA Rating
-            if (SearchMPAARating == MPAARating.G)
-            {
-                query = query.Where(r => r.MPAARating == MPAARating.G);
-            }
-            if (SearchMPAARating == MPAARating.PG)
-            {
-                query = query.Where(r => r.MPAARating == MPAARating.PG);
-            }
-            if (SearchMPAARating == MPAARating.PG13)
-            {
-                query = query.Where(r => r.MPAARating == MPAARating.PG13);
-            }
-            if (SearchMPAARating == MPAARating.R)
-            {
-                query = query.Where(r => r.MPAARating == MPAARating.R);
-            }
-            if (SearchMPAARating == MPAARating.Unrated)
-            {
-                query = query.Where(r => r.MPAARating == MPAARating.Unrated);
-            }
-
+      
+      
             //Search by Time of Day
             return View();
 
@@ -372,7 +340,20 @@ namespace FinalProject_Team12.Controllers
             //return the select list
             return selScreenings;
         }
-        
+
+        //method to get all screenings for the ViewBag
+        public SelectList GetAllMovies()
+        {
+            //Get the list of screenings in order by screening time
+            List<Movie> allMovie = db.Movies.OrderBy(p => p.MovieID).ToList();
+
+            //convert the list to a select lsit
+            SelectList selMovies = new SelectList(allMovie, "MovieID");
+
+            //return the select list
+            return selMovies;
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

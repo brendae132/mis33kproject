@@ -46,19 +46,19 @@ namespace FinalProject_Team12.Models
             [Display(Name = "Running Time (minutes)")]
             public Int32 RunningTime { get; set; }
 
-            //TODO: Write the calculations for overall movie rating here: 
+        //TODO: Write the calculations for overall movie rating here: 
 
-            //[Display(Name = "Customer Rating")]
-            //[DisplayFormat(DataFormatString = "{0:0.0}")]
-           
-            //public Decimal CustomerRating 
-            //{
-            //    get { return MovieReviews.Average(x => x.Rating); } 
-            //}
-             
+        [Display(Name = "Customer Rating")]
+        [DisplayFormat(DataFormatString = "{0:0.0}")]
 
-            //TODO: revenue for reports
-            [Display(Name = "Revenue")]
+        public Decimal CustomerRating
+        {
+            get { if (MovieReviews.Count == 0) { return 0; } else { return MovieReviews.Average(x => x.Rating); } }
+        }
+
+
+        //TODO: revenue for reports
+        [Display(Name = "Revenue")]
             public Int64 Revenue { get; set; }
 
             //navigational properties

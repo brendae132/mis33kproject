@@ -137,7 +137,7 @@ namespace FinalProject_Team12.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 await UserManager.AddToRoleAsync(user.Id, "Customer");
-                await UserManager.AddToRoleAsync(user.Id, "Employee");
+                //await UserManager.AddToRoleAsync(user.Id, "Employee");
 
 
                 if (result.Succeeded)

@@ -181,11 +181,11 @@ namespace FinalProject_Team12.Controllers
                 {
                     ViewBag.SelectedStarOption = "The records greater than the selected rank should be shown.";
 
-                //    query = query.Where(r => r.CustomerRating >= decStarOptions);
+                    query = query.Where(r => r.CustomerRating >= decStarOptions);
                 }
                 else
                 {
-                //    query = query.Where(r => r.CustomerRating <= decStarOptions);
+                    query = query.Where(r => r.CustomerRating <= decStarOptions);
 
                     ViewBag.SelectedStarOption = "The records lesser than the selected rank should be shown.";
                 }

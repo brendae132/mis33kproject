@@ -160,19 +160,6 @@ namespace FinalProject_Team12.Controllers
                 }
 
 
-
-                //As part of HW 5. On the Orders/Details View
-                //[Display(Name = "Order Subtotal")]
-                //[DisplayFormat(DataFormatString = "{0:C}")]
-                //public Decimal OrderSubtotal
-                //{
-                //   get { return OrderDetails.Sum(od => od.ExtendedPrice); }
-                //}
-                //TODO: Write the calculations for overall movie rating in Movie.cs: 
-                //Then, use that variable of overall rating here: 
-
-
-
                 //Rating = Convert.ToDecimal(NumberofStars);
                 Decimal decStarOptions;
                 decStarOptions = Convert.ToDecimal(NumberofStars);

@@ -237,6 +237,65 @@ namespace FinalProject_Team12.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public ActionResult DetailedMovieReports() //TODO: Genres section
+        {
+            //ViewBag.AllGenres = GetAllGenres();
+            return View();
+        }
+
+
+        [Authorize(Roles = "Manager")]
+        public ActionResult DisplayMovieReports(String SearchTitle, DateTime? SearchDateRange, MPAARating? SearchMPAARating, DateTime? SearchTimeofDay )
+        {
+            //There should be separate reports for looking at sales by movie and sales by customer.
+            //Sales by movie should be searchable by date, movie, rating, etc.
+            //Search by customer should either show all customers or just a particular customer.
+            //You can just show a drop - down list of customers or let them search by name
+
+            ViewBag.TotalMovies = db.Movies.ToList().Count();
+            List<Movie> SearchReportsbyMovies = new List<Movie>();
+            var query = from r in db.Movies select r;
+
+            //Search by movie
+            //Check to see if search string is null
+            if (SearchTitle != null)
+            {
+                query = query.Where(r => r.Title.Contains(SearchTitle));
+            }
+
+            if (SearchDateRange != null)
+            {
+                query = query.Where(r => r.Order.Equals(g => g.OrderDate == SearchDateRange));
+            }
+
+            //Search by MPAA Rating
+            if (SearchMPAARating == MPAARating.G)
+            {
+                query = query.Where(r => r.MPAARating == MPAARating.G);
+            }
+            if (SearchMPAARating == MPAARating.PG)
+            {
+                query = query.Where(r => r.MPAARating == MPAARating.PG);
+            }
+            if (SearchMPAARating == MPAARating.PG13)
+            {
+                query = query.Where(r => r.MPAARating == MPAARating.PG13);
+            }
+            if (SearchMPAARating == MPAARating.R)
+            {
+                query = query.Where(r => r.MPAARating == MPAARating.R);
+            }
+            if (SearchMPAARating == MPAARating.Unrated)
+            {
+                query = query.Where(r => r.MPAARating == MPAARating.Unrated);
+            }
+
+            //Search by Time of Day
+            return View();
+
+        }
+
         //method to get all screenings for the ViewBag
         public SelectList GetAllScreenings()
         {

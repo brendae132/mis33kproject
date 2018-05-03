@@ -262,6 +262,10 @@
     <Compile Include="Migrations\201805022333125_ModifiedScreenings.Designer.cs">
       <DependentUpon>201805022333125_ModifiedScreenings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805030143049_ModifiedHome.cs" />
+    <Compile Include="Migrations\201805030143049_ModifiedHome.Designer.cs">
+      <DependentUpon>201805030143049_ModifiedHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\CustomerData.cs" />
     <Compile Include="Migrations\EmployeeData.cs" />
@@ -358,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805022333125_ModifiedScreenings.resx">
       <DependentUpon>201805022333125_ModifiedScreenings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805030143049_ModifiedHome.resx">
+      <DependentUpon>201805030143049_ModifiedHome.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

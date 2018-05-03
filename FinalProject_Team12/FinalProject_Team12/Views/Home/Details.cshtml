@@ -83,19 +83,38 @@
             @Html.DisplayFor(model => model.CustomerRating)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Genres)
-        </dt>
-
-        <dd>
-            @foreach (Genre gen in Model.Genres)
-            {
-                @Html.DisplayFor(modelItem => gen.GenreType)
-            }
-        </dd>
-
     </dl>
 </div>
+
+<div>
+    <table class="table table-sm table-striped">
+        <tr>
+            <th>Genres</th>
+        </tr>
+        @foreach (Genre gen in Model.Genres)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => gen.GenreType)</td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div>
+    <table class="table table-sm table-striped">
+        <tr>
+            <th>Screenings</th>
+        </tr>
+        @foreach (Screening screen in Model.Screenings)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => screen.ScreeningDate)</td>
+            <td>@Html.DisplayFor(modelItem => screen.StartTime)</td>
+        </tr>
+        }
+    </table>
+</div>
+
 <p>
     @Html.ActionLink("Back to List", "Index")
 </p>

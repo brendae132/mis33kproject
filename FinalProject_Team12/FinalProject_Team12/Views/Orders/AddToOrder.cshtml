@@ -1,5 +1,4 @@
 ﻿@model FinalProject_Team12.Models.Ticket
-@using FinalProject_Team12.Models.*
 
 @{
     ViewBag.Title = "AddToOrder";
@@ -7,38 +6,38 @@
 
 <h2>Add To Order</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm(FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h4>OrderDetail</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.Order.OrderID)
-    <div class="form-group">
-        @Html.LabelFor(model => model.SeatsReserved, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.SeatsReserved, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.SeatsReserved, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    @*@using (Html.BeginForm("Index", "AddToOrder", FormMethod.Post))*@
-    <div class="form-group">
-        <label class="control-label col-md-2">Select a screening:</label>
-        <div class="col-md-10">
-            @Html.DropDownList("SelectedScreening", (SelectList) ViewBag.AllScreenings, new { @class = "form-control" })
-        </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Choose Available Seats" class="btn btn-default" />
+    <div class="form-horizontal">
+        <h4>OrderDetail</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Order.OrderID)
+        <div class="form-group">
+            @Html.LabelFor(model => model.SeatsReserved, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SeatsReserved, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SeatsReserved, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*@using (Html.BeginForm("Index", "AddToOrder", FormMethod.Post))*@
+        <div class="form-group">
+            <label class="control-label col-md-2">Select a screening:</label>
+            <div class="col-md-10">
+                @Html.DropDownList("SelectedScreening", (SelectList)ViewBag.AllScreenings, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Choose Available Seats" class="btn btn-default" />
+            </div>
         </div>
     </div>
-</div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "AvailableSeats")
+    @Html.ActionLink("Back to Order History", "Index")
 </div>

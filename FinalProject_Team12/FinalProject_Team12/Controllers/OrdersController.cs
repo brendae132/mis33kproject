@@ -118,6 +118,11 @@ namespace FinalProject_Team12.Controllers
             //Set the new order detail's order to the new ord we just found
             od.Order = ord;
 
+
+            //fin the seat numbers for this ticket
+
+            //ViewBag.AllSeatNumbers = GetSeatNumbers();
+
             //Populate the view bag with the list of screening
             ViewBag.AllScreenings = GetAllScreenings();
 
@@ -128,10 +133,10 @@ namespace FinalProject_Team12.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddToOrder(Ticket od, int SelectedScreening)
+        public ActionResult AddToOrder(Ticket od, Screening SelectedScreening)
         {
             //Find the screening associated with the int SelectedScreening
-            Screening screening = db.Screenings.Find(SelectedScreening);
+            Screening screening = db.Screenings.Find(SelectedScreening.ScreeningID);
 
             //set the screening property of the order detail to this newly found screening
             od.Screening = screening;
@@ -143,10 +148,10 @@ namespace FinalProject_Team12.Controllers
             od.Order = ord;
 
             //set the value of the product price
-            od.TicketPrice = screening.Price;
+            //od.TicketPrice = screening.Price;
 
             ////set the value of the extended price
-            od.ExtendedPrice = od.TicketPrice * od.SeatsReserved;
+            //od.ExtendedPrice = od.TicketPrice * od.SeatsReserved;
 
             if (ModelState.IsValid)//model meets all requirements
             {
@@ -156,18 +161,19 @@ namespace FinalProject_Team12.Controllers
                 return RedirectToAction("Details", "Orders", new { id = ord.OrderID });
             }
 
-            //model state is not valid
             ViewBag.AllScreenings = GetAllScreenings();
+
+           
             return View(od);
 
         }
 
-        public static SelectList AvailableSeats(List<Ticket> Tickets)
+        public static MultiSelectList FindAvailableSeats(List<Ticket> Tickets)
         {
             List<String> TakenSeatNames = new List<String>();
             foreach (Ticket t in Tickets)
             {
-                //TODO:should this be seat seatnumber or seat resevrve?
+                //TODO:should be seat name, need to add prop to model 
                 TakenSeatNames.Add(t.SeatNumber);
             }
 
@@ -211,17 +217,42 @@ namespace FinalProject_Team12.Controllers
 
             List<String> AvailableSeats = AllSeatNames.Except(TakenSeatNames).ToList();
 
-            SelectList slAvailableSeats = new SelectList(AvailableSeats);
+            MultiSelectList slAvailableSeats = new MultiSelectList(AvailableSeats);
 
             return slAvailableSeats;
         }
 
-        public ActionResult CheckOut(List<Ticket> Tickets)
+        public ActionResult CheckOut(Ticket od, Order ord, int[] AvailableSeats, Screening screening)
         {
-            //TODO:call price, sub, total
-            //TODO:viewbad CC1 CC2
-            return View();
+
+            List<SelectListItem> AvailableSeatList = FindAvailableSeats(ord.Tickets).ToList();
+
+            var availableseats = FindAvailableSeats(ord.Tickets);
+
+            var SeatCount = 0;
+            SeatCount = AvailableSeatList.Count() - 1;
+            List<Ticket> TicketList = new List<Ticket>();
+
+            foreach (var i in AvailableSeats)
+            {
+                Ticket t = new Ticket();
+                t.Screening = screening;
+                t.Order = ord;
+                //t.SeatNumber = GetSeatName(SeatCount);
+                SeatCount = SeatCount - 1;
+                t.TicketPrice = od.TicketPrice;
+                TicketList.Add(t);
+
+                if (ModelState.IsValid)
+                {
+                    db.Tickets.Add(t);
+                    db.SaveChanges();
+                }
+            }
+            return View(ord);
         }
+
+
 
         // GET: Orders/Edit/5
         public ActionResult Edit(int? id)
@@ -335,11 +366,12 @@ namespace FinalProject_Team12.Controllers
             List<Screening> allScreening = db.Screenings.OrderBy(p => p.StartTime).ToList();
 
             //convert the list to a select lsit
-            SelectList selScreenings = new SelectList(allScreening, "Title");
+            SelectList selScreenings = new SelectList(allScreening);
 
             //return the select list
             return selScreenings;
         }
+
 
         //method to get all screenings for the ViewBag
         public SelectList GetAllMovies()
@@ -352,6 +384,15 @@ namespace FinalProject_Team12.Controllers
 
             //return the select list
             return selMovies;
+        }
+
+        public SelectList GetSeatName()
+        {
+            List<Ticket> allSeatNumber = db.Tickets.OrderBy(p => p.SeatNumber).ToList();
+
+            SelectList selSeatNumber = new SelectList(allSeatNumber, "SeatNumber");
+
+            return selSeatNumber;
         }
 
         protected override void Dispose(bool disposing)
